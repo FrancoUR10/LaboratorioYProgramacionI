@@ -10,8 +10,10 @@ int main()
     int primerDolar=1;
     int primerPeso=1;
     int maximoDolar;
+    int minimoBitCoin;
+    int primerBitCoin=1;
     int sumaDePesos=0;
-    int contador=0;
+    int contadorDePesosIngresados=0;
     float promedioDePesos;
 
     int i;
@@ -36,9 +38,21 @@ int main()
                 maximoDolar=dinero;
             }
         }
+        if(tipo=='b')
+        {
+            if(primerBitCoin==1)
+            {
+                minimoBitCoin=dinero;
+                primerBitCoin=0;
+            }
+            if(dinero < minimoBitCoin)
+            {
+                minimoBitCoin=dinero;
+            }
+        }
         if(tipo=='p')
         {
-            contador++;
+            contadorDePesosIngresados++;
             sumaDePesos+=dinero;
             if(primerPeso==1)
             {
@@ -46,22 +60,30 @@ int main()
             }
         }
     }
-    promedioDePesos=(float)sumaDePesos/contador;
     if(primerDolar!=1)
     {
         printf("\nMayor importe en dolares: %d\n",maximoDolar);
     }
     else
     {
-        printf("No se han ingresado dolares");
+        printf("\nNo se han ingresado dolares\n");
     }
-    if(primerPeso!=1)
+    if(primerBitCoin!=1)
     {
-        printf("Promedio de pesos: %.2f",promedioDePesos);
+        printf("\nMenor importe en bitcoins: %d\n",minimoBitCoin);
     }
     else
     {
-        printf("No se han ingresado pesos");
+        printf("\nNo se han ingresado bitcoins\n");
+    }
+    if(primerPeso!=1)
+    {
+        promedioDePesos=(float)sumaDePesos/contadorDePesosIngresados;
+        printf("\nPromedio de pesos: %.2f\n",promedioDePesos);
+    }
+    else
+    {
+        printf("\nNo se han ingresado pesos\n");
     }
 
 
