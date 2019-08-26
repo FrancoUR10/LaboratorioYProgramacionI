@@ -1,0 +1,23 @@
+# depslib dependency file v1.0
+1566584941 source:c:\users\acquisto\desktop\clase4_ejercicio\funciones.c
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	"Funciones.h"
+
+1566584895 c:\users\acquisto\desktop\clase4_ejercicio\funciones.h
+
+1566584123 source:c:\users\acquisto\desktop\clase4_ejercicio\main.c
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	"Funciones.h"
+
+1566584941 source:c:\users\acquisto\desktop\programacion y laboratorio\proyectos de codeblocks\clase4_ejercicio\funciones.c
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	"Funciones.h"
+
+1566584895 c:\users\acquisto\desktop\programacion y laboratorio\proyectos de codeblocks\clase4_ejercicio\funciones.h
+

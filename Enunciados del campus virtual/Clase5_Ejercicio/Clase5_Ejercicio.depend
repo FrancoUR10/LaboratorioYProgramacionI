@@ -1,0 +1,13 @@
+# depslib dependency file v1.0
+1566770543 source:c:\users\acquisto\desktop\clase5_ejercicio\biblioteca.c
+	<stdio.h>
+	<stdlib.h>
+	"Biblioteca.h"
+
+1566770543 c:\users\acquisto\desktop\clase5_ejercicio\biblioteca.h
+
+1566770413 source:c:\users\acquisto\desktop\clase5_ejercicio\main.c
+	<stdio.h>
+	<stdlib.h>
+	"Biblioteca.h"
+
