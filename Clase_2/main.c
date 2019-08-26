@@ -1,6 +1,5 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "Biblioteca.h"
 #define TAM 5
 
 int main()
@@ -15,6 +14,7 @@ int main()
     int sumaDePesos=0;
     int contadorDePesosIngresados=0;
     float promedioDePesos;
+    int contadorTotalDineroIngresado=0;
 
     int i;
     for(i=0;i<TAM;i++)
@@ -25,6 +25,7 @@ int main()
         printf("Ingrese el tipo de dinero: ");
         scanf("%c",&tipo);
         fflush(stdin);
+        contadorTotalDineroIngresado++;
 
         if(tipo=='d')
         {
@@ -80,6 +81,7 @@ int main()
     {
         promedioDePesos=(float)sumaDePesos/contadorDePesosIngresados;
         printf("\nPromedio de pesos: %.2f\n",promedioDePesos);
+        printf("\nPorcentaje de pesos ingresados: %.2f\n",(((float)contadorDePesosIngresados/contadorTotalDineroIngresado) * 100));
     }
     else
     {
