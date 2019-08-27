@@ -1,0 +1,14 @@
+# depslib dependency file v1.0
+1566938461 source:c:\users\acquisto\desktop\ejercicio_clase6\cadenascaracteres.c
+	<stdio.h>
+	<stdlib.h>
+	"CadenasCaracteres.h"
+
+1566936571 c:\users\acquisto\desktop\ejercicio_clase6\cadenascaracteres.h
+
+1566938072 source:c:\users\acquisto\desktop\ejercicio_clase6\main.c
+	<stdio.h>
+	<stdlib.h>
+	"CadenasCaracteres.h"
+	<string.h>
+
