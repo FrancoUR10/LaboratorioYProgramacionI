@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include "Biblioteca.h"
 
+
 int sacarNumeroEntero(char mensaje[])
 {
     int auxNumero;
@@ -10,7 +11,6 @@ int sacarNumeroEntero(char mensaje[])
     fflush(stdin);
     return auxNumero;
 }
-
 int sacarSuma(int numeroUnoSumando, int numeroDosSumando)
 {
     int resultadoSuma;
