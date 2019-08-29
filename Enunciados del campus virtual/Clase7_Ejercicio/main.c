@@ -32,7 +32,7 @@ int main()
     int opcionIngresada;
     char continuarMenu='s';
     int i;
-    //int j;
+    int j;
 
     inicializarArray(arrayLegajos,MAX,-1);
     do
@@ -124,6 +124,24 @@ int main()
                 }
                 break;
             case 5:
+                for(i=1;i<MAX;i++)
+                {
+                    strcpy(auxApellidoStr,arrayApellidos[i]);
+                    strcpy(auxNombreStr,arrayNombres[i]);
+                    auxLegajo=arrayLegajos[i];
+                    j=i-1;
+                    while(j >= 0 && auxApellidoStr < arrayApellidos[j])
+                    {
+                        strcpy(arrayApellidos[j+1],arrayApellidos[j]);
+                        strcpy(arrayNombres[j+1],arrayNombres[j]);
+                        arrayLegajos[j+1]=arrayLegajos[j];
+                        j--;
+                    }
+                    strcpy(arrayApellidos[j+1],auxApellidoStr);
+                    strcpy(arrayNombres[j+1],auxNombreStr);
+                    arrayLegajos[j+1]=auxLegajo;
+                }
+                printf("\nSe ordeno la lista por apellidos\n");
                 break;
             case 6:
                 continuarMenu='n';
