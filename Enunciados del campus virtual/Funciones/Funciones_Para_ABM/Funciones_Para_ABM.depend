@@ -1,0 +1,15 @@
+# depslib dependency file v1.0
+1567119001 source:c:\users\acquisto\desktop\funciones_para_abm\abm.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"abm.h"
+
+1567119605 c:\users\acquisto\desktop\funciones_para_abm\abm.h
+
+1567118346 source:c:\users\acquisto\desktop\funciones_para_abm\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"abm.h"
+
