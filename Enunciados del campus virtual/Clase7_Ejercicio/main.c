@@ -100,12 +100,12 @@ int main()
                     printf("\nEl legajo no se encuentra\n");
                     break;
                 }
-                if(!getStringLetras("Ingrese el nombre a dar de alta: ",auxNombreStr))
+                if(!getStringLetras("Ingrese el nombre a modificar: ",auxNombreStr))
                 {
                     printf("\nEl nombre solo se permite ingresarse con letras\n");
                     break;
                 }
-                if(!getStringLetras("Ingrese el apellido a dar de alta: ",auxApellidoStr))
+                if(!getStringLetras("Ingrese el apellido a modificar: ",auxApellidoStr))
                 {
                     printf("\nEl apellido solo se permite ingresarse con letras\n");
                     break;
