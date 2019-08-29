@@ -1,0 +1,15 @@
+# depslib dependency file v1.0
+1567040025 source:c:\users\acquisto\desktop\ejercicio_clase7\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"abm.h"
+
+1567034972 c:\users\acquisto\desktop\ejercicio_clase7\abm.h
+
+1567039641 source:c:\users\acquisto\desktop\ejercicio_clase7\abm.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"abm.h"
+
