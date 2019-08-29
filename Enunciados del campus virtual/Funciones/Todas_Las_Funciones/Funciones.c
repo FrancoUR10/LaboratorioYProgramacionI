@@ -173,6 +173,7 @@ int validarNumeroTelefono(char cadena[])
  * \param unArray[] El array donde se guardan los numeros
  * \return 1 si es solo numeros y 0 si no contiene solo numeros
  *
+ * Se requiere utilizar: #include <string.h>
  */
 int getStrNumeros(char mensaje[],char unArray[])
 {
@@ -192,6 +193,7 @@ int getStrNumeros(char mensaje[],char unArray[])
  * \param unArray[] El array donde se guardan las letras
  * \return 1 si es solo letras y 0 si no contiene solo letras
  *
+ * Se requiere utilizar: #include <string.h>
  */
 int getStrLetras(char mensaje[],char unArray[])
 {
