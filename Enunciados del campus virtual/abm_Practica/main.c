@@ -27,7 +27,7 @@ int main()
     inicializarLegajoArray(arrayLegajo,MAX,LIBRE);
     do
     {
-        opcionIngresadaMenu=getInt("1.ALTA\n2.BAJA\n3.MODIFICAR\n4.LISTAR\n5.SALIR\nIngrese una opcion: ");
+        opcionIngresadaMenu=getInt("1.ALTA\n2.BAJA\n3.MODIFICAR\n4.LISTAR\n5.ORDENAR\n6.SALIR\nIngrese una opcion: ");
         switch(opcionIngresadaMenu)
         {
             case 1:
@@ -35,15 +35,6 @@ int main()
                 if(indiceLibre == -1)
                 {
                     printf("\nNo hay mas lugares Libres\n");
-                }
-                if(!getStringLetras("Ingrese el nombre a dar de alta: ",auxNombre))
-                {
-                    printf("\nSolo se permiten letras\n");
-                    break;
-                }
-                if(!getStringLetras("Ingrese el apellido a dar de alta: ",auxApellido))
-                {
-                    printf("\nSolo se permiten letras\n");
                     break;
                 }
                 if(!getStringNumeros("Ingrese el legajo a dar de alta: ",auxLegajoStr))
@@ -57,9 +48,20 @@ int main()
                     printf("\nEl legajo ingresado ya esta ocupado\n");
                     break;
                 }
+                if(!getStringLetras("Ingrese el nombre a dar de alta: ",auxNombre))
+                {
+                    printf("\nSolo se permiten letras\n");
+                    break;
+                }
+                if(!getStringLetras("Ingrese el apellido a dar de alta: ",auxApellido))
+                {
+                    printf("\nSolo se permiten letras\n");
+                    break;
+                }
                 strcpy(arrayNombre[indiceLibre],auxNombre);
                 strcpy(arrayApellido[indiceLibre],auxApellido);
                 arrayLegajo[indiceLibre]=auxLegajo;
+                printf("\nEl legajo %d ha sido dado de alta\n",auxLegajo);
                 break;
             case 2:
                 if(!getStringNumeros("Ingrese el legajo a dar de baja: ",auxLegajoStr))
@@ -75,6 +77,7 @@ int main()
                     break;
                 }
                 arrayLegajo[indiceBusqueda]=BORRADO;
+                printf("\nEl legajo %d ha sido dado de baja\n",auxLegajo);
                 break;
             case 3:
                 if(!getStringNumeros("Ingrese el legajo a modificar: ",auxLegajoStr))
@@ -101,6 +104,7 @@ int main()
                 }
                 strcpy(arrayNombre[indiceBusqueda],auxNombre);
                 strcpy(arrayApellido[indiceBusqueda],auxApellido);
+                printf("\nEl legajo %d se ha modificado\n",auxLegajo);
                 break;
             case 4:
                 for(i=0;i<MAX;i++)
@@ -112,6 +116,8 @@ int main()
                 }
                 break;
             case 5:
+                break;
+            case 6:
                 continuarMenu='n';
                 break;
             default:
