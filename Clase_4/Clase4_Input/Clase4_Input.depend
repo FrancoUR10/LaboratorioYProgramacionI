@@ -1,0 +1,13 @@
+# depslib dependency file v1.0
+1567437680 source:c:\users\alumno\desktop\clase4_input\entradas.c
+	<stdio.h>
+	<stdlib.h>
+	"Entradas.h"
+
+1567437680 c:\users\alumno\desktop\clase4_input\entradas.h
+
+1567437728 source:c:\users\alumno\desktop\clase4_input\main.c
+	<stdio.h>
+	<stdlib.h>
+	"Entradas.h"
+
