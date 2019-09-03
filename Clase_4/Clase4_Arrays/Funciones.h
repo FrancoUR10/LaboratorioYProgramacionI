@@ -9,6 +9,7 @@ void mostrarMinimo(int vector[],int tam);
 int calcularMinimo(int vector[],int tam);
 void mostrarVector(int vector[],int tam);
 void mostrarVectorNegativos(int vector[],int tam);
+void mostrarPromedioPositivos(int vector[],int tam);
 void ordenarVector(int vector[],int tam);
 
 #endif // FUNCIONES_H_INCLUDED

@@ -57,7 +57,7 @@ void mostrarMinimo(int vector[],int tam)
     int i;
     minimo=calcularMinimo(vector,tam);
 
-    printf("\nMaximo: %d\n",minimo);
+    printf("\nMinimo: %d\n",minimo);
     for(i=0;i<tam;i++)
     {
         if(vector[i] == minimo)
@@ -121,4 +121,21 @@ void ordenarVector(int vector[],int tam)
             }
         }
     }
+}
+void mostrarPromedioPositivos(int vector[],int tam)
+{
+    float promedioPositivos;
+    int sumaDePositivos=0;
+    int contadorDePositivos=0;
+    int i;
+    for(i=0;i<tam;i++)
+    {
+        if(vector[i] > 0)
+        {
+            sumaDePositivos+=vector[i];
+            contadorDePositivos++;
+        }
+    }
+    promedioPositivos=(float)sumaDePositivos/contadorDePositivos; //Casteo de datos int a float
+    printf("\nPromedio de numeros positivos: %.2f\n",promedioPositivos);
 }

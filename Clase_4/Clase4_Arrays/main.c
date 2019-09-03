@@ -12,14 +12,8 @@ int main()
 {
     //int numeroUno,numeroDos,........,numeroDiez == int arrayNumeros[10];
     int arrayNumeros[MAX]={8,7,1,3,-8,9,9,-7,10,5}; //Hardcodear datos
-    int acumuladorNumerosPositivos=0;
-    int contadorNumerosPositivos=0;
-    int flagPrimerValor;
-    int minimo;
-    float promedioDeNumerosPositivos;
     int opcionMenu;
     char continuarMenu='s';
-    int i;
 
     do
     {
@@ -36,39 +30,13 @@ int main()
                 mostrarVectorNegativos(arrayNumeros,MAX);
                 break;
             case 4:
-                for(i=0;i<MAX;i++)
-                {
-                    if(arrayNumeros[i] > 0)
-                    {
-                        acumuladorNumerosPositivos+=arrayNumeros[i];
-                        contadorNumerosPositivos++;
-                    }
-                }
-                promedioDeNumerosPositivos=(float)acumuladorNumerosPositivos/contadorNumerosPositivos; //Casteo de datos int a float
-                printf("%.2f",promedioDeNumerosPositivos);
+                mostrarPromedioPositivos(arrayNumeros,MAX);
                 break;
             case 5:
                 mostrarMaximo(arrayNumeros,MAX);
                 break;
             case 6:
-                flagPrimerValor=1;
-                for(i=0;i<MAX;i++)
-                {
-                    if(flagPrimerValor==1 || arrayNumeros[i]<minimo)
-                    {
-                        minimo=arrayNumeros[i];
-                    }
-                    flagPrimerValor=0;
-                }
-
-                printf("Minimo: %d\n",minimo);
-                for(i=0;i<MAX;i++)
-                {
-                    if(arrayNumeros[i]==minimo)
-                    {
-                        printf("En la posicion: %d-",i);
-                    }
-                }
+                mostrarMinimo(arrayNumeros,MAX);
                 break;
             case 7:
                 continuarMenu='n';
