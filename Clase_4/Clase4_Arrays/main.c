@@ -10,8 +10,6 @@
 
 int main()
 {
-    printf("Ejemplos de arrays\n");
-
     //int numeroUno,numeroDos,........,numeroDiez == int arrayNumeros[10];
     int arrayNumeros[MAX]={8,7,1,3,-8,9,9,-7,10,5}; //Hardcodear datos
     int acumuladorNumerosPositivos=0;
@@ -32,20 +30,10 @@ int main()
                 cargarVector("Ingrese un numero: ",arrayNumeros,MAX);
                 break;
             case 2:
-                // Mostrar datos
-                for(i=0;i<MAX;i++)
-                {
-                    printf("%d\n",arrayNumeros[i]);
-                }
+                mostrarVector(arrayNumeros,MAX);
                 break;
             case 3:
-                for(i=0;i<MAX;i++)
-                {
-                    if(arrayNumeros[i] < 0)
-                    {
-                        printf("%d\n",arrayNumeros[i]);
-                    }
-                }
+                mostrarVectorNegativos(arrayNumeros,MAX);
                 break;
             case 4:
                 for(i=0;i<MAX;i++)

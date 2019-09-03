@@ -82,3 +82,22 @@ int calcularMinimo(int vector[],int tam)
     }
     return minimo;
 }
+void mostrarVector(int vector[],int tam)
+{
+    int i;
+    for(i=0;i<tam;i++)
+    {
+        printf("%d\n",vector[i]);
+    }
+}
+void mostrarVectorNegativos(int vector[],int tam)
+{
+    int i;
+    for(i=0;i<tam;i++)
+    {
+        if(vector[i] < 0)
+        {
+            printf("%d\n",vector[i]);
+        }
+    }
+}
