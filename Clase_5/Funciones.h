@@ -15,6 +15,13 @@ void funcion(int* numero);
  * \return int El factorial
  * Es una funcion recursiva
  */
- unsigned int factorial(int numero);
+unsigned int sacarFactorial(int numero);
+/** \brief Recibe un numero y muestra el factorial del mismo
+ *
+ * \param numero int El numero a realizarle el factorial
+ * \return void No retorna nada
+ *
+ */
+void factorial(int numero);
 
 #endif // FUNCIONES_H_INCLUDED

@@ -16,22 +16,16 @@ int main()
     funcion(&numero);
     printf("El numero despues de modificar es: %d\n",numero);
 */
-/*
-int unNumero=5;
-int resultadoFactorial=1;
-int i;
 
-for(i=unNumero;i>=1;i--)
-{
-    resultadoFactorial=resultadoFactorial * i;
-}
-printf("Factorial es: %d",resultadoFactorial);
-*/
+int unNumero=5;
+factorial(unNumero);
+
+/*
 int resultado;
 int unNumero=5;
 resultado=factorial(unNumero);
 printf("Factorial es: %d",resultado);
-
+*/
 
 
 

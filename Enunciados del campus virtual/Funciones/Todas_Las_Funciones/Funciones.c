@@ -156,3 +156,110 @@ int buscarLugarLibre(int unArray[],int tam,int valorABuscar)
     }
     return retorno;
 }
+void factorial(int numero)
+{
+    unsigned int resultadoFactorial=1;
+    int i;
+    for(i=numero;i>=1;i--)
+    {
+        resultadoFactorial=resultadoFactorial*i;
+    }
+    if(numero >= 0)
+    {
+        printf("\nEl factorial de %d es: %d\n",numero,resultadoFactorial);
+    }
+    else
+    {
+        printf("\nEl factorial de %d no existe\n",numero);
+    }
+}
+void ordenarVector(int vector[],int tam)
+{
+    int i;
+    int j;
+    int aux;
+    for(i=0;i<tam-1;i++)
+    {
+        for(j=i+1;j<tam;j++)
+        {
+            if(vector[i] > vector[j])
+            {
+                aux=vector[i];
+                vector[i]=vector[j];
+                vector[j]=aux;
+            }
+        }
+    }
+}
+void mostrarMaximo(int vector[],int tam)
+{
+    int maximo;
+    int i;
+    maximo=calcularMaximo(vector,tam);
+
+    printf("\nMaximo: %d\n",maximo);
+    for(i=0;i<tam;i++)
+    {
+        if(vector[i] == maximo)
+            {
+                printf("En la posicion: %d-",i);
+            }
+    }
+}
+int calcularMaximo(int vector[],int tam)
+{
+    int i;
+    int maximo;
+    int flagPrimerValor;
+    flagPrimerValor=1;
+    for(i=0;i<tam;i++)
+    {
+        if(flagPrimerValor==1 || vector[i]>maximo)
+        {
+            maximo=vector[i];
+        }
+            flagPrimerValor=0;
+    }
+    return maximo;
+}
+int calcularMinimo(int vector[],int tam)
+{
+    int i;
+    int minimo;
+    int flagPrimerValor;
+    flagPrimerValor=1;
+    for(i=0;i<tam;i++)
+    {
+        if(flagPrimerValor==1 || vector[i]<minimo)
+        {
+            minimo=vector[i];
+        }
+            flagPrimerValor=0;
+    }
+    return minimo;
+}
+void mostrarMinimo(int vector[],int tam)
+{
+    int minimo;
+    int i;
+    minimo=calcularMinimo(vector,tam);
+
+    printf("\nMinimo: %d\n",minimo);
+    for(i=0;i<tam;i++)
+    {
+        if(vector[i] == minimo)
+            {
+                printf("En la posicion: %d-",i);
+            }
+    }
+}
+void cargarVector(char mensaje[],int vector[],int tam)
+{
+    int i;
+    for(i=0;i<tam;i++)
+    {
+        printf("%s",mensaje);
+        scanf("%d",&vector[i]);
+        fflush(stdin);
+    }
+}

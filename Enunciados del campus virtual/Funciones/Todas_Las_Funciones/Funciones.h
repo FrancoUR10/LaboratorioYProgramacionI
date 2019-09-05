@@ -121,8 +121,68 @@ void inicializarLegajo(int unArray[],int tam,int valor);
  */
 int buscarLugarLibre(int unArray[],int tam,int valorABuscar);
 
+/** \brief Recibe un numero y muestra el factorial del mismo
+ *
+ * \param numero int El numero a realizarle el factorial
+ * \return void No retorna nada
+ *
+ */
+void factorial(int numero);
 
+/** \brief Ordena de menor a mayor los elementos de un vector
+ *
+ * \param vector[] int El vector que se quiere ordenar
+ * \param tam int La longitud del vector
+ * \return void No retorna nada
+ *
+ */
+void ordenarVector(int vector[],int tam);
 
+/** \brief Calcula el numero maximo de un vector
+ *
+ * \param vector[] int El vector con numeros
+ * \param tam int La longitud del vector
+ * \return int El numero maximo
+ *
+ */
+int calcularMaximo(int vector[],int tam);
+
+/** \brief Muestra el numero maximo y su posicion en el vector
+ *
+ * \param vector[] int El vector con numeros
+ * \param tam int La longitud del vector
+ * \return void No retorna nada
+ *
+ */
+void mostrarMaximo(int vector[],int tam);
+
+/** \brief Calcula el numero minimo de un vector
+ *
+ * \param vector[] int El vector con numeros
+ * \param tam int La longitud del vector
+ * \return int El numero minimo
+ *
+ */
+int calcularMinimo(int vector[],int tam);
+
+/** \brief Muestra el numero minimo y su posicion en el vector
+ *
+ * \param vector[] int El vector con numeros
+ * \param tam int La longitud del vector
+ * \return void No retorna nada
+ *
+ */
+void mostrarMinimo(int vector[],int tam);
+
+/** \brief Pide numeros enteros y los guarda en un vector
+ *
+ * \param mensaje[] char El mensaje pidiendo numeros
+ * \param vector[] int El vector donde se guardan los numeros
+ * \param tam int La longitud del vector
+ * \return void No retorna nada
+ *
+ */
+void cargarVector(char mensaje[],int vector[],int tam);
 
 
 

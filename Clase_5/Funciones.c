@@ -8,7 +8,7 @@ void funcion(int* numero)
     scanf("%d",numero);
     //*numero=100;
 }
-unsigned int factorial(int numero)
+unsigned int sacarFactorial(int numero)
 {
     unsigned int resultado;
     if (numero == 0)
@@ -17,7 +17,25 @@ unsigned int factorial(int numero)
     }
     else
     {
-        resultado=numero*factorial(numero-1);
+        resultado=numero*sacarFactorial(numero-1);
     }
     return resultado;
+}
+
+void factorial(int numero)
+{
+    unsigned int resultadoFactorial=1;
+    int i;
+    for(i=numero;i>=1;i--)
+    {
+        resultadoFactorial=resultadoFactorial*i;
+    }
+    if(numero >= 0)
+    {
+        printf("\nEl factorial de %d es: %d\n",numero,resultadoFactorial);
+    }
+    else
+    {
+        printf("\nEl factorial de %d no existe\n",numero);
+    }
 }
