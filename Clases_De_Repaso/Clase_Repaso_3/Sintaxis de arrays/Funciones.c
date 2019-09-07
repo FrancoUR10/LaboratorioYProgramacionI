@@ -7,15 +7,15 @@ void mostrarArray(int parametroArray[], int cant)
     int indice;
     for(indice=0;indice<cant;indice++)
     {
-        printf("\nNumeros: %d",parametroArray[indice]);
+        printf("\nNumeros: %d\n",parametroArray[indice]);
     }
 }
-void inicializarArray(int parametroArray[], int cant)
+void inicializarArray(int parametroArray[], int cant,int inicializacion)
 {
     int indice;
     for(indice=0;indice<cant;indice++)
     {
-        parametroArray[indice]=0;
+        parametroArray[indice]=inicializacion;
     }
 }
 void cargarArray(char mensaje[],int parametroArray[], int cant)
@@ -59,6 +59,42 @@ void dameElIndiceMaximo(int parametroArray[],int cant, int outArrayIndices[])
         {
             outArrayIndices[indiceIndex]=indice;
             indiceIndex++;
+        }
+    }
+}
+void ordenarDesc(int parametroArray[],int cant)
+{
+    int indice;
+    int siguiente;
+    int auxNumero;
+    for(indice=0;indice<cant-1;indice++)
+    {
+        for(siguiente=indice+1;siguiente<cant;siguiente++)
+        {
+            if(parametroArray[indice]<parametroArray[siguiente])
+            {
+                auxNumero=parametroArray[indice];
+                parametroArray[indice]=parametroArray[siguiente];
+                parametroArray[siguiente]=auxNumero;
+            }
+        }
+    }
+}
+void ordenarAsc(int parametroArray[],int cant)
+{
+    int indice;
+    int siguiente;
+    int auxNumero;
+    for(indice=0;indice<cant-1;indice++)
+    {
+        for(siguiente=indice+1;siguiente<cant;siguiente++)
+        {
+            if(parametroArray[indice]>parametroArray[siguiente])
+            {
+                auxNumero=parametroArray[indice];
+                parametroArray[indice]=parametroArray[siguiente];
+                parametroArray[siguiente]=auxNumero;
+            }
         }
     }
 }

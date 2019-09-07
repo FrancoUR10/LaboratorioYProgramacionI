@@ -9,8 +9,13 @@ int main()
     int elMaximo;
     int indiceMaximo[CANTIDAD];
 
-    inicializarArray(miArray,CANTIDAD);
-    cargarArray("Ingrese numeros: ",miArray,CANTIDAD);
+    inicializarArray(miArray,CANTIDAD,0);
+    cargarArray("Ingrese su edad: ",miArray,CANTIDAD);
+    printf("\nDescendente: \n");
+    ordenarDesc(miArray,CANTIDAD);
+    mostrarArray(miArray,CANTIDAD);
+    printf("\nAscendente: \n");
+    ordenarAsc(miArray,CANTIDAD);
     mostrarArray(miArray,CANTIDAD);
 
     elMaximo=dameElMaximo(miArray,CANTIDAD);
