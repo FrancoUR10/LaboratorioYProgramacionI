@@ -6,7 +6,38 @@
 int main()
 {
     eAlumno listadoDeAlumnos[MAX];
+    int opcion;
+    char continuar='s';
+
     inicializarListadoAlumnos(listadoDeAlumnos,MAX);
+    do
+    {
+        opcion=getInt("1-MOSTRAR\n2-CARGAR\n3-BUSCAR\n4-BORRAR\n5-SALIR\n\nIngrese una opcion: ");
+        switch(opcion)
+        {
+            case 1:
+                listarAlumnos(listadoDeAlumnos,MAX);
+                break;
+            case 2:
+                //cargarDatosTest(listadoDeAlumnos,MAX);
+                harcodearListaDeAlumnos(listadoDeAlumnos,0);
+                break;
+            case 3:
+                buscarUnNombre(listadoDeAlumnos,MAX);
+                break;
+            case 4:
+                borrarUnAlumnoListado(listadoDeAlumnos,MAX);
+                break;
+            case 5:
+                continuar='n';
+                break;
+            default:
+                printf("\nOpcion ingresada no valida\n");
+        }
+        system("pause");
+        system("cls");
+    }
+    while(continuar=='s');
     //eAlumno unAlumno;
     //eAlumno otroAlumno;
 
@@ -25,9 +56,7 @@ int main()
     otroAlumno.nota=999;
     printf("\nEl actual es: %d\n",otroAlumno.nota);
 */
-    //harcodearListaDeAlumnos(listadoDeAlumnos,0);
-    cargarDatosTest(listadoDeAlumnos,MAX);
-    listarAlumnos(listadoDeAlumnos,MAX);
+
 
 
 

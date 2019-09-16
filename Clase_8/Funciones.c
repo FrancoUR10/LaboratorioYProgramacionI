@@ -94,3 +94,53 @@ void cargarDatosTest(eAlumno listaAlumnos[],int tam) //Carga datos sin validarlo
         listaAlumnos[indiceLibre].estaVacio=OCUPADO;
     }
 }
+void borrarUnAlumnoListado(eAlumno listaAlumnos[],int tam)
+{
+    int auxLegajo;
+    int indiceResultadoBusqueda;
+
+    printf("Ingrese legajo: ");
+    scanf("%d",&auxLegajo);
+    fflush(stdin);
+
+    indiceResultadoBusqueda=buscarPorLegajo(listaAlumnos,tam,auxLegajo);
+    if(indiceResultadoBusqueda == -1)
+    {
+        printf("\nEl legajo ingresado no existe\n");
+    }
+    else
+    {
+        listaAlumnos[indiceResultadoBusqueda].legajo=-1;
+        listaAlumnos[indiceResultadoBusqueda].estaVacio=LIBRE;
+    }
+}
+int getInt(char mensaje[])
+{
+    int auxInt;
+    printf("%s",mensaje);
+    scanf("%d",&auxInt);
+    fflush(stdin);
+    return auxInt;
+}
+void buscarUnNombre(eAlumno listaAlumnos[],int tam)
+{
+    int flagPrimerIndice=1;
+    int i;
+    char nombreABuscar[256];
+    printf("Ingrese el nombre a buscar: ");
+    gets(nombreABuscar);
+    fflush(stdin);
+
+    for(i=0;i<tam;i++)
+    {
+        if((strcmp(listaAlumnos[i].nombre,nombreABuscar)==0) && listaAlumnos[i].estaVacio==OCUPADO)
+        {
+            printf("\nSe encontro el nombre: %s\n",listaAlumnos[i].nombre);
+            flagPrimerIndice=0;
+        }
+    }
+    if(flagPrimerIndice == 1)
+    {
+        printf("\nEl nombre a buscar no existe\n");
+    }
+}
