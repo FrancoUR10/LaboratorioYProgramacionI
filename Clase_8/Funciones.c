@@ -27,11 +27,13 @@ void listarAlumnos(eAlumno listaAlumnos[],int tam)
     }
     else
     {
+        printf("NOMBRE\tNOTA\tLEGAJO\n");
         for(i=0;i<tam;i++)
         {
             if(listaAlumnos[i].estaVacio==OCUPADO)
             {
-                printf("\nLegajo: %d --Nombre: %s --Nota: %d\n",listaAlumnos[i].legajo,listaAlumnos[i].nombre,listaAlumnos[i].nota);
+                //printf("\nLegajo: %d --Nombre: %s --Nota: %d\n",listaAlumnos[i].legajo,listaAlumnos[i].nombre,listaAlumnos[i].nota);
+                mostrarUnSoloAlumno(listaAlumnos,i);
             }
         }
     }
@@ -143,4 +145,10 @@ void buscarUnNombre(eAlumno listaAlumnos[],int tam)
     {
         printf("\nEl nombre a buscar no existe\n");
     }
+}
+void mostrarUnSoloAlumno(eAlumno unAlumno[],int indice)
+{
+    printf("\n%s\t",unAlumno[indice].nombre);
+    printf("%d\t",unAlumno[indice].nota);
+    printf("%d\n",unAlumno[indice].legajo);
 }

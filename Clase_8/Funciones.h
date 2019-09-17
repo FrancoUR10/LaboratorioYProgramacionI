@@ -17,5 +17,6 @@ void cargarDatosTest(eAlumno listaAlumnos[],int tam);
 void borrarUnAlumnoListado(eAlumno listaAlumnos[],int tam);
 int getInt(char mensaje[]);
 void buscarUnNombre(eAlumno listaAlumnos[],int tam);
+void mostrarUnSoloAlumno(eAlumno unAlumno[],int indice);
 
 #endif // FUNCIONES_H_INCLUDED
