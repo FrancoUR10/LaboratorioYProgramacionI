@@ -10,6 +10,14 @@ typedef struct
 
 int getInt(char mensaje[]);
 void inicializarArray(eAlumno unArray[],int tam);
-void ordenarInsercion(char unArray[][256],int tam);
+void ordenarInsercion(eAlumno unArray[],int tam);
+void harcodearAlumnos(eAlumno unArray[]);
+int buscarSoloEstado(eAlumno unArray[],int tam,int estado);
+void mostrarUnSoloAlumno(eAlumno unAlumno[],int indice);
+void mostrarLista(eAlumno unArray[],int tam);
+void cargarDatos(eAlumno unArray[],int tam);
+void borrarDatos(eAlumno unArray[],int tam);
+int buscarLegajo(eAlumno unArray[],int tam,int legajo);
+void modificarDatos(eAlumno unArray[],int tam);
 
 #endif // FUNCIONES_H_INCLUDED
