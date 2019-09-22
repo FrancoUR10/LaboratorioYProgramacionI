@@ -1,0 +1,25 @@
+# depslib dependency file v1.0
+1568668808 source:c:\users\acquisto\desktop\programacion y laboratorio\abm_funciones\main.c
+	<stdio.h>
+	<stdlib.h>
+	"ABM.h"
+	"Validaciones.h"
+	<string.h>
+
+1569180268 c:\users\acquisto\desktop\programacion y laboratorio\abm_funciones\abm.h
+
+1569180085 source:c:\users\acquisto\desktop\programacion y laboratorio\abm_funciones\abm.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"ABM.h"
+	"Validaciones.h"
+
+1569180106 source:c:\users\acquisto\desktop\programacion y laboratorio\abm_funciones\validaciones.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"Validaciones.h"
+
+1569170821 c:\users\acquisto\desktop\programacion y laboratorio\abm_funciones\validaciones.h
+
