@@ -12,6 +12,7 @@ int main()
     int opcion;
     char continuar='s';
 
+    int contadorAltas=1;
     inicializarArray(listaAlumnos,MAX);
     harcodearAlumnos(listaAlumnos);
     do
@@ -20,7 +21,8 @@ int main()
         switch(opcion)
         {
             case 1:
-                cargarDatos(listaAlumnos,MAX);
+                cargarDatos(listaAlumnos,MAX,&contadorAltas);
+                contadorAltas++;
                 break;
             case 2:
                 borrarDatos(listaAlumnos,MAX);

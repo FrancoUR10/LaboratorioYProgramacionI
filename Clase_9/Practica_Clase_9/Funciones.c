@@ -97,9 +97,8 @@ void mostrarUnSoloAlumno(eAlumno unAlumno[],int indice)
     printf("%d\t",unAlumno[indice].nota);
     printf("%d\n",unAlumno[indice].legajo);
 }
-void cargarDatos(eAlumno unArray[],int tam)
+void cargarDatos(eAlumno unArray[],int tam,int* cantDatosCargados)
 {
-    int cantDatosCargados=1;
     eAlumno aux;
     int auxLegajo;
     int indiceLibre;
@@ -111,23 +110,19 @@ void cargarDatos(eAlumno unArray[],int tam)
     else
     {
         //aux.legajo=getInt("Ingrese el legajo: ");
-        auxLegajo=cantDatosCargados;
+        auxLegajo=*cantDatosCargados;
         cantDatosCargados++;
-        if(buscarLegajo(unArray,tam,aux.legajo)!=-1)
-        {
-            printf("\nYa existe el legajo ingresado\n");
-        }
-        else
-        {
-            printf("Ingrese el nombre: ");
-            gets(aux.nombre);
-            fflush(stdin);
 
-            aux.nota=getInt("Ingrese la nota: ");
+        printf("Ingrese el nombre: ");
+        gets(aux.nombre);
+        fflush(stdin);
 
-            unArray[indiceLibre]=aux;
-            unArray[indiceLibre].estaVacio=OCUPADO;
-        }
+        aux.nota=getInt("Ingrese la nota: ");
+
+        unArray[indiceLibre]=aux;
+        unArray[indiceLibre].estaVacio=OCUPADO;
+        unArray[indiceLibre].legajo=auxLegajo;
+
     }
 }
 void borrarDatos(eAlumno unArray[],int tam)

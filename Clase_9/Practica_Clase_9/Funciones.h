@@ -1,11 +1,20 @@
 #ifndef FUNCIONES_H_INCLUDED
 #define FUNCIONES_H_INCLUDED
+
+typedef struct
+{
+    int id;
+    char localidad;
+    int codigoPostal;
+}eLocalidad;
+
 typedef struct
 {
     int estaVacio;
     int legajo;
     int nota;
     char nombre[51];
+    int idLocalidad;
 }eAlumno;
 
 int getInt(char mensaje[]);
@@ -15,7 +24,7 @@ void harcodearAlumnos(eAlumno unArray[]);
 int buscarSoloEstado(eAlumno unArray[],int tam,int estado);
 void mostrarUnSoloAlumno(eAlumno unAlumno[],int indice);
 void mostrarLista(eAlumno unArray[],int tam);
-void cargarDatos(eAlumno unArray[],int tam);
+void cargarDatos(eAlumno unArray[],int tam,int* cantDatosCargados);
 void borrarDatos(eAlumno unArray[],int tam);
 int buscarLegajo(eAlumno unArray[],int tam,int legajo);
 void modificarDatos(eAlumno unArray[],int tam);
