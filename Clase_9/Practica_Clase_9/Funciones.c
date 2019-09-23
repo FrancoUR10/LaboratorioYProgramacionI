@@ -99,7 +99,9 @@ void mostrarUnSoloAlumno(eAlumno unAlumno[],int indice)
 }
 void cargarDatos(eAlumno unArray[],int tam)
 {
+    int cantDatosCargados=1;
     eAlumno aux;
+    int auxLegajo;
     int indiceLibre;
     indiceLibre=buscarSoloEstado(unArray,tam,LIBRE);
     if(indiceLibre==-1)
@@ -108,7 +110,9 @@ void cargarDatos(eAlumno unArray[],int tam)
     }
     else
     {
-        aux.legajo=getInt("Ingrese el legajo: ");
+        //aux.legajo=getInt("Ingrese el legajo: ");
+        auxLegajo=cantDatosCargados;
+        cantDatosCargados++;
         if(buscarLegajo(unArray,tam,aux.legajo)!=-1)
         {
             printf("\nYa existe el legajo ingresado\n");

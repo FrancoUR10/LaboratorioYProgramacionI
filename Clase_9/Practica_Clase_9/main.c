@@ -3,6 +3,9 @@
 #include "Funciones.h"
 #define MAX 5
 
+//Cambiar la carga de datos para que el id se genere de manera automatica
+//Crear una estructura llamada Localidad
+//Cuando se muestra a un alumno, en vez de mostrar el numero, mostrar la descripcion de la localidad
 int main()
 {
     eAlumno listaAlumnos[MAX];
