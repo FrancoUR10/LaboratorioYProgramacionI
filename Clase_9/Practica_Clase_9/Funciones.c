@@ -99,7 +99,7 @@ void mostrarUnSoloAlumno(eAlumno unAlumno[],int indice)
 }
 void cargarDatos(eAlumno unArray[],int tam)
 {
-    int auxLegajo;
+    eAlumno aux;
     int indiceLibre;
     indiceLibre=buscarSoloEstado(unArray,tam,LIBRE);
     if(indiceLibre==-1)
@@ -108,26 +108,27 @@ void cargarDatos(eAlumno unArray[],int tam)
     }
     else
     {
-        auxLegajo=getInt("Ingrese el legajo: ");
-        if(buscarLegajo(unArray,tam,auxLegajo)!=-1)
+        aux.legajo=getInt("Ingrese el legajo: ");
+        if(buscarLegajo(unArray,tam,aux.legajo)!=-1)
         {
             printf("\nYa existe el legajo ingresado\n");
         }
         else
         {
             printf("Ingrese el nombre: ");
-            gets(unArray[indiceLibre].nombre);
+            gets(aux.nombre);
             fflush(stdin);
 
-            unArray[indiceLibre].nota=getInt("Ingrese la nota: ");
+            aux.nota=getInt("Ingrese la nota: ");
 
+            unArray[indiceLibre]=aux;
             unArray[indiceLibre].estaVacio=OCUPADO;
-            unArray[indiceLibre].legajo=auxLegajo;
         }
     }
 }
 void borrarDatos(eAlumno unArray[],int tam)
 {
+    char opcion;
     int auxLegajo;
     int indiceResultadoDeBusqueda;
     int indiceLibre;
@@ -138,7 +139,9 @@ void borrarDatos(eAlumno unArray[],int tam)
     }
     else
     {
-        auxLegajo=getInt("Ingrese el legajo a borrar: ");
+        printf("\nEmpleados disponibles para borrar: ");
+        mostrarLista(unArray,tam);
+        auxLegajo=getInt("Ingrese el legajo del empleado a borrar: ");
         indiceResultadoDeBusqueda=buscarLegajo(unArray,tam,auxLegajo);
         if(indiceResultadoDeBusqueda==-1)
         {
@@ -146,7 +149,19 @@ void borrarDatos(eAlumno unArray[],int tam)
         }
         else
         {
-            unArray[indiceResultadoDeBusqueda].estaVacio=LIBRE;
+            printf("Esta seguro que desea dar de baja al empleado: ");
+            mostrarUnSoloAlumno(unArray,indiceResultadoDeBusqueda);
+            printf("(s/n): ");
+            scanf("%c",&opcion);
+            fflush(stdin);
+            if(opcion=='s')
+            {
+                unArray[indiceResultadoDeBusqueda].estaVacio=LIBRE;
+            }
+            else
+            {
+                printf("\nSe ha cancelado la baja por el usuario\n");
+            }
         }
     }
 }
@@ -167,6 +182,8 @@ int buscarLegajo(eAlumno unArray[],int tam,int legajo)
 }
 void modificarDatos(eAlumno unArray[],int tam)
 {
+    char opcion;
+    eAlumno aux;
     int indiceResultadoDeBusqueda;
     int indiceLibre;
     indiceLibre=buscarSoloEstado(unArray,tam,OCUPADO);
@@ -185,11 +202,33 @@ void modificarDatos(eAlumno unArray[],int tam)
         }
         else
         {
-            printf("Ingrese el nombre: ");
-            gets(unArray[indiceLibre].nombre);
+            aux=unArray[indiceResultadoDeBusqueda];
+            printf("Ingrese el nombre a modificar: ");
+            gets(aux.nombre);
             fflush(stdin);
+            aux.nota=getInt("Ingrese la nota: ");
 
-            unArray[indiceLibre].nota=getInt("Ingrese la nota: ");
+            printf("Desea confirmar la modificacion de:\n");
+            mostrarUnSoloAlumno(unArray,indiceResultadoDeBusqueda);
+            printf("Por: ");
+            mostrarDatosAuxiliares(aux);
+
+            scanf("%c",&opcion);
+            fflush(stdin);
+            if(opcion=='s')
+            {
+                unArray[indiceResultadoDeBusqueda]=aux;
+            }
+            else
+            {
+                printf("\nSe ha cancelado la modificacion por el usuario\n");
+            }
         }
     }
+}
+void mostrarDatosAuxiliares(eAlumno auxAlumno)
+{
+    printf("\n%s\t",auxAlumno.nombre);
+    printf("%d\t",auxAlumno.nota);
+    printf("%d\n",auxAlumno.legajo);
 }
