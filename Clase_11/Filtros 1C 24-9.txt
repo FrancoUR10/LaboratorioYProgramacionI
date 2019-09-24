@@ -1,0 +1,5 @@
+1. Mostrar todos los alumnos con su localidad
+2. Mostrar todas las localidades
+3. Mostrar por cada localidad todos los alumnos que viven en ella.
+4. Mostrar todos los alumnos que viven en Avellaneda
+5. Mostrar la localidad con menos alumnos.

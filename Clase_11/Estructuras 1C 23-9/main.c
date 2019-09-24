@@ -41,7 +41,7 @@ int main()
 
             break;
         case 2:
-            mostrarListadoAlumnos(listaDeAlumnos, A);
+            mostrarListadoAlumnos(listaDeAlumnos, A,listaLocalidades,3);
             break;
         case 3:
             sortStudentsByNameAndAverage(listaDeAlumnos,A);

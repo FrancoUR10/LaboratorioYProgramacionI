@@ -28,7 +28,7 @@ typedef struct
 } eAlumno;
 
 eAlumno cargarAlumno(void);
-void mostrarUnAlumno(eAlumno miAlumno[], eLocalidad suLocalidad,int indice);
+void mostrarUnAlumno(eAlumno miAlumno[], eLocalidad suLocalidad[],int indice,int indiceLocalidad);
 int buscarLibre(eAlumno*, int);
 void cargarListadoAlumnos(eAlumno[], int);
 void mostrarListadoAlumnos(eAlumno listadoDeAlumnos[], int tam,eLocalidad listadoLocalidad [],int tamLocalidad);

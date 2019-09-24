@@ -40,20 +40,19 @@ void hardCodearAlumnos(eAlumno listadoDeAlumnos[], int tam)
 void mostrarListadoAlumnos(eAlumno listadoDeAlumnos[], int tam,eLocalidad listadoLocalidad [],int tamLocalidad)
 {
     int i;
-    eLocalidad auxLocalidad;
-    int idLocalidadAlumno;
     int indiceBusqueda;
+    int auxId;
 
     for(i=0; i<tam; i++)
     {
         if(listadoDeAlumnos[i].estado==OCUPADO)
         {
-            idLocalidadAlumno=listadoDeAlumnos[i].idLocalidad;
-            indiceBusqueda=buscarUnaLocalidad(listadoLocalidad,tamLocalidad,idLocalidadAlumno);
+            auxId=listadoDeAlumnos[i].idLocalidad;
+            indiceBusqueda=buscarUnaLocalidad(listadoLocalidad,tamLocalidad,auxId);
             if(indiceBusqueda!=-1)
             {
-                strcpy(auxLocalidad[i].localidad,listadoLocalidad[indiceBusqueda].localidad);
-                mostrarUnAlumno(listadoDeAlumnos,auxLocalidad,i);
+                //mostrarUnAlumno(listadoDeAlumnos,listadoLocalidad,i,indiceBusqueda);
+                printf("\n%d %s %.2f %s\n",listadoDeAlumnos[i].legajo,listadoDeAlumnos[i].nombre,listadoDeAlumnos[i].promedio,listadoLocalidad[indiceBusqueda].localidad);
             }
         }
 
@@ -97,9 +96,9 @@ eAlumno cargarAlumno(void)
 
     return miAlumno;
 }
-void mostrarUnAlumno(eAlumno miAlumno[], eLocalidad suLocalidad,int indice)
+void mostrarUnAlumno(eAlumno miAlumno[], eLocalidad suLocalidad[],int indice,int indiceLocalidad)
 {
-    printf("%4d %25s %8.2f %4d %25s\n",miAlumno[indice].legajo,miAlumno[indice].nombre, miAlumno[indice].promedio, suLocalidad.localidad);
+    printf("%04d %25s %8.2f %25s\n",miAlumno[indice].legajo,miAlumno[indice].nombre, miAlumno[indice].promedio,suLocalidad[indiceLocalidad].localidad);
 }
 
 void sortStudentsByNameAndAverage(eAlumno listadoDeAlumnos[], int tam)
@@ -172,7 +171,7 @@ int modificarAlumno(eAlumno listaDeAlumnos[], int cant, int legajo)
     if(index!=-1)
     {
         aux = listaDeAlumnos[index];
-        mostrarUnAlumno(aux);
+        //mostrarUnAlumno(aux);
         printf("Ingrese el nuevo nombre: ");
         fflush(stdin);
         gets(aux.nombre);
@@ -200,7 +199,7 @@ int eliminarAlumno(eAlumno listadoDeAlumnos[], int tam)
 
     int quePaso = -1;
 
-    mostrarListadoAlumnos(listadoDeAlumnos,tam);
+    //mostrarListadoAlumnos(listadoDeAlumnos,tam);
 
     printf("Ingrese el legajo: ");
     scanf("%d", &legajo);
@@ -209,7 +208,7 @@ int eliminarAlumno(eAlumno listadoDeAlumnos[], int tam)
     {
         if(listadoDeAlumnos[i].legajo==legajo && listadoDeAlumnos[i].estado==OCUPADO)
         {
-            mostrarUnAlumno(listadoDeAlumnos[i]);
+            //mostrarUnAlumno(listadoDeAlumnos[i]);
             printf("Esta seguro que desea eliminar este alumno? :");
             respuesta = getche();
             if(respuesta=='s')
