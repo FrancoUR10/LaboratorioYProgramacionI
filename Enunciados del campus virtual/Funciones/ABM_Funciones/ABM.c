@@ -40,12 +40,13 @@ void mostrarArray(eGenerica unArray[],int tam)
     else
     {
         printf("\nNOMBRE\tAPELLIDO\tEDAD\tSUELDO\tID\n");
+        ordenarArray(unArray,tam,1);
         for(i=0;i<tam;i++)
         {
             if(unArray[i].estado==OCUPADO)
             {
                 //printf("\nNombre: %s --apellido: %s --Edad: %d --Salario %.2f --Id: %d\n",unArray[i].nombre,unArray[i].apellido,unArray[i].edad,unArray[i].salario,unArray[i].id);
-                mostrarUnoSolo(unArray,i);
+                mostrarUnoSoloEnElIndice(unArray,i);
             }
         }
     }
@@ -104,6 +105,7 @@ int buscarLugarLibre(eGenerica unArray[],int tam,int valorABuscar,int estadoDelL
         if((unArray[i].estado==estadoDelLugar) && (unArray[i].id==valorABuscar))
         {
             retorno=i;
+            break;
         }
     }
     return retorno;
@@ -117,57 +119,58 @@ int buscarSoloUnEstado(eGenerica unArray[],int tam,int estadoDelLugar)
         if(unArray[i].estado==estadoDelLugar)
         {
             retorno=i;
+            break;
         }
     }
     return retorno;
 }
-void darDeAlta(eGenerica unArray[],int tam)
+void darDeAlta(eGenerica unArray[],int tam,int* contDeAltas)
 {
+    int sePudo;
     int indiceLibre;
-    char auxIdStr[256];
     int auxIdInt;
-    indiceLibre=buscarLugarLibre(unArray,tam,-1,LIBRE);
+    indiceLibre=buscarSoloUnEstado(unArray,tam,LIBRE);
     if(indiceLibre==-1)
     {
         printf("\nNo quedan lugares libres\n");
     }
-    else if(getStrNumeros("\nIngrese el id a dar de alta: ",auxIdStr,"\nSolo se permiten numeros\a\n","\nRango valido entre 1 y 4\a\n",1,4,3))
+    else
     {
-        auxIdInt=atoi(auxIdStr);
-        if(buscarLugarLibre(unArray,tam,auxIdInt,OCUPADO)!=-1)
-        {
-            printf("\nEl id ingresado ya existe\n");
-        }
-        else if(!pedirDatosSecuenciales(unArray,tam,indiceLibre))
+        auxIdInt=*contDeAltas;
+        sePudo=pedirDatosSecuenciales(unArray,tam,indiceLibre);
+        if(sePudo==-1)
         {
             printf("\nAlta del empleado cancelada\n");
+        }
+        else if(sePudo==0)
+        {
+            printf("\nAlta del empleado cancelada por el usuario\n");
         }
         else
         {
             unArray[indiceLibre].id=auxIdInt;
             unArray[indiceLibre].estado=OCUPADO;
-            printf("\nSe ha dado de alta\n");
+            *contDeAltas=auxIdInt+1;
+            printf("\nSe ha dado de alta el id numero %d\n",auxIdInt);
         }
     }
 }
 int pedirDatosSecuenciales(eGenerica unArray[],int tam,int indice)
 {
-    int retorno=1;
-    int ingresoSecuencialValido=1;
-    char auxNombreStr[256];
-    char auxApellidoStr[256];
+    int confirmacion;
+    int retorno=-1;
+    eGenerica auxDatos;
     char auxEdadStr[256];
     char auxSalarioStr[256];
+    int ingresoSecuencialValido=1;
 
-    int auxEdadInt;
-    float auxSalarioFloat;
     if(ingresoSecuencialValido==1)
     {
-        if(!getStrLetras("\nIngrese el nombre del empleado: ",auxNombreStr,"\nSolo se permiten letras\a\n","\nRango valido entre 1 y 8\a\n",1,8,3))
+        if(!getStrLetras("\nIngrese el nombre del empleado: ",auxDatos.nombre,"\nSolo se permiten letras\a\n","\nRango valido entre 1 y 7\a\n",1,7,3))
         {
             ingresoSecuencialValido=0;
         }
-        else if(!getStrLetras("\nIngrese el apellido del empleado: ",auxApellidoStr,"\nSolo se permiten letras\a\n","\nRango valido entre 1 y 8\a\n",1,8,3))
+        else if(!getStrLetras("\nIngrese el apellido del empleado: ",auxDatos.apellido,"\nSolo se permiten letras\a\n","\nRango valido entre 1 y 7\a\n",1,7,3))
         {
             ingresoSecuencialValido=0;
         }
@@ -179,27 +182,29 @@ int pedirDatosSecuenciales(eGenerica unArray[],int tam,int indice)
         {
             ingresoSecuencialValido=0;
         }
+        auxDatos.edad=atoi(auxEdadStr);
+        auxDatos.salario=atof(auxSalarioStr);
     }
     if(ingresoSecuencialValido==1)
     {
-        auxEdadInt=atoi(auxEdadStr);
-        auxSalarioFloat=atof(auxSalarioStr);
-
-        strcpy(unArray[indice].nombre,auxNombreStr);
-        strcpy(unArray[indice].apellido,auxApellidoStr);
-        unArray[indice].edad=auxEdadInt;
-        unArray[indice].salario=auxSalarioFloat;
-    }
-    else
-    {
-        retorno=0;
+        confirmacion=confirmarCambios("Esta seguro que desea dar de alta? (s/n): ","\nSolo confirme con ('s' o con 'n'): ");
+        if(confirmacion==1)
+        {
+            unArray[indice]=auxDatos;
+            retorno=1;
+        }
+        else
+        {
+            retorno=0;
+        }
     }
     return retorno;
 }
 void darDeBaja(eGenerica unArray[],int tam)
 {
-    char auxIdStr[256];
+    int confirmacion;
     int auxIdInt;
+    char auxIdStr[256];
     int indiceLibre;
     int indiceResultadoBusqueda;
     indiceLibre=buscarSoloUnEstado(unArray,tam,OCUPADO);
@@ -207,99 +212,131 @@ void darDeBaja(eGenerica unArray[],int tam)
     {
         printf("\nTodos los lugares se encuentran libres\n");
     }
-    else if(getStrNumeros("\nIngrese el id a dar de baja: ",auxIdStr,"\nSolo se permiten numeros\a\n","\nRango valido entre 1 y 4\a\n",1,4,3))
+    else
     {
-        auxIdInt=atoi(auxIdStr);
-        indiceResultadoBusqueda=buscarLugarLibre(unArray,tam,auxIdInt,OCUPADO);
-        if(indiceResultadoBusqueda == -1)
+        mostrarArray(unArray,tam);
+        if(getStrSoloId("\nIngrese el id a dar de baja: ",auxIdStr,"\nSolo se permiten numeros\a\n",3))
         {
-            printf("\nNo existe el legajo ingresado\n");
-        }
-        else
-        {
-            unArray[indiceResultadoBusqueda].id=-1;
-            unArray[indiceResultadoBusqueda].estado=LIBRE;
-            printf("\nSe ha dado de baja\n");
+            auxIdInt=atoi(auxIdStr);
+            indiceResultadoBusqueda=buscarLugarLibre(unArray,tam,auxIdInt,OCUPADO);
+            if(indiceResultadoBusqueda == -1)
+            {
+                printf("\nNo existe el legajo ingresado\n");
+            }
+            else
+            {
+                confirmacion=confirmarCambios("Esta seguro que desea dar de baja? (s/n): ","\nSolo confirme con ('s' o con 'n'): ");
+                if(confirmacion==1)
+                {
+                    unArray[indiceResultadoBusqueda].estado=LIBRE;
+                    printf("\nSe ha dado de baja al id numero %d\n",auxIdInt);
+                }
+                else if(confirmacion==0)
+                {
+                    printf("\nBaja cancelada por el usuario\n");
+                }
+            }
         }
     }
 }
 void pedirDatosAEleccion(eGenerica unArray[],int tam,int indice)
 {
-    char auxNombreStr[256];
-    char auxApellidoStr[256];
-    char auxEdadStr[256];
+    eGenerica auxDatos;
     char auxSalarioStr[256];
-    int auxEdadInt;
-    float auxSalarioFloat;
+    char auxEdadStr[256];
+    int opcionMenu;
+    char continuarMenu='s';
+    int confirmacion;
 
-    int opcionAModificar;
-    char continuarModificacion='s';
+
+
+    auxDatos=unArray[indice];
     do
     {
         system("cls");
-        opcionAModificar=getInt("Que dato desea modificar?\n\n1-NOMBRE\n2-APELLIDO\n3-EDAD\n4-SALARIO\n5-CANCELAR MODIFICACION\n\nIngrese una opcion: ");
-        switch(opcionAModificar)
+
+        printf("NOMBRE\tAPELLIDO\tEDAD\tSUELDO\tID\n");
+        printf("\nDatos actuales seleccionados:\n");
+        mostrarUnoSoloEnElIndice(unArray,indice);
+        printf("\nDatos a modificar:\n");
+        mostrarSoloUno(auxDatos);
+
+        opcionMenu=getInt("\nQue dato desea modificar?\n1-NOMBRE\n2-APELLIDO\n3-EDAD\n4-SALARIO\n5-CONFIRMAR CAMBIOS\n6-FINALIZAR MODIFICACION\n\nIngrese una opcion: ");
+        switch(opcionMenu)
         {
             case 1:
-                if(!getStrLetras("\nIngrese el nombre del empleado: ",auxNombreStr,"\nSolo se permiten letras\a\n","Rango valido entre 1 y 8",1,8,3))
+                if(getStrLetras("\nIngrese el nombre a modificar: ",auxDatos.nombre,"\nSolo se permiten letras\n","\nRango valido entre 1 y 7\n",1,7,3))
                 {
-                    printf("\nModificacion cancelada\n");
-                }
-                else
-                {
-                    strcpy(unArray[indice].nombre,auxNombreStr);
                     printf("\nSe ha modificado el nombre\n");
                 }
-                continuarModificacion='n';
+                else
+                {
+                    printf("\nNo se pudo modificar el nombre\n");
+                }
+                system("pause");
                 break;
             case 2:
-                if(!getStrLetras("\nIngrese el apellido del empleado: ",auxApellidoStr,"\nSolo se permiten letras\a\n","\nRango valido entre 1 y 8\a\n",1,8,3))
+                if(getStrLetras("\nIngrese el apellido a modificar: ",auxDatos.apellido,"\nSolo se permiten letras\n","\nRango valido entre 1 y 7\n",1,7,3))
                 {
-                    printf("\nModificacion cancelada\n");
-                }
-                else
-                {
-                    strcpy(unArray[indice].apellido,auxApellidoStr);
                     printf("\nSe ha modificado el apellido\n");
                 }
-                continuarModificacion='n';
+                else
+                {
+                    printf("\nNo se pudo modificar el apellido\n");
+                }
+                system("pause");
                 break;
             case 3:
-                if(!getStringSoloEdad("\nIngrese la edad del empleado: ",auxEdadStr,"\nSolo se permiten numeros\a\n","\nEdad permitida entre 18 y 65\a\n",18,65,3))
+                if(getStringSoloEdad("\nIngrese la edad a modificar: ",auxEdadStr,"\nSolo se permiten numeros\n","\nEdad permitida entre 18 y 65\n",18,65,3))
                 {
-                    printf("\nModificacion cancelada\n");
-                }
-                else
-                {
-                    auxEdadInt=atoi(auxEdadStr);
-                    unArray[indice].edad=auxEdadInt;
                     printf("\nSe ha modificado la edad\n");
-                }
-                continuarModificacion='n';
-                break;
-            case 4:
-                if(!getStrNumerosFlotantes("\nIngrese el salario del empleado: ",auxSalarioStr,"\nSolo se permiten numeros y solo un punto\a\n","Rango valido entre 1 y 8",1,8,3))
-                {
-                    printf("\nModificacion cancelada\n");
+                    auxDatos.edad=atoi(auxEdadStr);
                 }
                 else
                 {
-                    auxSalarioFloat=atof(auxSalarioStr);
-                    unArray[indice].salario=auxSalarioFloat;
-                    printf("\nSe ha modificado el salario\n");
+                    printf("\nNo se pudo modificar la edad\n");
                 }
-                continuarModificacion='n';
+                system("pause");
+                break;            case 4:
+                if(getStrNumerosFlotantes("\nIngrese el salario a modificar: ",auxSalarioStr,"\nSolo se permiten numeros y un solo punto\n","Rango valido entre 1 y 8",1,8,3))
+                {
+                    printf("\nSe ha modificado el salario\n");
+                    auxDatos.salario=atof(auxSalarioStr);
+                }
+                else
+                {
+                    printf("\nNo se pudo modificar el salario\n");
+                }
+                system("pause");
                 break;
             case 5:
-                printf("\nModificacion cancelada\n");
-                continuarModificacion='n';
+                confirmacion=confirmarCambios("\nEsta seguro que desea confirmar los cambios realizados? (s/n): ","\nSolo confirme con ('s' o con 'n'): ");
+                if(confirmacion==1)
+                {
+                    unArray[indice]=auxDatos;
+                    printf("\nSe han confirmado los cambios realizados\n");
+                    system("pause");
+                }
+                else if(confirmacion==0)
+                {
+                    printf("\nNo se han confirmado los cambios realizados\n");
+                    system("pause");
+                }
+                break;
+            case 6:
+                confirmacion=confirmarCambios("\nEsta seguro que desea finalizar la modificacion? (s/n): ","\nSolo confirme con ('s' o con 'n'): ");
+                if(confirmacion==1)
+                {
+                    printf("\nModificacion finalizada\n");
+                    continuarMenu='n';
+                }
                 break;
             default:
-                printf("\nOpcion ingresada no valida\a\n");
+                printf("\nOpcion ingresada no valida\n");
                 system("pause");
         }
     }
-    while(continuarModificacion=='s');
+    while(continuarMenu=='s');
 }
 void modificarArray(eGenerica unArray[],int tam)
 {
@@ -313,25 +350,37 @@ void modificarArray(eGenerica unArray[],int tam)
     {
         printf("\nTodos los lugares se encuentran libres\n");
     }
-    else if(getStrNumeros("\nIngrese el id a modificar: ",auxIdStr,"\nSolo se permiten numeros\a\n","\nRango valido entre 1 y 4\a\n",1,4,3))
+    else
     {
-        auxIdInt=atoi(auxIdStr);
-        indiceResultadoBusqueda=buscarLugarLibre(unArray,tam,auxIdInt,OCUPADO);
-        if(indiceResultadoBusqueda==-1)
+        mostrarArray(unArray,tam);
+        if(getStrSoloId("\nIngrese el id a modificar: ",auxIdStr,"\nSolo se permiten numeros\a\n",3))
         {
-            printf("\nEl id ingresado no existe\n");
-        }
-        else
-        {
-            pedirDatosAEleccion(unArray,tam,indiceResultadoBusqueda);
+            auxIdInt=atoi(auxIdStr);
+            indiceResultadoBusqueda=buscarLugarLibre(unArray,tam,auxIdInt,OCUPADO);
+            if(indiceResultadoBusqueda==-1)
+            {
+                printf("\nEl id ingresado no existe\n");
+            }
+            else
+            {
+                pedirDatosAEleccion(unArray,tam,indiceResultadoBusqueda);
+            }
         }
     }
 }
-void mostrarUnoSolo(eGenerica unArray[],int indice)
+void mostrarUnoSoloEnElIndice(eGenerica unArray[],int indice)
 {
     printf("\n%s",unArray[indice].nombre);
     printf("\t%s",unArray[indice].apellido);
     printf("\t\t%d",unArray[indice].edad);
     printf("\t%.2f",unArray[indice].salario);
     printf("\t%d\n",unArray[indice].id);
+}
+void mostrarSoloUno(eGenerica unArray)
+{
+    printf("\n%s",unArray.nombre);
+    printf("\t%s",unArray.apellido);
+    printf("\t\t%d",unArray.edad);
+    printf("\t%.2f",unArray.salario);
+    printf("\t%d\n",unArray.id);
 }

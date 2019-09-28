@@ -1,6 +1,5 @@
 #ifndef ABM_H_INCLUDED
 #define ABM_H_INCLUDED
-
 typedef struct
 {
     int estado;
@@ -9,6 +8,7 @@ typedef struct
     char apellido[51];
     int edad;
     float salario;
+    int idLocalidad;
 } eGenerica;
 
 /** \brief Inicializa cada elemento del array en estado libre
@@ -92,14 +92,14 @@ int buscarLugarLibre(eGenerica unArray[],int tam,int valorABuscar,int estadoDelL
  */
 int buscarSoloUnEstado(eGenerica unArray[],int tam,int estadoDelLugar);
 
-/** \brief Pide todos los datos de un empleado y los da de alta
+/** \brief Pide todos los datos de un empleado y los da de alta generando un id automaticamente
  *
  * \param unArray[] eGenerica El array en donde guardar los elementos
  * \param tam int La longitud del array
  * \return void No retorna nada
  *
  */
-void darDeAlta(eGenerica unArray[],int tam);
+void darDeAlta(eGenerica unArray[],int tam,int* contDeAltas);
 
 /** \brief Pide cada elemento del array de forma secuencial
  *
@@ -139,12 +139,20 @@ void pedirDatosAEleccion(eGenerica unArray[],int tam,int indice);
  */
 void modificarArray(eGenerica unArray[],int tam);
 
-/** \brief Muestra solo un dato del array
+/** \brief Muestra solo un dato relacionado con un indice
  *
  * \param unArray[] eGenerica El array con un dato a mostrar
  * \param indice int El indice con un dato a mostrar
  * \return void No retorna nada
  *
  */
-void mostrarUnoSolo(eGenerica unArray[],int indice);
+void mostrarUnoSoloEnElIndice(eGenerica unArray[],int indice);
+
+/** \brief Muestra solo un dato que no dispone de un indice
+ *
+ * \param unArray[] eGenerica El array con un dato a mostrar
+ * \return void No retorna nada
+ *
+ */
+void mostrarSoloUno(eGenerica unArray);
 #endif // ABM_H_INCLUDED

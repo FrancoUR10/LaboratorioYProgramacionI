@@ -35,6 +35,10 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="ABM.h" />
+		<Unit filename="Localidad.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="Localidad.h" />
 		<Unit filename="Validaciones.c">
 			<Option compilerVar="CC" />
 		</Unit>

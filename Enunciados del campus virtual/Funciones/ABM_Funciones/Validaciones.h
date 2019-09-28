@@ -112,4 +112,24 @@ int getStrLetras(char mensaje[],char unArray[],char mensajeErrorLetras[],char me
  *
  */
 int getStringSoloEdad(char mensaje[],char unArray[],char mensajeErrorNumeros[],char mensajeErrorEdadPermitida[],int minEdad,int maxEdad,int intentos);
+
+/** \brief valida si el id Ingresado contiene solo numeros
+ *
+ * \param unArray[] char El array con la cadena de caracteres a guardar
+ * \param mensaje[] char El mensaje pidiendo un id
+ * \param mensajeErrorNumeros[] char El mensaje de error informando que solo se permiten numeros
+ * \param intentos int La cantidad de intentos para ingresar correctamente el id
+ * \return int Si se agotaron los intentos [0] si se ingresaron solo numeros [1]
+ *
+ */
+int getStrSoloId(char mensaje[],char unArray[],char mensajeErrorNumeros[],int intentos);
+
+/** \brief Pregunta al usuario si quiere confirmar o cancelar una operacion, pidiendo la letra ("s" o "n")
+ *
+ * \param mensajeInicial[] char El mensaje preguntando por una confirmacion dando a elejir con ("s" o "n")
+ * \param mensajeVolverAConfirmar[] char El mensaje aclarando que solo se confirma con ("s" o "n")
+ * \return int Si ingreso "s" [1] si ingreso "n" [0] en caso de error [-1]
+ *
+ */
+int confirmarCambios(char mensajeInicial[],char mensajeVolverAConfirmar[]);
 #endif // VALIDACIONES_H_INCLUDED

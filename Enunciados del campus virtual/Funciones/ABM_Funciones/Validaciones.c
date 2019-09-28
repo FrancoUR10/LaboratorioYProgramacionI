@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <ctype.h>
 #include "Validaciones.h"
 
 int getInt(char mensaje[])
@@ -98,13 +99,13 @@ int getStrNumeros(char mensaje[],char unArray[],char mensajeErrorNumeros[],char 
     }
     while(((validarSoloNumeros(auxString) == 0) || (longitud < min || longitud > max)) && (contadorIntentos != intentos))
     {
-        if(longitud < min || longitud > max)
-        {
-            printf("%s",mensajeErrorRango);
-        }
         if(validarSoloNumeros(auxString) == 0)
         {
             printf("%s",mensajeErrorNumeros);
+        }
+        else if(longitud < min || longitud > max)
+        {
+            printf("%s",mensajeErrorRango);
         }
         getString(mensaje,auxString);
         longitud=strlen(auxString);
@@ -139,13 +140,13 @@ int getStrNumerosFlotantes(char mensaje[],char unArray[],char mensajeErrorNumero
     }
     while(((validarSoloNumerosFlotantes(auxString) == 0) || (longitud < min || longitud > max)) && (contadorIntentos != intentos))
     {
-        if(longitud < min || longitud > max)
-        {
-            printf("%s",mensajeErrorRango);
-        }
         if(validarSoloNumerosFlotantes(auxString) == 0)
         {
             printf("%s",mensajeErrorNumerosFlotantes);
+        }
+        else if(longitud < min || longitud > max)
+        {
+            printf("%s",mensajeErrorRango);
         }
         getString(mensaje,auxString);
         longitud=strlen(auxString);
@@ -180,13 +181,13 @@ int getStrLetras(char mensaje[],char unArray[],char mensajeErrorLetras[],char me
     }
     while(((validarSoloLetras(auxString) == 0) || (longitud < min || longitud > max)) && (contadorIntentos != intentos))
     {
-        if(longitud < min || longitud > max)
-        {
-            printf("%s",mensajeErrorRango);
-        }
         if(validarSoloLetras(auxString) == 0)
         {
             printf("%s",mensajeErrorLetras);
+        }
+        else if(longitud < min || longitud > max)
+        {
+            printf("%s",mensajeErrorRango);
         }
         getString(mensaje,auxString);
         longitud=strlen(auxString);
@@ -222,13 +223,13 @@ int getStringSoloEdad(char mensaje[],char unArray[],char mensajeErrorNumeros[],c
     }
     while(((validarSoloNumeros(auxString) == 0) || (auxEdadInt < minEdad || auxEdadInt > maxEdad)) && (contadorIntentos != intentos))
     {
-        if(auxEdadInt < minEdad || auxEdadInt > maxEdad)
-        {
-            printf("%s",mensajeErrorEdadPermitida);
-        }
         if(validarSoloNumeros(auxString) == 0)
         {
             printf("%s",mensajeErrorNumeros);
+        }
+        else if(auxEdadInt < minEdad || auxEdadInt > maxEdad)
+        {
+            printf("%s",mensajeErrorEdadPermitida);
         }
         getString(mensaje,auxString);
         auxEdadInt=atoi(auxString);
@@ -246,6 +247,61 @@ int getStringSoloEdad(char mensaje[],char unArray[],char mensajeErrorNumeros[],c
     {
         strcpy(unArray,auxString);
         retorno=1;
+    }
+    return retorno;
+}
+int getStrSoloId(char mensaje[],char unArray[],char mensajeErrorNumeros[],int intentos)
+{
+    int contadorIntentos=0;
+    int retorno;
+    char auxString[256];
+    getString(mensaje,auxString);
+    if(validarSoloNumeros(auxString) == 0)
+    {
+        contadorIntentos++;
+    }
+    while((validarSoloNumeros(auxString) == 0) && (contadorIntentos != intentos))
+    {
+        if(validarSoloNumeros(auxString) == 0)
+        {
+            printf("%s",mensajeErrorNumeros);
+        }
+        getString(mensaje,auxString);
+        if(validarSoloNumeros(auxString) == 0)
+        {
+            contadorIntentos++;
+        }
+    }
+    if(contadorIntentos==intentos)
+    {
+        printf("\nSe acabaron los intentos\a\n");
+        retorno=0;
+    }
+    else
+    {
+        strcpy(unArray,auxString);
+        retorno=1;
+    }
+    return retorno;
+}
+int confirmarCambios(char mensajeInicial[],char mensajeVolverAConfirmar[])
+{
+    int retorno=-1;
+    char confirmacion;
+    confirmacion=getChar(mensajeInicial);
+    confirmacion=tolower(confirmacion);
+    while(confirmacion != 's' && confirmacion != 'n')
+    {
+        confirmacion=getChar(mensajeVolverAConfirmar);
+        confirmacion=tolower(confirmacion);
+    }
+    if(confirmacion=='s')
+    {
+        retorno=1;
+    }
+    else if(confirmacion=='n')
+    {
+        retorno=0;
     }
     return retorno;
 }
