@@ -1,5 +1,6 @@
 #ifndef ABM_H_INCLUDED
 #define ABM_H_INCLUDED
+#include "Localidad.h"
 typedef struct
 {
     int estado;
@@ -20,19 +21,14 @@ typedef struct
  */
 void inicializarArray(eGenerica unArray[],int tam);
 
-/** \brief Harcodea una posicion del array con valores pasados por parametros
+/** \brief Harcodea 3 posiciones del array
  *
  * \param unArray[] eGenerica El array a harcodear
- * \param indice int El indice en donde se harcodearan los valores
- * \param id int El numero de id a harcodear
- * \param nombre[] char El nombre a harcodear
- * \param apellido[] char El apellido a harcodear
- * \param edad int La edad a harcodear
- * \param salario float El salario a harcodear
+ * \param tam int La longitud del array
  * \return void No retorna nada
  *
  */
-void harcodearArray(eGenerica unArray[],int indice,int id,char nombre[],char apellido[],int edad,float salario);
+void harcodearArray(eGenerica unArray[],int tam);
 
 /** \brief Muestra cada elemento del array que este en estado ocupado
  *
@@ -96,20 +92,25 @@ int buscarSoloUnEstado(eGenerica unArray[],int tam,int estadoDelLugar);
  *
  * \param unArray[] eGenerica El array en donde guardar los elementos
  * \param tam int La longitud del array
+ * \param contDeAltas int* El contador que genera un id automaticamente
+ * \param listaLocalidades[] eLocalidad El array de localidades
+ * \param tamLocalidades int La longitud de la localidad
  * \return void No retorna nada
  *
  */
-void darDeAlta(eGenerica unArray[],int tam,int* contDeAltas);
+void darDeAlta(eGenerica unArray[],int tam,int* contDeAltas,eLocalidad listaLocalidades[],int tamLocalidades);
 
 /** \brief Pide cada elemento del array de forma secuencial
  *
  * \param unArray[] eGenerica El array en donde guardar los elementos
  * \param tam int La longitud del array
  * \param indice int El indice del array en el que se guardaran los elementos
+ * \param listaLocalidades[] eLocalidad El array de localidades
+ * \param tamLocalidades int La longitud de la localidad
  * \return int Si se ingresaron todos los datos correctamente [1] si no [0]
  *
  */
-int pedirDatosSecuenciales(eGenerica unArray[],int tam,int indice);
+int pedirDatosSecuenciales(eGenerica unArray[],int tam,int indice,eLocalidad listaLocalidades[],int tamLocalidades);
 
 /** \brief Pide un id del empleado y lo da de baja
  *
@@ -120,24 +121,28 @@ int pedirDatosSecuenciales(eGenerica unArray[],int tam,int indice);
  */
 void darDeBaja(eGenerica unArray[],int tam);
 
-/** \brief Muestra un menu de opciones preguntando solo por un dato a modificar
+/** \brief Muestra un menu de opciones preguntando solo por los datos a modificar
  *
  * \param unArray[] eGenerica El array en donde se guardaran los datos
  * \param tam int La longitud del array
  * \param indice int El indice del array en donde guardar los elementos
+ * \param listaLocalidades[] eLocalidad El array con las localidades
+ * \param tamLocalidades int La longitud de las localidades
  * \return void No retorna nada
  *
  */
-void pedirDatosAEleccion(eGenerica unArray[],int tam,int indice);
+void pedirDatosAEleccion(eGenerica unArray[],int tam,int indice,eLocalidad listaLocalidades[],int tamLocalidades);
 
-/** \brief Pide un id del empleado y pregunta por un dato a modificar
+/** \brief Pide un id del empleado y pregunta por los datos que se desean modificar
  *
- * \param unArray[] eGenerica El array en donde se modificara un dato
+ * \param unArray[] eGenerica El array en donde se modificaran los datos
  * \param tam int La longitud del array
+ * \param listaLocalidades[] eLocalidad El array con las localidades
+ * \param tamLocalidades int La longitud de las localidades
  * \return void No retorna nada
  *
  */
-void modificarArray(eGenerica unArray[],int tam);
+void modificarArray(eGenerica unArray[],int tam,eLocalidad listaLocalidades[],int tamLocalidades);
 
 /** \brief Muestra solo un dato relacionado con un indice
  *
@@ -146,7 +151,7 @@ void modificarArray(eGenerica unArray[],int tam);
  * \return void No retorna nada
  *
  */
-void mostrarUnoSoloEnElIndice(eGenerica unArray[],int indice);
+void mostrarSoloUnoEnElIndice(eGenerica unArray[],int indice);
 
 /** \brief Muestra solo un dato que no dispone de un indice
  *

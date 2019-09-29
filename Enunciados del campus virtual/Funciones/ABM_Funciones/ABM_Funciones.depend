@@ -23,36 +23,42 @@
 
 1569170821 c:\users\acquisto\desktop\programacion y laboratorio\abm_funciones\validaciones.h
 
-1569520709 source:c:\users\acquisto\desktop\programacion y laboratorio\laboratorioyprogramacioni\enunciados del campus virtual\funciones\abm_funciones\abm.c
+1569794628 source:c:\users\acquisto\desktop\programacion y laboratorio\laboratorioyprogramacioni\enunciados del campus virtual\funciones\abm_funciones\abm.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
 	"ABM.h"
 	"Validaciones.h"
+	"Localidad.h"
 
-1569705249 c:\users\acquisto\desktop\programacion y laboratorio\laboratorioyprogramacioni\enunciados del campus virtual\funciones\abm_funciones\abm.h
+1569794303 c:\users\acquisto\desktop\programacion y laboratorio\laboratorioyprogramacioni\enunciados del campus virtual\funciones\abm_funciones\abm.h
+	"Localidad.h"
 
-1569518526 c:\users\acquisto\desktop\programacion y laboratorio\laboratorioyprogramacioni\enunciados del campus virtual\funciones\abm_funciones\validaciones.h
+1569786641 c:\users\acquisto\desktop\programacion y laboratorio\laboratorioyprogramacioni\enunciados del campus virtual\funciones\abm_funciones\validaciones.h
 
-1569512410 source:c:\users\acquisto\desktop\programacion y laboratorio\laboratorioyprogramacioni\enunciados del campus virtual\funciones\abm_funciones\main.c
+1569794333 source:c:\users\acquisto\desktop\programacion y laboratorio\laboratorioyprogramacioni\enunciados del campus virtual\funciones\abm_funciones\main.c
 	<stdio.h>
 	<stdlib.h>
 	"ABM.h"
 	"Validaciones.h"
 	"Localidad.h"
 
-1569521091 source:c:\users\acquisto\desktop\programacion y laboratorio\laboratorioyprogramacioni\enunciados del campus virtual\funciones\abm_funciones\validaciones.c
+1569790206 source:c:\users\acquisto\desktop\programacion y laboratorio\laboratorioyprogramacioni\enunciados del campus virtual\funciones\abm_funciones\validaciones.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
 	<ctype.h>
+	"ABM.h"
 	"Validaciones.h"
+	"Localidad.h"
 
-1569509043 c:\users\acquisto\desktop\programacion y laboratorio\laboratorioyprogramacioni\enunciados del campus virtual\funciones\abm_funciones\localidad.h
+1569790721 c:\users\acquisto\desktop\programacion y laboratorio\laboratorioyprogramacioni\enunciados del campus virtual\funciones\abm_funciones\localidad.h
 
-1569508949 source:c:\users\acquisto\desktop\programacion y laboratorio\laboratorioyprogramacioni\enunciados del campus virtual\funciones\abm_funciones\localidad.c
+1569794824 source:c:\users\acquisto\desktop\programacion y laboratorio\laboratorioyprogramacioni\enunciados del campus virtual\funciones\abm_funciones\localidad.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
+	"ABM.h"
 	"Localidad.h"
+	"Validaciones.h"
 

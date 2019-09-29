@@ -2,7 +2,9 @@
 #include <stdlib.h>
 #include <string.h>
 #include <ctype.h>
+#include "ABM.h"
 #include "Validaciones.h"
+#include "Localidad.h"
 
 int getInt(char mensaje[])
 {
@@ -250,7 +252,7 @@ int getStringSoloEdad(char mensaje[],char unArray[],char mensajeErrorNumeros[],c
     }
     return retorno;
 }
-int getStrSoloId(char mensaje[],char unArray[],char mensajeErrorNumeros[],int intentos)
+int getStrSoloNumeroSinRango(char mensaje[],char unArray[],char mensajeErrorNumeros[],int intentos)
 {
     int contadorIntentos=0;
     int retorno;
