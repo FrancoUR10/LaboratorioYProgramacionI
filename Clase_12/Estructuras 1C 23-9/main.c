@@ -12,7 +12,7 @@ int main()
 {
     eAlumno listaDeAlumnos[A];
     eLocalidad listaLocalidades[3]={{1,"Avellaneda",1870},{2,"Wilde",1872},{3,"Lomas de Zamora",1700}};
-    eAuxCont contAlumnos[3];
+    eAuxLocalidad auxContador[3];
     int i;
     /*for(i=0;i<3;i++)
     {
@@ -44,9 +44,9 @@ int main()
         case 2:
             //mostrarListadoAlumnos(listaDeAlumnos, A,listaLocalidades,3); //1
             //mostrarSoloLocalidad(listaLocalidades,3); //2
-            mostrarLocalidadConMenosAlumnos(listaDeAlumnos,A,listaLocalidades,3,contAlumnos); //5
             //mostrarCadaLocalidadConSusAlumnos(listaDeAlumnos,A,listaLocalidades,3); //3
             //mostrarAlumnosEnAvellaneda(listaDeAlumnos,A,listaLocalidades,3); //4
+            mostrarLocalidadConMenosAlumnos(listaDeAlumnos,A,listaLocalidades,3,auxContador); //5
             break;
         case 3:
             sortStudentsByNameAndAverage(listaDeAlumnos,A);

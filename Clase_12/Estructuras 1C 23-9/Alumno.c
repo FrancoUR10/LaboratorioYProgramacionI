@@ -25,7 +25,7 @@ void hardCodearAlumnos(eAlumno listadoDeAlumnos[], int tam)
     int legajo[]= {101,102,105};
     float promedio[]= {6.66, 4,7.66};
     char nombre[][25]= {"Juan","Maria josefina","Maria"};
-    int localidad[]={3,1,3};
+    int localidad[]={1,2,2};
     for(i=0; i<3; i++)
     {
         listadoDeAlumnos[i].legajo = legajo[i];
@@ -162,7 +162,7 @@ int buscarAlumnoPorLegajo(eAlumno* listaDeAlumnos, int cant, int legajo)
 int modificarAlumno(eAlumno listaDeAlumnos[], int cant, int legajo)
 {
     int index;
-    char nombre[30];
+    //char nombre[30];
     int quePaso = -1;
     char respuesta;
     eAlumno aux;
@@ -194,7 +194,7 @@ int eliminarAlumno(eAlumno listadoDeAlumnos[], int tam)
 {
     int legajo;
     int i;
-    int flag = 0 ;
+    //int flag = 0 ;
     char respuesta;
 
     int quePaso = -1;
@@ -263,27 +263,8 @@ int buscarLocalidadDelAlumno(eAlumno listaAlumno[],int tamAlumno,int idLocalidad
     }
     return retorno;
 }
-void contarCantAlumnos(eAlumno listaAlumnos[],int tamAlumnos,eLocalidad listaLocalidad[],int tamLocalidad,eAuxCont contadorAlumnos[])
-{
-    int i;
-    int j;
-    for(i=0;i<tamLocalidad;i++)
-    {
-        contadorAlumnos[i].idLocalidad=listaLocalidad[i].idLocalidad;
-        contadorAlumnos[i].cantAlumnos=0;
-    }
-    for(i=0;i<tamLocalidad;i++)
-    {
-        for(j=0;j<tamAlumnos;j++)
-        {
-            if(contadorAlumnos[i].idLocalidad==listaAlumnos[j].idLocalidad)
-            {
-                contadorAlumnos[i].cantAlumnos++;
-            }
-        }
-    }
-}
-int buscarElMinimo(eAlumno listaAlumnos[],int tamAlumnos,eLocalidad listaLocalidad[],int tamLocalidad,eAuxCont contadorAlumnos[])
+/*
+int buscarElMinimo(eAlumno listaAlumnos[],int tamAlumnos,eLocalidad listaLocalidad[],int tamLocalidad,eAuxLocalidad contadorAlumnos[])
 {
     int i;
     int minimo;
@@ -299,6 +280,8 @@ int buscarElMinimo(eAlumno listaAlumnos[],int tamAlumnos,eLocalidad listaLocalid
     }
     return minimo;
 }
+*/
+/*
 void mostrarLocalidadConMenosAlumnos(eAlumno listaAlumnos[],int tamAlumnos,eLocalidad listaLocalidad[],int tamLocalidad,eAuxCont contadorAlumnos[])
 {
     int i;
@@ -312,6 +295,61 @@ void mostrarLocalidadConMenosAlumnos(eAlumno listaAlumnos[],int tamAlumnos,eLoca
             if((listaLocalidad[j].idLocalidad==contadorAlumnos[i].idLocalidad) && (elMinimo==contadorAlumnos[i].idLocalidad))
             {
                 printf("%s\n",listaLocalidad[j].localidad);
+            }
+        }
+    }
+}
+*/
+void contarCantDeAlumnos(eAlumno listaAlumnos[],int tamAlumnos,eLocalidad listaLocalidades[],int tamLocalidades,eAuxLocalidad auxliliarLocalidad[])
+{
+    int i;
+    int j;
+    for(i=0;i<tamLocalidades;i++)
+    {
+        auxliliarLocalidad[i].idLocalidad=listaLocalidades[i].idLocalidad;
+        auxliliarLocalidad[i].cantAlumnos=0;
+    }
+    for(i=0;i<tamLocalidades;i++)
+    {
+        for(j=0;j<tamAlumnos;j++)
+        {
+            if((listaAlumnos[j].estado==OCUPADO) && (auxliliarLocalidad[i].idLocalidad==listaAlumnos[j].idLocalidad))
+            {
+                auxliliarLocalidad[i].cantAlumnos++;
+            }
+        }
+    }
+}
+int dameElMinimo(eAlumno listaAlumnos[],int tamAlumnos,eLocalidad listaLocalidades[],int tamLocalidad,eAuxLocalidad auxiliarLocalidades[])
+{
+    int elMinimo;
+    int flagPrimerDato=1;
+    int i;
+    contarCantDeAlumnos(listaAlumnos,tamAlumnos,listaLocalidades,tamLocalidad,auxiliarLocalidades);
+    for(i=0;i<tamLocalidad;i++)
+    {
+        if((flagPrimerDato==1) || (auxiliarLocalidades[i].cantAlumnos < elMinimo))
+        {
+            elMinimo=auxiliarLocalidades[i].cantAlumnos;
+            flagPrimerDato=0;
+        }
+    }
+    return elMinimo;
+}
+void mostrarLocalidadConMenosAlumnos(eAlumno listaAlumnos[],int tamAlumnos,eLocalidad listaLocalidades[],int tamLocalidades,eAuxLocalidad auxLocalidad[])
+{
+    int i;
+    int j;
+    int elMinimo;
+    contarCantDeAlumnos(listaAlumnos,tamAlumnos,listaLocalidades,tamLocalidades,auxLocalidad);
+    elMinimo=dameElMinimo(listaAlumnos,tamAlumnos,listaLocalidades,tamLocalidades,auxLocalidad);
+    for(i=0;i<tamLocalidades;i++)
+    {
+        for(j=0;j<tamLocalidades;j++)
+        {
+            if((listaLocalidades[i].idLocalidad==auxLocalidad[j].idLocalidad) && (auxLocalidad[j].cantAlumnos==elMinimo))
+            {
+                printf("%s\n",listaLocalidades[i].localidad);
             }
         }
     }

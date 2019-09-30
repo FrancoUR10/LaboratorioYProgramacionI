@@ -7,7 +7,7 @@ typedef struct
 {
     int idLocalidad;
     int cantAlumnos;
-}eAuxCont;
+}eAuxLocalidad;
 
 typedef struct
 {
@@ -48,8 +48,9 @@ int buscarUnaLocalidad(eLocalidad listaLocalidades[], int tam,int idABuscar);
 void mostrarSoloLocalidad(eLocalidad listaLocalidad[],int tamLocalidad);
 
 int buscarLocalidadDelAlumno(eAlumno listaAlumno[],int tamAlumno,int idLocalidadBusqueda);
-void contarCantAlumnos(eAlumno listaAlumnos[],int tamAlumnos,eLocalidad listaLocalidad[],int tamLocalidad,eAuxCont contadorAlumnos[]);
-int buscarElMinimo(eAlumno listaAlumnos[],int tamAlumnos,eLocalidad listaLocalidad[],int tamLocalidad,eAuxCont contadorAlumnos[]);
-void mostrarLocalidadConMenosAlumnos(eAlumno listaAlumnos[],int tamAlumnos,eLocalidad listaLocalidad[],int tamLocalidad,eAuxCont contadorAlumnos[]);
 void mostrarCadaLocalidadConSusAlumnos(eAlumno listaAlumnos[],int tamAlumnos,eLocalidad listaLocalidad[],int tamLocalidad);
 void mostrarAlumnosEnAvellaneda(eAlumno listaAlumnos[],int tamAlumnos,eLocalidad listaLocalidad[],int tamLocalidad);
+
+void contarCantDeAlumnos(eAlumno listaAlumnos[],int tamAlumnos,eLocalidad listaLocalidades[],int tamLocalidades,eAuxLocalidad auxliliarLocalidad[]);
+int dameElMinimo(eAlumno listaAlumnos[],int tamAlumnos,eLocalidad listaLocalidades[],int tamLocalidad,eAuxLocalidad auxiliarLocalidades[]);
+void mostrarLocalidadConMenosAlumnos(eAlumno listaAlumnos[],int tamAlumnos,eLocalidad listaLocalidades[],int tamLocalidades,eAuxLocalidad auxLocalidad[]);
