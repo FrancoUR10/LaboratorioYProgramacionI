@@ -82,3 +82,25 @@
 
 1569936879 c:\users\alumno\desktop\clase_13\estructuras 1c 23-9\materias.h
 
+1569938491 source:c:\users\alumno\desktop\laboratorioyprogramacioni\clase_13\estructuras 1c 23-9\alumno.c
+	"Alumno.h"
+
+1569938491 c:\users\alumno\desktop\laboratorioyprogramacioni\clase_13\estructuras 1c 23-9\alumno.h
+	<stdio.h>
+	<string.h>
+
+1569941603 source:c:\users\alumno\desktop\laboratorioyprogramacioni\clase_13\estructuras 1c 23-9\main.c
+	<stdio.h>
+	<stdlib.h>
+	"Alumno.h"
+	"Materias.h"
+
+1569942175 c:\users\alumno\desktop\laboratorioyprogramacioni\clase_13\estructuras 1c 23-9\materias.h
+
+1569940945 source:c:\users\alumno\desktop\laboratorioyprogramacioni\clase_13\estructuras 1c 23-9\materias.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"Alumno.h"
+	"Materias.h"
+

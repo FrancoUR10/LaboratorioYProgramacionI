@@ -54,15 +54,17 @@ void darDeAltaInscripcion(eMateria listaMaterias[], int tamMaterias,eAlumno list
     int legajoAlumno;
     int idMateria;
     eFecha fechaInscripcion;
+    int indiceMaterias;
     int indiceLibre;
-    indiceLibre=buscarMateriaLibre(listaMaterias,tamMaterias);
-    printf("Indice: %d\n", indiceLibre);
-    if(indiceLibre==-1)
+    indiceMaterias=buscarMateriaLibre(listaMaterias,tamMaterias);
+    printf("Indice: %d\n", indiceMaterias);
+    if(indiceMaterias==-1)
     {
         printf("\nNo hay espacio disponible\n");
     }
     else
     {
+        indiceLibre=buscaer
         printf("\nIngrese ID inscripcion: ");
         scanf("%d",&idInscripcion);
         fflush(stdin);
@@ -85,7 +87,56 @@ void darDeAltaInscripcion(eMateria listaMaterias[], int tamMaterias,eAlumno list
         listaInscripcion[indiceLibre].legajoAlumno=legajoAlumno;
         listaInscripcion[indiceLibre].idMateria=idMateria;
         listaInscripcion[indiceLibre].fechaInscripcion=fechaInscripcion;
+        listaInscripcion[indiceLibre].estadoInscripcion=MATERIA_OCUPADA;
 
     }
 
+}
+void mostrarInscripciones(eInscripciones listaInscripcion[],int tamInscripcion,eAlumno listaAlumno[],int tamAlumno,eMateria listaMateria[],int tamMateria)
+{
+    int i;
+    int j;
+    int k;
+    for(i=0;i<tamInscripcion;i++)
+    {
+        for(j=0;j<tamAlumno;j++)
+        {
+            for(k=0;k<tamMateria;k++)
+            {
+                if((listaInscripcion[i].estadoInscripcion==MATERIA_OCUPADA) && (listaInscripcion[i].legajoAlumno==listaAlumno[j].legajo) && (listaInscripcion[i].idMateria==listaMateria[k].idMateria))
+                {
+                    mostrarUnaInscripcion(listaInscripcion,i,listaAlumno,j,listaMateria,k);
+                }
+            }
+        }
+    }
+}
+void mostrarUnaInscripcion(eInscripciones unaInscripcion[],int indiceInscripcion,eAlumno unAlumno[],int indiceAlumno,eMateria unaMateria[],int indiceMateria)
+{
+    printf("\n%d\t",unaInscripcion[indiceInscripcion].idInscripcion);
+    printf("%s\t",unAlumno[indiceAlumno].nombre);
+    printf("%s\t",unaMateria[indiceMateria].descripcion);
+    printf("%d/%d/%d\n",unaInscripcion[indiceInscripcion].fechaInscripcion.dia,unaInscripcion[indiceInscripcion].fechaInscripcion.mes,unaInscripcion[indiceInscripcion].fechaInscripcion.anio);
+}
+void inicializarInscripcion(eInscripciones listaInscripciones[],int tamInscripcion)
+{
+    int i;
+    for(i=0;i<tamInscripcion;i++)
+    {
+        listaInscripciones[i].estadoInscripcion=MATERIA_LIBRE;
+    }
+}
+//int buscarInscripcionLibre(eInscripciones listaInscripciones[], int tamInscripciones)
+{
+    /*int indice = -1;
+    int i;
+    for(i=0; i<tamMaterias; i++)
+    {
+        if(listaMaterias[i].estadoMateria==MATERIA_LIBRE)
+        {
+            indice=i;
+            break;
+        }
+    }
+    return indice;*/
 }
