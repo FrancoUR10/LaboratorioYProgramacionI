@@ -93,20 +93,24 @@ int buscarSoloUnEstado(eGenerica unArray[],int tam,int estadoDelLugar);
  * \param unArray[] eGenerica El array en donde guardar los elementos
  * \param tam int La longitud del array
  * \param contDeAltas int* El contador que genera un id automaticamente
+ * \param listaLocalidades[] eLocalidad El array de localidades
+ * \param tamLocalidades int La longitud de la localidad
  * \return void No retorna nada
  *
  */
-void darDeAlta(eGenerica unArray[],int tam,int* contDeAltas);
+void darDeAlta(eGenerica unArray[],int tam,int* contDeAltas,eLocalidad listaLocalidades[],int tamLocalidades);
 
 /** \brief Pide cada elemento del array de forma secuencial
  *
  * \param unArray[] eGenerica El array en donde guardar los elementos
  * \param tam int La longitud del array
  * \param indice int El indice del array en el que se guardaran los elementos
+ * \param listaLocalidades[] eLocalidad El array de localidades
+ * \param tamLocalidades int La longitud de la localidad
  * \return int Si se ingresaron todos los datos correctamente [1] si no [0]
  *
  */
-int pedirDatosSecuenciales(eGenerica unArray[],int tam,int indice);
+int pedirDatosSecuenciales(eGenerica unArray[],int tam,int indice,eLocalidad listaLocalidades[],int tamLocalidades);
 
 /** \brief Pide un id del empleado y lo da de baja
  *
@@ -122,19 +126,23 @@ void darDeBaja(eGenerica unArray[],int tam);
  * \param unArray[] eGenerica El array en donde se guardaran los datos
  * \param tam int La longitud del array
  * \param indice int El indice del array en donde guardar los elementos
+ * \param listaLocalidades[] eLocalidad El array con las localidades
+ * \param tamLocalidades int La longitud de las localidades
  * \return void No retorna nada
  *
  */
-void pedirDatosAEleccion(eGenerica unArray[],int tam,int indice);
+void pedirDatosAEleccion(eGenerica unArray[],int tam,int indice,eLocalidad listaLocalidades[],int tamLocalidades);
 
 /** \brief Pide un id del empleado y pregunta por los datos que se desean modificar
  *
  * \param unArray[] eGenerica El array en donde se modificaran los datos
  * \param tam int La longitud del array
+ * \param listaLocalidades[] eLocalidad El array con las localidades
+ * \param tamLocalidades int La longitud de las localidades
  * \return void No retorna nada
  *
  */
-void modificarArray(eGenerica unArray[],int tam);
+void modificarArray(eGenerica unArray[],int tam,eLocalidad listaLocalidades[],int tamLocalidades);
 
 /** \brief Muestra solo un dato relacionado con un indice
  *

@@ -1,0 +1,64 @@
+# depslib dependency file v1.0
+1568668808 source:c:\users\acquisto\desktop\programacion y laboratorio\abm_funciones\main.c
+	<stdio.h>
+	<stdlib.h>
+	"ABM.h"
+	"Validaciones.h"
+	<string.h>
+
+1569180268 c:\users\acquisto\desktop\programacion y laboratorio\abm_funciones\abm.h
+
+1569180085 source:c:\users\acquisto\desktop\programacion y laboratorio\abm_funciones\abm.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"ABM.h"
+	"Validaciones.h"
+
+1569180106 source:c:\users\acquisto\desktop\programacion y laboratorio\abm_funciones\validaciones.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"Validaciones.h"
+
+1569170821 c:\users\acquisto\desktop\programacion y laboratorio\abm_funciones\validaciones.h
+
+1569794628 source:c:\users\acquisto\desktop\programacion y laboratorio\laboratorioyprogramacioni\enunciados del campus virtual\funciones\abm_funciones\abm.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"ABM.h"
+	"Validaciones.h"
+	"Localidad.h"
+
+1569794303 c:\users\acquisto\desktop\programacion y laboratorio\laboratorioyprogramacioni\enunciados del campus virtual\funciones\abm_funciones\abm.h
+	"Localidad.h"
+
+1569786641 c:\users\acquisto\desktop\programacion y laboratorio\laboratorioyprogramacioni\enunciados del campus virtual\funciones\abm_funciones\validaciones.h
+
+1569794333 source:c:\users\acquisto\desktop\programacion y laboratorio\laboratorioyprogramacioni\enunciados del campus virtual\funciones\abm_funciones\main.c
+	<stdio.h>
+	<stdlib.h>
+	"ABM.h"
+	"Validaciones.h"
+	"Localidad.h"
+
+1569790206 source:c:\users\acquisto\desktop\programacion y laboratorio\laboratorioyprogramacioni\enunciados del campus virtual\funciones\abm_funciones\validaciones.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	"ABM.h"
+	"Validaciones.h"
+	"Localidad.h"
+
+1569790721 c:\users\acquisto\desktop\programacion y laboratorio\laboratorioyprogramacioni\enunciados del campus virtual\funciones\abm_funciones\localidad.h
+
+1569794824 source:c:\users\acquisto\desktop\programacion y laboratorio\laboratorioyprogramacioni\enunciados del campus virtual\funciones\abm_funciones\localidad.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"ABM.h"
+	"Localidad.h"
+	"Validaciones.h"
+
