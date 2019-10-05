@@ -55,8 +55,7 @@ void mostrarArray(eGenerica unArray[],int tam)
         {
             if(unArray[i].estado==OCUPADO)
             {
-                //printf("\nNombre: %s --apellido: %s --Edad: %d --Salario %.2f --Id: %d\n",unArray[i].nombre,unArray[i].apellido,unArray[i].edad,unArray[i].salario,unArray[i].id);
-                mostrarSoloUnoEnElIndice(unArray,i);
+                mostrarSoloUno(unArray[i]);
             }
         }
     }
@@ -267,7 +266,7 @@ void pedirDatosAEleccion(eGenerica unArray[],int tam,int indice)
 
         printf("NOMBRE\tAPELLIDO\tEDAD\tSUELDO\tID\n");
         printf("\nDatos actuales seleccionados:\n");
-        mostrarSoloUnoEnElIndice(unArray,indice);
+        mostrarSoloUno(unArray[indice]);
         printf("\nDatos a modificar:\n");
         mostrarSoloUno(auxDatos);
 
@@ -377,14 +376,6 @@ void modificarArray(eGenerica unArray[],int tam)
             }
         }
     }
-}
-void mostrarSoloUnoEnElIndice(eGenerica unArray[],int indice)
-{
-    printf("\n%s",unArray[indice].nombre);
-    printf("\t%s",unArray[indice].apellido);
-    printf("\t\t%d",unArray[indice].edad);
-    printf("\t%.2f",unArray[indice].salario);
-    printf("\t%d\n",unArray[indice].id);
 }
 void mostrarSoloUno(eGenerica unArray)
 {

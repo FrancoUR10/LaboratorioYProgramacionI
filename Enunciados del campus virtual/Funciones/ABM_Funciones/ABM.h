@@ -136,18 +136,9 @@ void pedirDatosAEleccion(eGenerica unArray[],int tam,int indice);
  */
 void modificarArray(eGenerica unArray[],int tam);
 
-/** \brief Muestra solo un dato relacionado con un indice
+/** \brief Muestra solo un dato
  *
- * \param unArray[] eGenerica El array con un dato a mostrar
- * \param indice int El indice con un dato a mostrar
- * \return void No retorna nada
- *
- */
-void mostrarSoloUnoEnElIndice(eGenerica unArray[],int indice);
-
-/** \brief Muestra solo un dato que no dispone de un indice
- *
- * \param unArray[] eGenerica El array con un dato a mostrar
+ * \param unArray eGenerica El dato a mostrar
  * \return void No retorna nada
  *
  */
