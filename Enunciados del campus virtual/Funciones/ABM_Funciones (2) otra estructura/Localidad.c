@@ -35,14 +35,15 @@ void harcodearLocalidades(eLocalidad unaLocalidad[],int tamLocalidad)
 void mostrarListaDeLocalidades(eLocalidad listaLocalidades[],int tamLocalidad)
 {
     int i;
-    printf("\nLOCALIDAD\t\tID\n");
+    printf("\nLOCALIDAD\tCODIGO POSTAL\tID\n");
     for(i=0;i<tamLocalidad;i++)
     {
-        mostrarUnaLocalidad(listaLocalidades,i);
+        mostrarUnaLocalidad(listaLocalidades[i]);
     }
 }
-void mostrarUnaLocalidad(eLocalidad unaLocalidad[],int indiceLocalidad)
+void mostrarUnaLocalidad(eLocalidad unaLocalidad)
 {
-    printf("\n%s\t",unaLocalidad[indiceLocalidad].nombreLocalidad);
-    printf("\t%d\n",unaLocalidad[indiceLocalidad].id);
+    printf("\n%s\t",unaLocalidad.nombreLocalidad);
+    printf("%d\t",unaLocalidad.codigoPostal);
+    printf("\t%d\n",unaLocalidad.id);
 }

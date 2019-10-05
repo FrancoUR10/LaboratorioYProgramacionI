@@ -58,8 +58,7 @@ void mostrarArray(eEmpleado unArray[],int tam)
         {
             if(unArray[i].estado==OCUPADO)
             {
-                //printf("\nNombre: %s --apellido: %s --Edad: %d --Salario %.2f --Id: %d\n",unArray[i].nombre,unArray[i].apellido,unArray[i].edad,unArray[i].salario,unArray[i].id);
-                mostrarSoloUnoEnElIndice(unArray,i);
+                mostrarSoloUno(unArray[i]);
             }
         }
     }
@@ -277,6 +276,7 @@ void pedirDatosAEleccion(eEmpleado unArray[],int tam,int indice,eLocalidad lista
 {
     int auxIdLocalidad;
     int indiceLocalidadEncontrada;
+    int indiceLocalidadAux;
     eEmpleado auxDatos;
     char auxSalarioStr[256];
     char auxEdadStr[256];
@@ -294,9 +294,13 @@ void pedirDatosAEleccion(eEmpleado unArray[],int tam,int indice,eLocalidad lista
 
         printf("NOMBRE\tAPELLIDO\tEDAD\tSUELDO\tID\tLOCALIDAD\n");
         printf("\nDatos actuales seleccionados:\n");
-        mostrarSoloUnoEnElIndice(unArray,indice);
+        indiceLocalidadEncontrada=buscarUnaLocalidad(listaLocalidades,tamLocalidades,unArray[indice].idLocalidad);
+        mostrarSoloUnoConSuLocalidad(unArray[indice],listaLocalidades,indiceLocalidadEncontrada);
+
         printf("\nDatos a modificar:\n");
-        mostrarSoloUno(auxDatos);
+        indiceLocalidadAux=buscarUnaLocalidad(listaLocalidades,tamLocalidades,auxDatos.idLocalidad);
+        mostrarSoloUnoConSuLocalidad(auxDatos,listaLocalidades,indiceLocalidadAux);
+
 
         opcionMenu=getInt("\nQue dato desea modificar?\n1-NOMBRE\n2-APELLIDO\n3-EDAD\n4-SALARIO\n5-LOCALIDAD\n6-CONFIRMAR CAMBIOS\n7-FINALIZAR MODIFICACION\n\nIngrese una opcion: ");
         switch(opcionMenu)
@@ -428,15 +432,6 @@ void modificarArray(eEmpleado unArray[],int tam,eLocalidad listaLocalidades[],in
         }
     }
 }
-void mostrarSoloUnoEnElIndice(eEmpleado unArray[],int indice)
-{
-    printf("\n%s",unArray[indice].nombre);
-    printf("\t%s",unArray[indice].apellido);
-    printf("\t\t%d",unArray[indice].edad);
-    printf("\t%.2f",unArray[indice].salario);
-    printf("\t%d",unArray[indice].id);
-    printf("\t%d\n",unArray[indice].idLocalidad);
-}
 void mostrarSoloUno(eEmpleado unArray)
 {
     printf("\n%s",unArray.nombre);
@@ -446,23 +441,14 @@ void mostrarSoloUno(eEmpleado unArray)
     printf("\t%d",unArray.id);
     printf("\t%d\n",unArray.idLocalidad);
 }
-void mostrarUnoConSuLocalidad(eEmpleado unArray[],int indice,eLocalidad unaLocalidad[],int indiceLocalidad)
+void mostrarSoloUnoConSuLocalidad(eEmpleado unEmpleado,eLocalidad unaLocalidad[],int indiceLocalidad)
 {
-    printf("\n%s\t",unArray[indice].nombre);
-    printf("%s\t",unArray[indice].apellido);
-    printf("%d\t",unArray[indice].edad);
-    printf("%.2f\t",unArray[indice].salario);
-    printf("%d\t",unArray[indice].id);
+    printf("\n%s\t",unEmpleado.nombre);
+    printf("%4s\t",unEmpleado.apellido);
+    printf("%7d\t",unEmpleado.edad);
+    printf("%9.2f\t",unEmpleado.salario);
+    printf("%d\t",unEmpleado.id);
     printf("%s\n",unaLocalidad[indiceLocalidad].nombreLocalidad);
-}
-void mostrarSoloUnoConSuLocalidad(eEmpleado unArray,eLocalidad unaLocalidad)
-{
-    printf("\n%s\t",unArray.nombre);
-    printf("%s\t",unArray.apellido);
-    printf("%d\t",unArray.edad);
-    printf("%.2f\t",unArray.salario);
-    printf("%d\t",unArray.id);
-    printf("%s\n",unaLocalidad.nombreLocalidad);
 }
 void mostrarArrayConSusLocalidades(eEmpleado listaArray[],int tam,eLocalidad listaLocalidad[],int tamLocalidad)
 {
@@ -476,7 +462,7 @@ void mostrarArrayConSusLocalidades(eEmpleado listaArray[],int tam,eLocalidad lis
     }
     else
     {
-        printf("\nNOMBRE---APELLIDO---EDAD---SUELDO---ID---LOCALIDAD\n");
+        printf("\nNOMBRE    APELLIDO   EDAD   SUELDO\tID\tLOCALIDAD\n");
         ordenarArray(listaArray,tam,1);
         for(i=0;i<tam;i++)
         {
@@ -484,7 +470,7 @@ void mostrarArrayConSusLocalidades(eEmpleado listaArray[],int tam,eLocalidad lis
             {
                 if((listaArray[i].estado==OCUPADO) && (listaLocalidad[j].id==listaArray[i].idLocalidad))
                 {
-                    mostrarUnoConSuLocalidad(listaArray,i,listaLocalidad,j);
+                    mostrarSoloUnoConSuLocalidad(listaArray[i],listaLocalidad,j);
                 }
             }
         }

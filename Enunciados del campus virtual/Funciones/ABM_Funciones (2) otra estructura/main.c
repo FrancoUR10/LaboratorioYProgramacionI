@@ -10,14 +10,13 @@ int main()
 {
     eEmpleado arrayEmpleado[MAX];
     eLocalidad arrayLocalidades[MAX_LOCALIDADES];
-    int contAltas=4;
-
+    int contDeAltas=4;
     int opcionMenu;
     char continuarMenu='s';
 
     inicializarArray(arrayEmpleado,MAX);
-    harcodearArray(arrayEmpleado,3);
 
+    harcodearArray(arrayEmpleado,3);
     harcodearLocalidades(arrayLocalidades,3);
 
     do
@@ -26,7 +25,7 @@ int main()
         switch(opcionMenu)
         {
             case 1:
-                darDeAlta(arrayEmpleado,MAX,&contAltas,arrayLocalidades,MAX_LOCALIDADES);
+                darDeAlta(arrayEmpleado,MAX,&contDeAltas,arrayLocalidades,MAX_LOCALIDADES);
                 break;
             case 2:
                 darDeBaja(arrayEmpleado,MAX,arrayLocalidades,MAX_LOCALIDADES);

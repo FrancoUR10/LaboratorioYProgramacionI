@@ -45,12 +45,12 @@ void harcodearLocalidades(eLocalidad unaLocalidad[],int tamLocalidad);
  */
 void mostrarListaDeLocalidades(eLocalidad listaLocalidades[],int tamLocalidad);
 
-/** \brief Muestra solo una locadidad de un indice
+/** \brief Muestra solo una locadidad
  *
- * \param unaLocalidad[] eLocalidad El array con un solo dato a mostrar
- * \param indiceLocalidad int La longitud del array
+ * \param unaLocalidad eLocalidad La localidad a mostrar
+ * \param indiceLocalidad int La longitud de la localidad
  * \return void No retorna nada
  *
  */
-void mostrarUnaLocalidad(eLocalidad unaLocalidad[],int indiceLocalidad);
+void mostrarUnaLocalidad(eLocalidad unaLocalidad);
 #endif // LOCALIDAD_H_INCLUDED

@@ -146,18 +146,9 @@ void pedirDatosAEleccion(eEmpleado unArray[],int tam,int indice,eLocalidad lista
  */
 void modificarArray(eEmpleado unArray[],int tam,eLocalidad listaLocalidades[],int tamLocalidades);
 
-/** \brief Muestra solo un dato relacionado con un indice
+/** \brief Muestra solo un dato
  *
- * \param unArray[] eEmpleado El array con un dato a mostrar
- * \param indice int El indice con un dato a mostrar
- * \return void No retorna nada
- *
- */
-void mostrarSoloUnoEnElIndice(eEmpleado unArray[],int indice);
-
-/** \brief Muestra solo un dato que no dispone de un indice
- *
- * \param unArray[] eEmpleado El array con un dato a mostrar
+ * \param unArray eEmpleado El empleado a mostrar
  * \return void No retorna nada
  *
  */
@@ -166,22 +157,12 @@ void mostrarSoloUno(eEmpleado unArray);
 /** \brief Muestra un elemento del array junto con su localidad
  *
  * \param unArray[] eEmpleado El array con los elementos a mostrar
- * \param indice int El indice del array a mostrar
  * \param unaLocalidad[] eLocalidad El array con la localidad a mostrar
  * \param indiceLocalidad int El indice de la localidad
  * \return void No retorna nada
  *
  */
-void mostrarUnoConSuLocalidad(eEmpleado unArray[],int indice,eLocalidad unaLocalidad[],int indiceLocalidad);
-
-/** \brief Muestra un solo elemento del array con su localidad, sin un indice
- *
- * \param unArray eEmpleado El array con un elemento a mostrar
- * \param unaLocalidad eLocalidad La localidad a mostrar
- * \return void No retorna nada
- *
- */
-void mostrarSoloUnoConSuLocalidad(eEmpleado unArray,eLocalidad unaLocalidad);
+void mostrarSoloUnoConSuLocalidad(eEmpleado unEmpleado,eLocalidad unaLocalidad[],int indiceLocalidad);
 
 /** \brief Muestra cada elemento ocupado del array con su localidad
  *
