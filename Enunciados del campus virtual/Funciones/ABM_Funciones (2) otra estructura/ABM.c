@@ -205,7 +205,7 @@ int pedirDatosSecuenciales(eEmpleado unArray[],int tam,int indice,eLocalidad lis
             if(getStrSoloNumeroSinRango("\nIngrese el id de una localidad: ",auxIdLocalidadStr,"\nSolo se permite el numero de una localidad\n",3))
             {
                 auxDatos.idLocalidad=atoi(auxIdLocalidadStr);
-                indiceLocalidadEncontrada=buscarUnaLocalidad(listaLocalidades,tamLocalidades,auxDatos.idLocalidad);
+                indiceLocalidadEncontrada=buscarUnaLocalidadPorId(listaLocalidades,tamLocalidades,auxDatos.idLocalidad);
                 if(indiceLocalidadEncontrada==-1)
                 {
                     printf("\nEl id de la localidad ingresada no existe\n");
@@ -294,11 +294,11 @@ void pedirDatosAEleccion(eEmpleado unArray[],int tam,int indice,eLocalidad lista
 
         printf("NOMBRE\tAPELLIDO\tEDAD\tSUELDO\tID\tLOCALIDAD\n");
         printf("\nDatos actuales seleccionados:\n");
-        indiceLocalidadEncontrada=buscarUnaLocalidad(listaLocalidades,tamLocalidades,unArray[indice].idLocalidad);
+        indiceLocalidadEncontrada=buscarUnaLocalidadPorId(listaLocalidades,tamLocalidades,unArray[indice].idLocalidad);
         mostrarSoloUnoConSuLocalidad(unArray[indice],listaLocalidades,indiceLocalidadEncontrada);
 
         printf("\nDatos a modificar:\n");
-        indiceLocalidadAux=buscarUnaLocalidad(listaLocalidades,tamLocalidades,auxDatos.idLocalidad);
+        indiceLocalidadAux=buscarUnaLocalidadPorId(listaLocalidades,tamLocalidades,auxDatos.idLocalidad);
         mostrarSoloUnoConSuLocalidad(auxDatos,listaLocalidades,indiceLocalidadAux);
 
 
@@ -356,7 +356,7 @@ void pedirDatosAEleccion(eEmpleado unArray[],int tam,int indice,eLocalidad lista
                 if(getStrSoloNumeroSinRango("\nIngrese el id de la localidad: ",auxIdLocalidadStr,"\nSolo se permite el numero de la localidad\n",3))
                 {
                     auxIdLocalidad=atoi(auxIdLocalidadStr);
-                    indiceLocalidadEncontrada=buscarUnaLocalidad(listaLocalidades,tamLocalidades,auxIdLocalidad);
+                    indiceLocalidadEncontrada=buscarUnaLocalidadPorId(listaLocalidades,tamLocalidades,auxIdLocalidad);
                     if(indiceLocalidadEncontrada!=-1)
                     {
                         printf("\nSe ha modificado la localidad\n");

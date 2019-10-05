@@ -47,7 +47,7 @@ void mostrarPersonasConSusAutos(sPersona[], int, sVehiculo[], int);
 //Enunciados:
 void ordenarPorNombreYFecha(sPersona listaPersonas[], int tamPersonas);
 void ordenarVehiculosPorNombreYPatente(sPersona listaPersonas[], int tamPersonas,sVehiculo listaVehiculos[], int tamVehiculos);
-void mostrarUnSoloAuto(sVehiculo unVehiculo[],int indiceVehiculo);
+void mostrarUnSoloAuto(sVehiculo unVehiculo);
 void mostrarAutosConSuDuenio(sVehiculo listaVehiculo[],sPersona listaPesonas[],int tamAutos,int tamPersonas);
 void mostrarSoloEstacionadosConSuDuenio(sVehiculo listaVehiculos[],sPersona listaPersonas[],int tamVehiculo,int tamPersonas);
 

@@ -238,19 +238,19 @@ void mostrarAutosConSuDuenio(sVehiculo listaVehiculo[],sPersona listaPesonas[],i
         {
             if(listaVehiculo[j].idDuenio==listaPesonas[i].id)
             {
-                mostrarUnSoloAuto(listaVehiculo,j);
+                mostrarUnSoloAuto(listaVehiculo[j]);
             }
         }
     }
 }
-void mostrarUnSoloAuto(sVehiculo unVehiculo[],int indiceVehiculo)
+void mostrarUnSoloAuto(sVehiculo unVehiculo)
 {
-    printf("\n%6s %02d %02d %02d/%02d/%4d\n", unVehiculo[indiceVehiculo].patente,
-    unVehiculo[indiceVehiculo].horaIngreso,
-    unVehiculo[indiceVehiculo].horaSalida,
-    unVehiculo[indiceVehiculo].fechaIngreso.dia,
-    unVehiculo[indiceVehiculo].fechaIngreso.mes,
-    unVehiculo[indiceVehiculo].fechaIngreso.anio);
+    printf("\n%6s %02d %02d %02d/%02d/%4d\n", unVehiculo.patente,
+    unVehiculo.horaIngreso,
+    unVehiculo.horaSalida,
+    unVehiculo.fechaIngreso.dia,
+    unVehiculo.fechaIngreso.mes,
+    unVehiculo.fechaIngreso.anio);
 }
 void mostrarSoloEstacionadosConSuDuenio(sVehiculo listaVehiculos[],sPersona listaPersonas[],int tamVehiculo,int tamPersonas)
 {
@@ -263,7 +263,7 @@ void mostrarSoloEstacionadosConSuDuenio(sVehiculo listaVehiculos[],sPersona list
         {
             if((listaVehiculos[j].estadoVehiculo==ESTACIONADO) && (listaVehiculos[j].idDuenio==listaPersonas[i].id))
             {
-                mostrarUnSoloAuto(listaVehiculos,j);
+                mostrarUnSoloAuto(listaVehiculos[j]);
             }
         }
     }
@@ -302,7 +302,7 @@ void mostrarAutosPorDuenio(char* mensaje,sPersona unDuenio[],sVehiculo listaVehi
         {
             if(listaVehiculos[i].idDuenio==unDuenio[seEncontro].id)
             {
-                mostrarUnSoloAuto(listaVehiculos,i);
+                mostrarUnSoloAuto(listaVehiculos[i]);
             }
         }
     }

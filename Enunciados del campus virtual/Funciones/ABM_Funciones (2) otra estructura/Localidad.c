@@ -5,7 +5,7 @@
 #include "Localidad.h"
 #include "Validaciones.h"
 
-int buscarUnaLocalidad(eLocalidad unaLocalidad[],int tamLocalidad,int idABuscar)
+int buscarUnaLocalidadPorId(eLocalidad unaLocalidad[],int tamLocalidad,int idABuscar)
 {
     int retorno=-1;
     int i;
@@ -46,4 +46,18 @@ void mostrarUnaLocalidad(eLocalidad unaLocalidad)
     printf("\n%s\t",unaLocalidad.nombreLocalidad);
     printf("%d\t",unaLocalidad.codigoPostal);
     printf("\t%d\n",unaLocalidad.id);
+}
+int buscarLocalidadPorNombre(eLocalidad listaLocalidad[],int tamLocalidad,char nombreLocalidad[])
+{
+    int retorno=-1;
+    int i;
+    for(i=0;i<tamLocalidad;i++)
+    {
+        if(strcmp(listaLocalidad[i].nombreLocalidad,nombreLocalidad)==0)
+        {
+            retorno=i;
+            break;
+        }
+    }
+    return retorno;
 }

@@ -7,15 +7,15 @@ typedef struct
     int id;
 } eLocalidad;
 
-/** \brief Busca un id en el array y retorna su indice
+/** \brief Busca el id de una localidad y retorna su indice
  *
  * \param unaLocalidad[] eLocalidad El array con la localidad a buscar
  * \param tamLocalidad int La longitud del array
  * \param idABuscar int El id a buscar en el array
- * \return int Si encontro el id devuelve su indice, si no lo encontro [-1]
+ * \return int Si encontro el id retorna su indice, si no lo encontro [-1]
  *
  */
-int buscarUnaLocalidad(eLocalidad unaLocalidad[],int tamLocalidad,int idABuscar);
+int buscarUnaLocalidadPorId(eLocalidad unaLocalidad[],int tamLocalidad,int idABuscar);
 
 /** \brief Busca solo el estado en el cual se encuentra la localidad
  *
@@ -53,4 +53,14 @@ void mostrarListaDeLocalidades(eLocalidad listaLocalidades[],int tamLocalidad);
  *
  */
 void mostrarUnaLocalidad(eLocalidad unaLocalidad);
+
+/** \brief Busca una localidad por su nombre
+ *
+ * \param listaLocalidad[] eLocalidad Elarray con las localidades
+ * \param tamLocalidad int La longitud de la localidad
+ * \param nombreLocalidad[] char El nombre de la localidad a buscar
+ * \return int Si encontro la localidad retorna su indice, si no [-1]
+ *
+ */
+int buscarLocalidadPorNombre(eLocalidad listaLocalidad[],int tamLocalidad,char nombreLocalidad[]);
 #endif // LOCALIDAD_H_INCLUDED
