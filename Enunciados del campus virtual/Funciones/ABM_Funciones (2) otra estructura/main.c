@@ -3,7 +3,7 @@
 #include "ABM.h"
 #include "Validaciones.h"
 #include "Localidad.h"
-#define MAX 5
+#define MAX 1000
 #define MAX_LOCALIDADES 3
 
 int main()

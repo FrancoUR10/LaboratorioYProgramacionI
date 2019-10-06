@@ -5,13 +5,13 @@
 #include "Localidad.h"
 #include "Validaciones.h"
 
-int buscarUnaLocalidadPorId(eLocalidad unaLocalidad[],int tamLocalidad,int idABuscar)
+int buscarUnaLocalidadPorId(eLocalidad listaLocalidades[],int tamLocalidad,int idABuscar)
 {
     int retorno=-1;
     int i;
     for(i=0;i<tamLocalidad;i++)
     {
-        if(unaLocalidad[i].id==idABuscar)
+        if(listaLocalidades[i].id==idABuscar)
         {
             retorno=i;
             break;
@@ -19,7 +19,7 @@ int buscarUnaLocalidadPorId(eLocalidad unaLocalidad[],int tamLocalidad,int idABu
     }
     return retorno;
 }
-void harcodearLocalidades(eLocalidad unaLocalidad[],int tamLocalidad)
+void harcodearLocalidades(eLocalidad listaLocalidades[],int tamLocalidad)
 {
     int codigoPostal[3]={1000,1500,2062};
     char nombreLocalidad[3][51]={"Avellaneda","Banfield","Lomas"};
@@ -27,15 +27,14 @@ void harcodearLocalidades(eLocalidad unaLocalidad[],int tamLocalidad)
     int i;
     for(i=0;i<tamLocalidad;i++)
     {
-        unaLocalidad[i].codigoPostal=codigoPostal[i];
-        strcpy(unaLocalidad[i].nombreLocalidad,nombreLocalidad[i]);
-        unaLocalidad[i].id=id[i];
+        listaLocalidades[i].codigoPostal=codigoPostal[i];
+        strcpy(listaLocalidades[i].nombreLocalidad,nombreLocalidad[i]);
+        listaLocalidades[i].id=id[i];
     }
 }
 void mostrarListaDeLocalidades(eLocalidad listaLocalidades[],int tamLocalidad)
 {
     int i;
-    printf("\nLOCALIDAD\tCODIGO POSTAL\tID\n");
     for(i=0;i<tamLocalidad;i++)
     {
         mostrarUnaLocalidad(listaLocalidades[i]);
@@ -47,13 +46,13 @@ void mostrarUnaLocalidad(eLocalidad unaLocalidad)
     printf("%d\t",unaLocalidad.codigoPostal);
     printf("\t%d\n",unaLocalidad.id);
 }
-int buscarLocalidadPorNombre(eLocalidad listaLocalidad[],int tamLocalidad,char nombreLocalidad[])
+int buscarLocalidadPorNombre(eLocalidad listaLocalidades[],int tamLocalidad,char nombreLocalidad[])
 {
     int retorno=-1;
     int i;
     for(i=0;i<tamLocalidad;i++)
     {
-        if(strcmp(listaLocalidad[i].nombreLocalidad,nombreLocalidad)==0)
+        if(strcmp(listaLocalidades[i].nombreLocalidad,nombreLocalidad)==0)
         {
             retorno=i;
             break;
