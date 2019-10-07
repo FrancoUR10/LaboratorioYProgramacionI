@@ -7,20 +7,20 @@
 #define LIBRE 1
 #define OCUPADO 0
 
-void inicializarArray(eGenerica unArray[],int tam)
+void inicializarArray(eEmpleado listaEmpleados[],int tamEmpleado)
 {
     int i;
-    for(i=0;i<tam;i++)
+    for(i=0;i<tamEmpleado;i++)
     {
-        unArray[i].id=-1;
-        unArray[i].estado=1;
-        strcpy(unArray[i].nombre,"VACIO");
-        strcpy(unArray[i].apellido,"VACIO");
-        unArray[i].edad=0;
-        unArray[i].salario=0;
+        listaEmpleados[i].id=-1;
+        listaEmpleados[i].estado=1;
+        strcpy(listaEmpleados[i].nombre,"VACIO");
+        strcpy(listaEmpleados[i].apellido,"VACIO");
+        listaEmpleados[i].edad=0;
+        listaEmpleados[i].salario=0;
     }
 }
-void harcodearArray(eGenerica unArray[],int tam)
+void harcodearArray(eEmpleado listaEmpleados[],int tamEmpleado)
 {
     char nombre[3][51]={"A","B","C"};
     char apellido[3][51]={"A","B","C"};
@@ -28,21 +28,21 @@ void harcodearArray(eGenerica unArray[],int tam)
     int salario[3]={50.4,60.5,70.6};
     int id[3]={3,1,2};
     int i;
-    for(i=0;i<tam;i++)
+    for(i=0;i<tamEmpleado;i++)
     {
-        strcpy(unArray[i].nombre,nombre[i]);
-        strcpy(unArray[i].apellido,apellido[i]);
-        unArray[i].edad=edad[i];
-        unArray[i].salario=salario[i];
-        unArray[i].id=id[i];
-        unArray[i].estado=OCUPADO;
+        strcpy(listaEmpleados[i].nombre,nombre[i]);
+        strcpy(listaEmpleados[i].apellido,apellido[i]);
+        listaEmpleados[i].edad=edad[i];
+        listaEmpleados[i].salario=salario[i];
+        listaEmpleados[i].id=id[i];
+        listaEmpleados[i].estado=OCUPADO;
     }
 }
-void mostrarArray(eGenerica unArray[],int tam)
+void mostrarArray(eEmpleado listaEmpleados[],int tamEmpleado)
 {
     int indiceLibre;
     int i;
-    indiceLibre=buscarSoloUnEstado(unArray,tam,OCUPADO);
+    indiceLibre=buscarSoloUnEstado(listaEmpleados,tamEmpleado,OCUPADO);
     if(indiceLibre==-1)
     {
         printf("\nTodos los lugares se encuentran libres\n");
@@ -50,68 +50,68 @@ void mostrarArray(eGenerica unArray[],int tam)
     else
     {
         printf("\nNOMBRE\tAPELLIDO\tEDAD\tSUELDO\tID\n");
-        ordenarArray(unArray,tam,1);
-        for(i=0;i<tam;i++)
+        ordenarArray(listaEmpleados,tamEmpleado,1);
+        for(i=0;i<tamEmpleado;i++)
         {
-            if(unArray[i].estado==OCUPADO)
+            if(listaEmpleados[i].estado==OCUPADO)
             {
-                mostrarSoloUno(unArray[i]);
+                mostrarSoloUno(listaEmpleados[i]);
             }
         }
     }
 }
-void ordenarArrayAscendiente(eGenerica unArray[],int tam)
+void ordenarArrayAscendiente(eEmpleado listaEmpleados[],int tamEmpleado)
 {
     int i;
     int j;
-    eGenerica auxiliar;
-    for(i=1;i<tam;i++)
+    eEmpleado auxiliar;
+    for(i=1;i<tamEmpleado;i++)
     {
-        auxiliar=unArray[i];
+        auxiliar=listaEmpleados[i];
         j=i-1;
-        while((j >= 0) && (auxiliar.id < unArray[j].id))
+        while((j >= 0) && (auxiliar.id < listaEmpleados[j].id))
         {
-            unArray[j+1]=unArray[j];
+            listaEmpleados[j+1]=listaEmpleados[j];
             j--;
         }
-        unArray[j+1]=auxiliar;
+        listaEmpleados[j+1]=auxiliar;
     }
 }
-void ordenarArrayDescendiente(eGenerica unArray[],int tam)
+void ordenarArrayDescendiente(eEmpleado listaEmpleados[],int tamEmpleado)
 {
     int i;
     int j;
-    eGenerica auxiliar;
-    for(i=1;i<tam;i++)
+    eEmpleado auxiliar;
+    for(i=1;i<tamEmpleado;i++)
     {
-        auxiliar=unArray[i];
+        auxiliar=listaEmpleados[i];
         j=i-1;
-        while((j >= 0) && (auxiliar.id > unArray[j].id))
+        while((j >= 0) && (auxiliar.id > listaEmpleados[j].id))
         {
-            unArray[j+1]=unArray[j];
+            listaEmpleados[j+1]=listaEmpleados[j];
             j--;
         }
-        unArray[j+1]=auxiliar;
+        listaEmpleados[j+1]=auxiliar;
     }
 }
-void ordenarArray(eGenerica unArray[],int tam, int tipoDeOrden)
+void ordenarArray(eEmpleado listaEmpleados[],int tamEmpleado, int tipoDeOrden)
 {
     if(tipoDeOrden==1)
     {
-        ordenarArrayAscendiente(unArray,tam);
+        ordenarArrayAscendiente(listaEmpleados,tamEmpleado);
     }
     else
     {
-        ordenarArrayDescendiente(unArray,tam);
+        ordenarArrayDescendiente(listaEmpleados,tamEmpleado);
     }
 }
-int buscarLugarLibre(eGenerica unArray[],int tam,int valorABuscar,int estadoDelLugar)
+int buscarLugarLibre(eEmpleado listaEmpleados[],int tamEmpleado,int valorABuscar,int estadoDelLugar)
 {
     int retorno=-1;
     int i;
-    for(i=0;i<tam;i++)
+    for(i=0;i<tamEmpleado;i++)
     {
-        if((unArray[i].estado==estadoDelLugar) && (unArray[i].id==valorABuscar))
+        if((listaEmpleados[i].estado==estadoDelLugar) && (listaEmpleados[i].id==valorABuscar))
         {
             retorno=i;
             break;
@@ -119,13 +119,13 @@ int buscarLugarLibre(eGenerica unArray[],int tam,int valorABuscar,int estadoDelL
     }
     return retorno;
 }
-int buscarSoloUnEstado(eGenerica unArray[],int tam,int estadoDelLugar)
+int buscarSoloUnEstado(eEmpleado listaEmpleados[],int tamEmpleado,int estadoDelLugar)
 {
     int retorno=-1;
     int i;
-    for(i=0;i<tam;i++)
+    for(i=0;i<tamEmpleado;i++)
     {
-        if(unArray[i].estado==estadoDelLugar)
+        if(listaEmpleados[i].estado==estadoDelLugar)
         {
             retorno=i;
             break;
@@ -133,12 +133,12 @@ int buscarSoloUnEstado(eGenerica unArray[],int tam,int estadoDelLugar)
     }
     return retorno;
 }
-void darDeAlta(eGenerica unArray[],int tam,int* contDeAltas)
+void darDeAlta(eEmpleado listaEmpleados[],int tamEmpleado,int* contDeAltas)
 {
     int sePudo;
     int indiceLibre;
     int auxIdInt;
-    indiceLibre=buscarSoloUnEstado(unArray,tam,LIBRE);
+    indiceLibre=buscarSoloUnEstado(listaEmpleados,tamEmpleado,LIBRE);
     if(indiceLibre==-1)
     {
         printf("\nNo quedan lugares libres\n");
@@ -146,7 +146,7 @@ void darDeAlta(eGenerica unArray[],int tam,int* contDeAltas)
     else
     {
         auxIdInt=*contDeAltas;
-        sePudo=pedirDatosSecuenciales(unArray,tam,indiceLibre);
+        sePudo=pedirDatosSecuenciales(listaEmpleados,tamEmpleado,indiceLibre);
         if(sePudo==-1)
         {
             printf("\nAlta del empleado cancelada\n");
@@ -157,18 +157,18 @@ void darDeAlta(eGenerica unArray[],int tam,int* contDeAltas)
         }
         else
         {
-            unArray[indiceLibre].id=auxIdInt;
-            unArray[indiceLibre].estado=OCUPADO;
+            listaEmpleados[indiceLibre].id=auxIdInt;
+            listaEmpleados[indiceLibre].estado=OCUPADO;
             *contDeAltas=auxIdInt+1;
             printf("\nSe ha dado de alta el id numero %d\n",auxIdInt);
         }
     }
 }
-int pedirDatosSecuenciales(eGenerica unArray[],int tam,int indice)
+int pedirDatosSecuenciales(eEmpleado listaEmpleados[],int tamEmpleado,int indice)
 {
     int confirmacion;
     int retorno=-1;
-    eGenerica auxDatos;
+    eEmpleado auxDatos;
     char auxEdadStr[256];
     char auxSalarioStr[256];
     int ingresoSecuencialValido=1;
@@ -199,7 +199,7 @@ int pedirDatosSecuenciales(eGenerica unArray[],int tam,int indice)
         confirmacion=confirmarCambios("Esta seguro que desea dar de alta? (s/n): ","\nSolo confirme con ('s' o con 'n'): ");
         if(confirmacion==1)
         {
-            unArray[indice]=auxDatos;
+            listaEmpleados[indice]=auxDatos;
             retorno=1;
         }
         else
@@ -209,25 +209,25 @@ int pedirDatosSecuenciales(eGenerica unArray[],int tam,int indice)
     }
     return retorno;
 }
-void darDeBaja(eGenerica unArray[],int tam)
+void darDeBaja(eEmpleado listaEmpleados[],int tamEmpleado)
 {
     int confirmacion;
     int auxIdInt;
     char auxIdStr[256];
     int indiceLibre;
     int indiceResultadoBusqueda;
-    indiceLibre=buscarSoloUnEstado(unArray,tam,OCUPADO);
+    indiceLibre=buscarSoloUnEstado(listaEmpleados,tamEmpleado,OCUPADO);
     if(indiceLibre==-1)
     {
         printf("\nTodos los lugares se encuentran libres\n");
     }
     else
     {
-        mostrarArray(unArray,tam);
+        mostrarArray(listaEmpleados,tamEmpleado);
         if(getStrSoloNumeroSinRango("\nIngrese el id a dar de baja: ",auxIdStr,"\nSolo se permiten numeros\a\n",3))
         {
             auxIdInt=atoi(auxIdStr);
-            indiceResultadoBusqueda=buscarLugarLibre(unArray,tam,auxIdInt,OCUPADO);
+            indiceResultadoBusqueda=buscarLugarLibre(listaEmpleados,tamEmpleado,auxIdInt,OCUPADO);
             if(indiceResultadoBusqueda == -1)
             {
                 printf("\nNo existe el legajo ingresado\n");
@@ -237,7 +237,7 @@ void darDeBaja(eGenerica unArray[],int tam)
                 confirmacion=confirmarCambios("Esta seguro que desea dar de baja? (s/n): ","\nSolo confirme con ('s' o con 'n'): ");
                 if(confirmacion==1)
                 {
-                    unArray[indiceResultadoBusqueda].estado=LIBRE;
+                    listaEmpleados[indiceResultadoBusqueda].estado=LIBRE;
                     printf("\nSe ha dado de baja al id numero %d\n",auxIdInt);
                 }
                 else if(confirmacion==0)
@@ -248,9 +248,9 @@ void darDeBaja(eGenerica unArray[],int tam)
         }
     }
 }
-void pedirDatosAEleccion(eGenerica unArray[],int tam,int indice)
+void pedirDatosAEleccion(eEmpleado listaEmpleados[],int tamEmpleado,int indice)
 {
-    eGenerica auxDatos;
+    eEmpleado auxDatos;
     char auxSalarioStr[256];
     char auxEdadStr[256];
     int opcionMenu;
@@ -259,14 +259,15 @@ void pedirDatosAEleccion(eGenerica unArray[],int tam,int indice)
 
 
 
-    auxDatos=unArray[indice];
+    auxDatos=listaEmpleados[indice];
     do
     {
         system("cls");
 
         printf("NOMBRE\tAPELLIDO\tEDAD\tSUELDO\tID\n");
         printf("\nDatos actuales seleccionados:\n");
-        mostrarSoloUno(unArray[indice]);
+        mostrarSoloUno(listaEmpleados[indice]);
+
         printf("\nDatos a modificar:\n");
         mostrarSoloUno(auxDatos);
 
@@ -322,7 +323,7 @@ void pedirDatosAEleccion(eGenerica unArray[],int tam,int indice)
                 confirmacion=confirmarCambios("\nEsta seguro que desea confirmar los cambios realizados? (s/n): ","\nSolo confirme con ('s' o con 'n'): ");
                 if(confirmacion==1)
                 {
-                    unArray[indice]=auxDatos;
+                    listaEmpleados[indice]=auxDatos;
                     printf("\nSe han confirmado los cambios realizados\n");
                     system("pause");
                 }
@@ -347,41 +348,220 @@ void pedirDatosAEleccion(eGenerica unArray[],int tam,int indice)
     }
     while(continuarMenu=='s');
 }
-void modificarArray(eGenerica unArray[],int tam)
+void modificarArray(eEmpleado listaEmpleados[],int tamEmpleado)
 {
     char auxIdStr[256];
     int auxIdInt;
 
     int indiceLibre;
     int indiceResultadoBusqueda;
-    indiceLibre=buscarSoloUnEstado(unArray,tam,OCUPADO);
+    indiceLibre=buscarSoloUnEstado(listaEmpleados,tamEmpleado,OCUPADO);
     if(indiceLibre==-1)
     {
         printf("\nTodos los lugares se encuentran libres\n");
     }
     else
     {
-        mostrarArray(unArray,tam);
+        mostrarArray(listaEmpleados,tamEmpleado);
         if(getStrSoloNumeroSinRango("\nIngrese el id a modificar: ",auxIdStr,"\nSolo se permiten numeros\a\n",3))
         {
             auxIdInt=atoi(auxIdStr);
-            indiceResultadoBusqueda=buscarLugarLibre(unArray,tam,auxIdInt,OCUPADO);
+            indiceResultadoBusqueda=buscarLugarLibre(listaEmpleados,tamEmpleado,auxIdInt,OCUPADO);
             if(indiceResultadoBusqueda==-1)
             {
                 printf("\nEl id ingresado no existe\n");
             }
             else
             {
-                pedirDatosAEleccion(unArray,tam,indiceResultadoBusqueda);
+                pedirDatosAEleccion(listaEmpleados,tamEmpleado,indiceResultadoBusqueda);
             }
         }
     }
 }
-void mostrarSoloUno(eGenerica unArray)
+void mostrarSoloUno(eEmpleado unEmpleado)
 {
-    printf("\n%s",unArray.nombre);
-    printf("\t%s",unArray.apellido);
-    printf("\t\t%d",unArray.edad);
-    printf("\t%.2f",unArray.salario);
-    printf("\t%d\n",unArray.id);
+    printf("\n%s",unEmpleado.nombre);
+    printf("\t%s",unEmpleado.apellido);
+    printf("\t\t%d",unEmpleado.edad);
+    printf("\t%.2f",unEmpleado.salario);
+    printf("\t%d\n",unEmpleado.id);
 }
+/*
+void mostrarSoloUnoConSuLocalidad(eEmpleado unEmpleado,eLocalidad listaLocalidades[],int indiceLocalidad)
+{
+    printf("\n%s\t",unEmpleado.nombre);
+    printf("%4s\t",unEmpleado.apellido);
+    printf("%7d\t",unEmpleado.edad);
+    printf("%9.2f\t",unEmpleado.salario);
+    printf("%d\t",unEmpleado.id);
+    printf("%s\n",listaLocalidades[indiceLocalidad].nombreLocalidad);
+}
+
+void mostrarArrayConSusLocalidades(eEmpleado listaEmpleados[],int tamEmpleado,eLocalidad listaLocalidades[],int tamLocalidad)
+{
+    int i;
+    int j;
+    int indiceLibre;
+    indiceLibre=buscarSoloUnEstado(listaEmpleados,tamEmpleado,OCUPADO);
+    if(indiceLibre==-1)
+    {
+        printf("\nTodos los lugares se encuentran libres\n");
+    }
+    else
+    {
+        printf("\nNOMBRE    APELLIDO   EDAD   SUELDO\tID\tLOCALIDAD\n");
+        ordenarArray(listaEmpleados,tamEmpleado,1);
+        for(i=0;i<tamEmpleado;i++)
+        {
+            for(j=0;j<tamLocalidad;j++)
+            {
+                if((listaEmpleados[i].estado==OCUPADO) && (listaLocalidades[j].id==listaEmpleados[i].idLocalidad))
+                {
+                    mostrarSoloUnoConSuLocalidad(listaEmpleados[i],listaLocalidades,j);
+                }
+            }
+        }
+    }
+}
+
+void mostrarCadaLocalidadConSusEmpleados(eEmpleado listaEmpleados[],int tamEmpleado,eLocalidad listaLocalidades[],int tamLocalidad)
+{
+    int i;
+    int j;
+    int indiceLibre;
+    indiceLibre=buscarSoloUnEstado(listaEmpleados,tamEmpleado,OCUPADO);
+    if(indiceLibre==-1)
+    {
+        printf("\nNo hay ningun empleado por mostrar\n");
+    }
+    else
+    {
+        for(i=0;i<tamLocalidad;i++)
+        {
+            printf("\nLocalidad: %s\n",listaLocalidades[i].nombreLocalidad);
+            for(j=0;j<tamEmpleado;j++)
+            {
+                if((listaEmpleados[j].estado==OCUPADO) && (listaEmpleados[j].idLocalidad==listaLocalidades[i].id))
+                {
+                    printf("\nNOMBRE\tAPELLIDO\tEDAD\tSUELDO\tID\n");
+                    mostrarSoloUno(listaEmpleados[j]);
+                }
+            }
+        }
+    }
+}
+void mostrarSoloEmpleadosDeAvellaneda(eEmpleado listaEmpleados[],int tamEmpleado,eLocalidad listaLocalidades[],int tamLocalidad)
+{
+    int i;
+    int j;
+    int indiceLibre;
+    indiceLibre=buscarSoloUnEstado(listaEmpleados,tamEmpleado,OCUPADO);
+    if(indiceLibre==-1)
+    {
+        printf("\nNo hay ningun empleado que mostrar\n");
+    }
+    else
+    {
+        printf("\nEmpleados en avellaneda:\n");
+        printf("\nNOMBRE\tAPELLIDO\tEDAD\tSUELDO\tID\n");
+        for(i=0;i<tamLocalidad;i++)
+        {
+            for(j=0;j<tamEmpleado;j++)
+            {
+                if((listaEmpleados[j].estado==OCUPADO) && (listaEmpleados[j].idLocalidad==listaLocalidades[i].id) && (listaLocalidades[i].id==100))
+                {
+                    mostrarSoloUno(listaEmpleados[j]);
+                }
+            }
+        }
+    }
+}
+void contarPorCant(eEmpleado listaEmpleados[],int tamEmpleado,eLocalidad listaLocalidades[],int tamLocalidad,eAuxLocalidad auxLocalidad[])
+{
+    int i;
+    int j;
+    for(i=0;i<tamLocalidad;i++)
+    {
+        auxLocalidad[i].idLocalidad=listaLocalidades[i].id;
+        auxLocalidad[i].contadores=0;
+    }
+    for(i=0;i<tamLocalidad;i++)
+    {
+        for(j=0;j<tamEmpleado;j++)
+        {
+            if((listaEmpleados[j].estado==OCUPADO) && (auxLocalidad[i].idLocalidad==listaEmpleados[j].idLocalidad))
+            {
+                auxLocalidad[i].contadores++;
+            }
+        }
+    }
+}
+int dameElMinimo(eEmpleado listaEmpleados[],int tamEmpleado,eLocalidad listaLocalidades[],int tamLocalidad,eAuxLocalidad auxLocalidad[])
+{
+    int elMinimo;
+    int flagPrimerDato=1;
+    int i;
+    contarPorCant(listaEmpleados,tamEmpleado,listaLocalidades,tamLocalidad,auxLocalidad);
+    for(i=0;i<tamLocalidad;i++)
+    {
+        if((flagPrimerDato==1) || (auxLocalidad[i].contadores < elMinimo))
+        {
+            elMinimo=auxLocalidad[i].contadores;
+            flagPrimerDato=0;
+        }
+    }
+    return elMinimo;
+}
+void mostrarLocalidadConMenosEmpleados(eEmpleado listaEmpleados[],int tamEmpleado,eLocalidad listaLocalidades[],int tamLocalidad,eAuxLocalidad auxLocalidad[])
+{
+    int i;
+    int j;
+    int elMinimo;
+    contarPorCant(listaEmpleados,tamEmpleado,listaLocalidades,tamLocalidad,auxLocalidad);
+    elMinimo=dameElMinimo(listaEmpleados,tamEmpleado,listaLocalidades,tamLocalidad,auxLocalidad);
+    for(i=0;i<tamLocalidad;i++)
+    {
+        for(j=0;j<tamLocalidad;j++)
+        {
+            if((listaLocalidades[i].id==auxLocalidad[j].idLocalidad) && (auxLocalidad[j].contadores==elMinimo))
+            {
+                printf("\nLocalidad con menos empleados: %s\n",listaLocalidades[i].nombreLocalidad);
+            }
+        }
+    }
+}
+int dameElMaximo(eEmpleado listaEmpleados[],int tamEmpleado,eLocalidad listaLocalidades[],int tamLocalidad,eAuxLocalidad auxLocalidad[])
+{
+    int elMaximo;
+    int flagPrimerDato=1;
+    int i;
+    contarPorCant(listaEmpleados,tamEmpleado,listaLocalidades,tamLocalidad,auxLocalidad);
+    for(i=0;i<tamLocalidad;i++)
+    {
+        if((flagPrimerDato==1) || (auxLocalidad[i].contadores > elMaximo))
+        {
+            elMaximo=auxLocalidad[i].contadores;
+            flagPrimerDato=0;
+        }
+    }
+    return elMaximo;
+}
+void mostrarLocalidadConMasEmpleados(eEmpleado listaEmpleados[],int tamEmpleado,eLocalidad listaLocalidades[],int tamLocalidad,eAuxLocalidad auxLocalidad[])
+{
+    int i;
+    int j;
+    int elMaximo;
+    contarPorCant(listaEmpleados,tamEmpleado,listaLocalidades,tamLocalidad,auxLocalidad);
+    elMaximo=dameElMaximo(listaEmpleados,tamEmpleado,listaLocalidades,tamLocalidad,auxLocalidad);
+    for(i=0;i<tamLocalidad;i++)
+    {
+        for(j=0;j<tamLocalidad;j++)
+        {
+            if((listaLocalidades[i].id==auxLocalidad[j].idLocalidad) && (auxLocalidad[j].contadores==elMaximo))
+            {
+                printf("\nLocalidad con mas empleados: %s\n",listaLocalidades[i].nombreLocalidad);
+            }
+        }
+    }
+}
+*/

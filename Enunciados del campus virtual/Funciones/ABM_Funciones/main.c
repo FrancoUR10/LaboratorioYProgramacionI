@@ -2,18 +2,17 @@
 #include <stdlib.h>
 #include "ABM.h"
 #include "Validaciones.h"
-#include "Localidad.h"
-#define MAX 5
+#define MAX 1000
 
 int main()
 {
-    eGenerica arrayEmpleado[MAX];
-    int contAltas=4;
-
+    eEmpleado arrayEmpleado[MAX];
+    int contDeAltas=4;
     int opcionMenu;
     char continuarMenu='s';
 
     inicializarArray(arrayEmpleado,MAX);
+
     harcodearArray(arrayEmpleado,3);
 
     do
@@ -22,7 +21,7 @@ int main()
         switch(opcionMenu)
         {
             case 1:
-                darDeAlta(arrayEmpleado,MAX,&contAltas);
+                darDeAlta(arrayEmpleado,MAX,&contDeAltas);
                 break;
             case 2:
                 darDeBaja(arrayEmpleado,MAX);
