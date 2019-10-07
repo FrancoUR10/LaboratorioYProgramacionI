@@ -52,7 +52,7 @@ void mostrarArray(eEmpleado listaEmpleados[],int tamEmpleado)
     }
     else
     {
-        printf("\nNOMBRE\tAPELLIDO\tEDAD\tSUELDO\tID\tLOCALIDAD\n");
+        printf("\nNOMBRE\tAPELLIDO\tEDAD\tSUELDO\tID\n");
         ordenarArray(listaEmpleados,tamEmpleado,1);
         for(i=0;i<tamEmpleado;i++)
         {
