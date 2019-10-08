@@ -1,0 +1,72 @@
+# depslib dependency file v1.0
+1570537705 source:d:\primer_parcial_laboratorio\genero.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"Validaciones.h"
+	"Pelicula.h"
+	"Genero.h"
+	"Actor.h"
+	"Elenco.h"
+
+1570539304 d:\primer_parcial_laboratorio\validaciones.h
+
+1570537123 d:\primer_parcial_laboratorio\pelicula.h
+
+1570536934 d:\primer_parcial_laboratorio\genero.h
+
+1570544111 source:d:\primer_parcial_laboratorio\main.c
+	<stdio.h>
+	<stdlib.h>
+	"Validaciones.h"
+	"Pelicula.h"
+	"Genero.h"
+	"Actor.h"
+	"Elenco.h"
+
+1570543814 source:d:\primer_parcial_laboratorio\pelicula.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"Validaciones.h"
+	"Pelicula.h"
+	"Genero.h"
+	"Actor.h"
+	"Elenco.h"
+
+1570539304 source:d:\primer_parcial_laboratorio\validaciones.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	"Validaciones.h"
+
+1570535108 d:\primer_parcial_laboratorio\abm.h
+	"Localidad.h"
+
+1570535108 d:\primer_parcial_laboratorio\localidad.h
+
+1570544049 source:d:\primer_parcial_laboratorio\elenco.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"Validaciones.h"
+	"Pelicula.h"
+	"Genero.h"
+	"Actor.h"
+	"Elenco.h"
+
+1570543369 d:\primer_parcial_laboratorio\actor.h
+
+1570543940 d:\primer_parcial_laboratorio\elenco.h
+
+1570544225 source:d:\primer_parcial_laboratorio\actor.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"Validaciones.h"
+	"Pelicula.h"
+	"Genero.h"
+	"Actor.h"
+	"Elenco.h"
+
