@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include "Alumno.h"
 #include "Materias.h"
+#include "Inscripciones.h"
 #define A 5
 #define MAX_MATERIAS 4
 //1.Mostrar nombre del alumno y nombre de materia en lugar del id

@@ -104,3 +104,28 @@
 	"Alumno.h"
 	"Materias.h"
 
+1570665478 source:c:\users\acquisto\desktop\programacion y laboratorio\laboratorioyprogramacioni\clase_13\estructuras 1c 23-9\alumno.c
+	"Alumno.h"
+
+1570665478 c:\users\acquisto\desktop\programacion y laboratorio\laboratorioyprogramacioni\clase_13\estructuras 1c 23-9\alumno.h
+	<stdio.h>
+	<string.h>
+
+1570736098 source:c:\users\acquisto\desktop\programacion y laboratorio\laboratorioyprogramacioni\clase_13\estructuras 1c 23-9\main.c
+	<stdio.h>
+	<stdlib.h>
+	"Alumno.h"
+	"Materias.h"
+	"Inscripciones.h"
+
+1570736098 c:\users\acquisto\desktop\programacion y laboratorio\laboratorioyprogramacioni\clase_13\estructuras 1c 23-9\materias.h
+
+1570736265 c:\users\acquisto\desktop\programacion y laboratorio\laboratorioyprogramacioni\clase_13\estructuras 1c 23-9\inscripciones.h
+
+1570736098 source:c:\users\acquisto\desktop\programacion y laboratorio\laboratorioyprogramacioni\clase_13\estructuras 1c 23-9\materias.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"Alumno.h"
+	"Materias.h"
+

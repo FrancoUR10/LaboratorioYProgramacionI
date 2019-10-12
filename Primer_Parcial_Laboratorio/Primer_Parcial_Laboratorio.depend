@@ -70,3 +70,70 @@
 	"Actor.h"
 	"Elenco.h"
 
+1570738681 source:c:\users\acquisto\desktop\programacion y laboratorio\laboratorioyprogramacioni\primer_parcial_laboratorio\actor.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"Validaciones.h"
+	"Pelicula.h"
+	"Genero.h"
+	"Actor.h"
+	"Elenco.h"
+
+1570665479 c:\users\acquisto\desktop\programacion y laboratorio\laboratorioyprogramacioni\primer_parcial_laboratorio\validaciones.h
+
+1570744447 c:\users\acquisto\desktop\programacion y laboratorio\laboratorioyprogramacioni\primer_parcial_laboratorio\pelicula.h
+	"Genero.h"
+
+1570665479 c:\users\acquisto\desktop\programacion y laboratorio\laboratorioyprogramacioni\primer_parcial_laboratorio\genero.h
+
+1570668834 c:\users\acquisto\desktop\programacion y laboratorio\laboratorioyprogramacioni\primer_parcial_laboratorio\actor.h
+
+1570834445 c:\users\acquisto\desktop\programacion y laboratorio\laboratorioyprogramacioni\primer_parcial_laboratorio\elenco.h
+
+1570833110 source:c:\users\acquisto\desktop\programacion y laboratorio\laboratorioyprogramacioni\primer_parcial_laboratorio\elenco.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"Validaciones.h"
+	"Pelicula.h"
+	"Genero.h"
+	"Actor.h"
+	"Elenco.h"
+
+1570665479 source:c:\users\acquisto\desktop\programacion y laboratorio\laboratorioyprogramacioni\primer_parcial_laboratorio\genero.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"Validaciones.h"
+	"Pelicula.h"
+	"Genero.h"
+	"Actor.h"
+	"Elenco.h"
+
+1570746444 source:c:\users\acquisto\desktop\programacion y laboratorio\laboratorioyprogramacioni\primer_parcial_laboratorio\main.c
+	<stdio.h>
+	<stdlib.h>
+	"Validaciones.h"
+	"Pelicula.h"
+	"Genero.h"
+	"Actor.h"
+	"Elenco.h"
+
+1570833498 source:c:\users\acquisto\desktop\programacion y laboratorio\laboratorioyprogramacioni\primer_parcial_laboratorio\pelicula.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"Validaciones.h"
+	"Pelicula.h"
+	"Genero.h"
+	"Actor.h"
+	"Elenco.h"
+
+1570665953 source:c:\users\acquisto\desktop\programacion y laboratorio\laboratorioyprogramacioni\primer_parcial_laboratorio\validaciones.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	"Validaciones.h"
+

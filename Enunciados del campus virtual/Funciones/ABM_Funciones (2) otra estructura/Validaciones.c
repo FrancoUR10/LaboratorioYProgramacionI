@@ -79,7 +79,7 @@ int validarSoloLetras(char unArray[])
     int i=0;
     while(unArray[i]!='\0')
     {
-        if((unArray[i] < 'a' || unArray[i] > 'z') && (unArray[i] < 'A' || unArray[i] > 'Z'))
+        if((unArray[i] != ' ') && (unArray[i] < 'a' || unArray[i] > 'z') && (unArray[i] < 'A' || unArray[i] > 'Z'))
         {
             retorno=0;
         }

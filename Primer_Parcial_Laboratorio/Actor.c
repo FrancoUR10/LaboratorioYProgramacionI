@@ -41,6 +41,7 @@ void menuGestionarActores(eActor listaActores[],int tamActor,int* contAltas)
                 break;
             default:
                 printf("\nOpcion ingresada no valida\a\n");
+                system("pause");
         }
     }
     while(continuarMenu=='s');
@@ -57,6 +58,22 @@ void inicializarActores(eActor listaActores[],int tamActor)
         listaActores[i].codigo=-1;
         strcpy(listaActores[i].sexo,"VACIO");
         listaActores[i].estado=LIBRE;
+    }
+}
+void harcodearActores(eActor listaActores[],int tamActor)
+{
+    char nombre[3][51]={"Ben","Abrahm","Irene"};
+    char apellido[3][51]={"Patric","Salgado","Beltran"};
+    char sexo[3][51]={"Masculino","Masculino","Femenino"};
+    int codigo[3]={1,2,3};
+    int i;
+    for(i=0;i<tamActor;i++)
+    {
+        strcpy(listaActores[i].nombre,nombre[i]);
+        strcpy(listaActores[i].apellido,apellido[i]);
+        strcpy(listaActores[i].sexo,sexo[i]);
+        listaActores[i].codigo=codigo[i];
+        listaActores[i].estado=OCUPADO;
     }
 }
 int buscarSoloUnEstado(eActor listaActores[],int tamActor,int estadoDelLugar)
@@ -101,7 +118,7 @@ void darDeAlta(eActor listaActores[],int tamActor,int* contDeAltas)
             listaActores[indiceLibre].codigo=auxCodigoInt;
             listaActores[indiceLibre].estado=OCUPADO;
             *contDeAltas=auxCodigoInt+1;
-            printf("\nSe ha dado de alta el id numero %d\n",auxCodigoInt);
+            printf("\nSe ha dado de alta el codigo numero %d\n",auxCodigoInt);
         }
     }
 }
@@ -116,11 +133,11 @@ int pedirDatosSecuenciales(eActor listaActores[],int tamActor,int indice)
 
     if(ingresoSecuencialValido==1)
     {
-        if(!getStrLetras("\nIngrese el nombre del empleado: ",auxDatos.nombre,"\nSolo se permiten letras\a\n","\nRango valido entre 1 y 7\a\n",1,7,3))
+        if(!getStrLetras("\nIngrese el nombre del actor/a: ",auxDatos.nombre,"\nSolo se permiten letras\a\n","\nRango valido entre 1 y 13\a\n",1,13,3))
         {
             ingresoSecuencialValido=0;
         }
-        else if(!getStrLetras("\nIngrese el apellido del empleado: ",auxDatos.apellido,"\nSolo se permiten letras\a\n","\nRango valido entre 1 y 7\a\n",1,7,3))
+        else if(!getStrLetras("\nIngrese el apellido del actor/a: ",auxDatos.apellido,"\nSolo se permiten letras\a\n","\nRango valido entre 1 y 13\a\n",1,13,3))
         {
             ingresoSecuencialValido=0;
         }
@@ -180,7 +197,7 @@ void pedirDatosAEleccion(eActor listaActores[],int tamActor,int indice)
         switch(opcionMenu)
         {
             case 1:
-                if(getStrLetras("\nIngrese el nombre a modificar: ",auxDatos.nombre,"\nSolo se permiten letras\n","\nRango valido entre 1 y 7\n",1,7,3))
+                if(getStrLetras("\nIngrese el nombre a modificar: ",auxDatos.nombre,"\nSolo se permiten letras\n","\nRango valido entre 1 y 13\n",1,13,3))
                 {
                     printf("\nSe ha modificado el nombre\n");
                 }
@@ -191,7 +208,7 @@ void pedirDatosAEleccion(eActor listaActores[],int tamActor,int indice)
                 system("pause");
                 break;
             case 2:
-                if(getStrLetras("\nIngrese el apellido a modificar: ",auxDatos.apellido,"\nSolo se permiten letras\n","\nRango valido entre 1 y 7\n",1,7,3))
+                if(getStrLetras("\nIngrese el apellido a modificar: ",auxDatos.apellido,"\nSolo se permiten letras\n","\nRango valido entre 1 y 13\n",1,13,3))
                 {
                     printf("\nSe ha modificado el apellido\n");
                 }
@@ -202,7 +219,7 @@ void pedirDatosAEleccion(eActor listaActores[],int tamActor,int indice)
                 system("pause");
                 break;
             case 3:
-                confirmacionSexoActor=validarSoloSexo("\nIngrese el sexo del actor/a a modificar ('f' o 'm'): ","\nSolo confirme con ('f' o con 'm'): ");
+                confirmacionSexoActor=validarSoloSexo("\nIngrese el sexo a modificar ('f' o 'm'): ","\nSolo confirme con ('f' o con 'm'): ");
                 if(confirmacionSexoActor==1)
                 {
                     strcpy(auxDatos.sexo,"Femenino");
@@ -282,12 +299,13 @@ void mostrarListadoDeActores(eActor listaActores[],int tamActor)
     }
     else
     {
-        printf("\nNOMBRE\tAPELLIDO\tSEXO\tCODIGO\n");
+        //printf("\nNOMBRE\tAPELLIDO\tSEXO\tCODIGO\n");
         for(i=0;i<tamActor;i++)
         {
             if(listaActores[i].estado==OCUPADO)
             {
-                mostrarSoloUnActor(listaActores[i]);
+                //mostrarSoloUnActor(listaActores[i]);
+                mostrarSoloUnActorTest(listaActores[i]);
             }
         }
     }
@@ -298,6 +316,13 @@ void mostrarSoloUnActor(eActor unActor)
     printf("\t%s",unActor.apellido);
     printf("\t\t%s",unActor.sexo);
     printf("\t%d\n",unActor.codigo);
+}
+void mostrarSoloUnActorTest(eActor unActor)
+{
+    printf("\nNombre: %s",unActor.nombre);
+    printf("\tApellido: %s",unActor.apellido);
+    printf("\tSexo: %s",unActor.sexo);
+    printf("\tCodigo: %d\n",unActor.codigo);
 }
 int buscarActorPorCodigo(eActor listaActores[],int tamActor,int valorABuscar,int estadoDelLugar)
 {

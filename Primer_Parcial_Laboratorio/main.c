@@ -12,20 +12,24 @@
 
 int main()
 {
-    int opcionMenu;
-    char continuarMenu='s';
-
-
     ePelicula listaPeliculas[MAX_PELICULA];
     eGenero listaGeneros[MAX_GENERO];
     eActor listaActores[MAX_ACTOR];
     eElenco listaElencos[MAX_ELENCO];
-    int contAltasActores=1;
+    int contAltasActores=4;
+    int contAltasElencos=4;
+    int opcionMenu;
+    char continuarMenu='s';
 
     inicializarPelicula(listaPeliculas,MAX_PELICULA);
     inicializarActores(listaActores,MAX_ACTOR);
     inicializarElenco(listaElencos,MAX_ELENCO);
+
+    harcodearPelicula(listaPeliculas,4);
+    harcodearActores(listaActores,3);
     harcodearGenero(listaGeneros,MAX_GENERO);
+    harcodearElenco(listaElencos,3);
+
 
     do
     {
@@ -36,7 +40,7 @@ int main()
                 menuGestionarActores(listaActores,MAX_ACTOR,&contAltasActores);
                 break;
             case 2:
-                ordenarElencos(listaElencos,MAX_ELENCO);
+                menuGestionarElencos(listaElencos,MAX_ELENCO,listaActores,MAX_ACTOR,listaPeliculas,MAX_PELICULA,listaGeneros,MAX_GENERO,&contAltasElencos);
                 break;
             case 3:
                 continuarMenu='n';

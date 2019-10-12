@@ -35,6 +35,10 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="Alumno.h" />
+		<Unit filename="Inscripciones.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="Inscripciones.h" />
 		<Unit filename="Materias.c">
 			<Option compilerVar="CC" />
 		</Unit>
