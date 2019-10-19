@@ -217,13 +217,14 @@ void pedirDatosAEleccion(eActor listaActores[],int tamActor,int indice)
                 if(confirmacionSexoActor==1)
                 {
                     strcpy(auxDatos.sexo,"Femenino");
-                    flagPrimerCambio=0;
                 }
                 else if(confirmacionSexoActor==0)
                 {
                     strcpy(auxDatos.sexo,"Masculino");
-                    flagPrimerCambio=0;
                 }
+                printf("\nSe ha modificado el genero\n");
+                flagPrimerCambio=0;
+                system("pause");
                 break;
             case 4:
                 if(flagPrimerCambio==0)
