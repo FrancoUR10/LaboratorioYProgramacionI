@@ -1,0 +1,30 @@
+# depslib dependency file v1.0
+1571491132 source:d:\### repaso los sabados\ejemplodebibliotecasdeestructuras\localidad.c
+	<stdio.h>
+	<string.h>
+	"localidad.h"
+
+1571492194 source:d:\### repaso los sabados\ejemplodebibliotecasdeestructuras\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"fecha.h"
+	"localidad.h"
+	"persona.h"
+
+1571493085 d:\### repaso los sabados\ejemplodebibliotecasdeestructuras\localidad.h
+	"fecha.h"
+
+1571492573 source:d:\### repaso los sabados\ejemplodebibliotecasdeestructuras\fecha.c
+	"fecha.h"
+	"fecha.h"
+
+1571492429 d:\### repaso los sabados\ejemplodebibliotecasdeestructuras\fecha.h
+
+1571491293 d:\### repaso los sabados\ejemplodebibliotecasdeestructuras\persona.h
+
+1571491540 source:d:\### repaso los sabados\ejemplodebibliotecasdeestructuras\persona.c
+	<stdio.h>
+	<string.h>
+	"persona.h"
+
