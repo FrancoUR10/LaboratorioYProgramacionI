@@ -163,6 +163,7 @@ int pedirDatosSecuenciales(eActor listaActores[],int tamActor,int indice)
 
 void pedirDatosAEleccion(eActor listaActores[],int tamActor,int indice)
 {
+    int flagPrimerCambio=1;
     int confirmacionSexoActor;
     eActor auxDatos;
     int opcionMenu;
@@ -191,6 +192,7 @@ void pedirDatosAEleccion(eActor listaActores[],int tamActor,int indice)
                 if(getStrLetras("\nIngrese el nombre a modificar: ",auxDatos.nombre,"\nSolo se permiten letras\n","\nRango valido entre 1 y 13\n",1,13,3))
                 {
                     printf("\nSe ha modificado el nombre\n");
+                    flagPrimerCambio=0;
                 }
                 else
                 {
@@ -202,6 +204,7 @@ void pedirDatosAEleccion(eActor listaActores[],int tamActor,int indice)
                 if(getStrLetras("\nIngrese el apellido a modificar: ",auxDatos.apellido,"\nSolo se permiten letras\n","\nRango valido entre 1 y 13\n",1,13,3))
                 {
                     printf("\nSe ha modificado el apellido\n");
+                    flagPrimerCambio=0;
                 }
                 else
                 {
@@ -214,29 +217,46 @@ void pedirDatosAEleccion(eActor listaActores[],int tamActor,int indice)
                 if(confirmacionSexoActor==1)
                 {
                     strcpy(auxDatos.sexo,"Femenino");
+                    flagPrimerCambio=0;
                 }
                 else if(confirmacionSexoActor==0)
                 {
                     strcpy(auxDatos.sexo,"Masculino");
+                    flagPrimerCambio=0;
                 }
                 break;
             case 4:
-                confirmacion=confirmarCambios("\nEsta seguro que desea confirmar los cambios realizados? (s/n): ","\nSolo confirme con ('s' o con 'n'): ");
-                if(confirmacion==1)
+                if(flagPrimerCambio==0)
                 {
-                    listaActores[indice]=auxDatos;
-                    printf("\nSe han confirmado los cambios realizados\n");
-                    system("pause");
+                    confirmacion=confirmarCambios("\nEsta seguro que desea confirmar los cambios realizados? (s/n): ","\nSolo confirme con ('s' o con 'n'): ");
+                    if(confirmacion==1)
+                    {
+                        listaActores[indice]=auxDatos;
+                        printf("\nSe han confirmado los cambios realizados\n");
+                        flagPrimerCambio=1;
+                    }
+                    else if(confirmacion==0)
+                    {
+                        printf("\nNo se han confirmado los cambios realizados\n");
+                    }
                 }
-                else if(confirmacion==0)
+                else
                 {
-                    printf("\nNo se han confirmado los cambios realizados\n");
-                    system("pause");
+                    printf("\nNo se han realizado nuevos cambios que confirmar\n");
                 }
+                system("pause");
                 break;
             case 5:
-                confirmacion=confirmarCambios("\nEsta seguro que desea finalizar la modificacion? (s/n): ","\nSolo confirme con ('s' o con 'n'): ");
-                if(confirmacion==1)
+                if(flagPrimerCambio==0)
+                {
+                    confirmacion=confirmarCambios("\nEsta seguro que desea salir del menu sin confirmar los cambios? (s/n): ","\nSolo confirme con ('s' o con 'n'): ");
+                    if(confirmacion==1)
+                    {
+                        printf("\nModificacion finalizada\n");
+                        continuarMenu='n';
+                    }
+                }
+                else
                 {
                     printf("\nModificacion finalizada\n");
                     continuarMenu='n';

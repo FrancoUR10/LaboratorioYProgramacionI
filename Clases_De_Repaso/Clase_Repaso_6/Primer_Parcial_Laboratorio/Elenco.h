@@ -22,7 +22,6 @@ void menuGestionarElencos(eElenco listaElencos[],int tamElenco,eActor listaActor
 void inicializarElenco(eElenco listaElencos[],int tamElenco);
 void harcodearElenco(eElenco listaElencos[],int tamElenco);
 int pedirDatosDeElencos(eElenco listaElencos[],int tamElenco,int indice,eActor listaActores[],int tamActor,ePelicula listaPeliculas[],int tamPelicula,eGenero listaGeneros[],int tamGenero);
-void ordenarElencos(eElenco listaElencos[],int tamElenco);
 void mostrarListaElencos(eElenco listaElencos[],int tamElenco,eActor listaActores[],int tamActor,ePelicula listaPeliculas[],int tamPelicula);
 void mostrarUnSoloElenco(eElenco unElenco,eActor listaActores[],int indiceActor);
 void darDeAltaElencos(eElenco listaElencos[],int tamElenco,int* contadorDeAltasElencos,eActor listaActores[],int tamActor,ePelicula listaPeliculas[],int tamPelicula,eGenero listaGeneros[],int tamGenero);

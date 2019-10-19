@@ -143,31 +143,6 @@ int pedirDatosDeElencos(eElenco listaElencos[],int tamElenco,int indice,eActor l
     }
     return retorno;
 }
-void ordenarElencos(eElenco listaElencos[],int tamElenco)
-{
-    int i;
-    int j;
-    eElenco auxiliar;
-    for(i=0;i<tamElenco-1;i++)
-    {
-        for(j=i+1;j<tamElenco;j++)
-        {
-            if(listaElencos[i].codigoPelicula > listaElencos[j].codigoPelicula)
-            {
-                auxiliar=listaElencos[i];
-                listaElencos[i]=listaElencos[j];
-                listaElencos[j]=auxiliar;
-            }
-            else if(listaElencos[i].codigoPelicula == listaElencos[j].codigoPelicula)
-            if(listaElencos[i].codigoActor > listaElencos[j].codigoActor)
-            {
-                auxiliar=listaElencos[i];
-                listaElencos[i]=listaElencos[j];
-                listaElencos[j]=auxiliar;
-            }
-        }
-    }
-}
 void mostrarListaElencos(eElenco listaElencos[],int tamElenco,eActor listaActores[],int tamActor,ePelicula listaPeliculas[],int tamPelicula)
 {
     int i;
@@ -249,7 +224,7 @@ int buscarActorEnElElenco(eElenco listaElencos[],int tamElenco,int codigoActorEn
     int i;
     for(i=0;i<tamElenco;i++)
     {
-        if((listaElencos[i].estado==OCUPADO)&& ((listaElencos[i].codigoActor==codigoActorEnElenco) && (listaElencos[i].codigoPelicula==codigoPeliculaEnElenco)))
+        if((listaElencos[i].estado==OCUPADO) && ((listaElencos[i].codigoActor==codigoActorEnElenco) && (listaElencos[i].codigoPelicula==codigoPeliculaEnElenco)))
         {
             retorno=i;
             break;
