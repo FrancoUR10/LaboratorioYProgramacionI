@@ -1,0 +1,13 @@
+# depslib dependency file v1.0
+1571613206 source:c:\users\acquisto\desktop\programacion y laboratorio\practica_punteros\main.c
+	<stdio.h>
+	<stdlib.h>
+	"Biblioteca_arrays.h"
+
+1571613175 source:c:\users\acquisto\desktop\programacion y laboratorio\practica_punteros\biblioteca_arrays.c
+	"Biblioteca_arrays.h"
+
+1571612909 c:\users\acquisto\desktop\programacion y laboratorio\practica_punteros\biblioteca_arrays.h
+	<stdio.h>
+	<stdlib.h>
+
