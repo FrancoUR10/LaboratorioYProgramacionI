@@ -1,0 +1,43 @@
+# depslib dependency file v1.0
+1570907951 source:c:\users\acquisto\desktop\programacion y laboratorio\abm\main.c
+	<stdio.h>
+	<stdlib.h>
+	"Validaciones.h"
+	"abm.h"
+
+1570902507 c:\users\acquisto\desktop\programacion y laboratorio\abm\validaciones.h
+
+1570908625 c:\users\acquisto\desktop\programacion y laboratorio\abm\abm.h
+
+1570901790 source:c:\users\acquisto\desktop\programacion y laboratorio\abm\validaciones.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	"Validaciones.h"
+
+1570937255 source:c:\users\acquisto\desktop\programacion y laboratorio\abm\abm.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"Validaciones.h"
+	"abm.h"
+
+1571596752 source:c:\users\acquisto\desktop\programacion y laboratorio\laboratorioyprogramacioni\enunciados del campus virtual\funciones\abm\abm.c
+	"abm.h"
+
+1571596752 c:\users\acquisto\desktop\programacion y laboratorio\laboratorioyprogramacioni\enunciados del campus virtual\funciones\abm\abm.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"Validaciones.h"
+
+1571596708 c:\users\acquisto\desktop\programacion y laboratorio\laboratorioyprogramacioni\enunciados del campus virtual\funciones\abm\validaciones.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+
+1571596708 source:c:\users\acquisto\desktop\programacion y laboratorio\laboratorioyprogramacioni\enunciados del campus virtual\funciones\abm\validaciones.c
+	"Validaciones.h"
+
