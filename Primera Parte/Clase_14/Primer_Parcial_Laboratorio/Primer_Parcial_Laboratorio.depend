@@ -1,0 +1,213 @@
+# depslib dependency file v1.0
+1570537705 source:d:\primer_parcial_laboratorio\genero.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"Validaciones.h"
+	"Pelicula.h"
+	"Genero.h"
+	"Actor.h"
+	"Elenco.h"
+
+1570539304 d:\primer_parcial_laboratorio\validaciones.h
+
+1570537123 d:\primer_parcial_laboratorio\pelicula.h
+
+1570536934 d:\primer_parcial_laboratorio\genero.h
+
+1570544111 source:d:\primer_parcial_laboratorio\main.c
+	<stdio.h>
+	<stdlib.h>
+	"Validaciones.h"
+	"Pelicula.h"
+	"Genero.h"
+	"Actor.h"
+	"Elenco.h"
+
+1570543814 source:d:\primer_parcial_laboratorio\pelicula.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"Validaciones.h"
+	"Pelicula.h"
+	"Genero.h"
+	"Actor.h"
+	"Elenco.h"
+
+1570539304 source:d:\primer_parcial_laboratorio\validaciones.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	"Validaciones.h"
+
+1570535108 d:\primer_parcial_laboratorio\abm.h
+	"Localidad.h"
+
+1570535108 d:\primer_parcial_laboratorio\localidad.h
+
+1570544049 source:d:\primer_parcial_laboratorio\elenco.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"Validaciones.h"
+	"Pelicula.h"
+	"Genero.h"
+	"Actor.h"
+	"Elenco.h"
+
+1570543369 d:\primer_parcial_laboratorio\actor.h
+
+1570543940 d:\primer_parcial_laboratorio\elenco.h
+
+1570544225 source:d:\primer_parcial_laboratorio\actor.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"Validaciones.h"
+	"Pelicula.h"
+	"Genero.h"
+	"Actor.h"
+	"Elenco.h"
+
+1570738681 source:c:\users\acquisto\desktop\programacion y laboratorio\laboratorioyprogramacioni\primer_parcial_laboratorio\actor.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"Validaciones.h"
+	"Pelicula.h"
+	"Genero.h"
+	"Actor.h"
+	"Elenco.h"
+
+1570665479 c:\users\acquisto\desktop\programacion y laboratorio\laboratorioyprogramacioni\primer_parcial_laboratorio\validaciones.h
+
+1570744447 c:\users\acquisto\desktop\programacion y laboratorio\laboratorioyprogramacioni\primer_parcial_laboratorio\pelicula.h
+	"Genero.h"
+
+1570665479 c:\users\acquisto\desktop\programacion y laboratorio\laboratorioyprogramacioni\primer_parcial_laboratorio\genero.h
+
+1570668834 c:\users\acquisto\desktop\programacion y laboratorio\laboratorioyprogramacioni\primer_parcial_laboratorio\actor.h
+
+1570834445 c:\users\acquisto\desktop\programacion y laboratorio\laboratorioyprogramacioni\primer_parcial_laboratorio\elenco.h
+
+1570833110 source:c:\users\acquisto\desktop\programacion y laboratorio\laboratorioyprogramacioni\primer_parcial_laboratorio\elenco.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"Validaciones.h"
+	"Pelicula.h"
+	"Genero.h"
+	"Actor.h"
+	"Elenco.h"
+
+1570665479 source:c:\users\acquisto\desktop\programacion y laboratorio\laboratorioyprogramacioni\primer_parcial_laboratorio\genero.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"Validaciones.h"
+	"Pelicula.h"
+	"Genero.h"
+	"Actor.h"
+	"Elenco.h"
+
+1570746444 source:c:\users\acquisto\desktop\programacion y laboratorio\laboratorioyprogramacioni\primer_parcial_laboratorio\main.c
+	<stdio.h>
+	<stdlib.h>
+	"Validaciones.h"
+	"Pelicula.h"
+	"Genero.h"
+	"Actor.h"
+	"Elenco.h"
+
+1570833498 source:c:\users\acquisto\desktop\programacion y laboratorio\laboratorioyprogramacioni\primer_parcial_laboratorio\pelicula.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"Validaciones.h"
+	"Pelicula.h"
+	"Genero.h"
+	"Actor.h"
+	"Elenco.h"
+
+1570665953 source:c:\users\acquisto\desktop\programacion y laboratorio\laboratorioyprogramacioni\primer_parcial_laboratorio\validaciones.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	"Validaciones.h"
+
+1571670192 source:c:\users\alumno\desktop\primer_parcial_laboratorio\elenco.c
+	"Elenco.h"
+
+1571670192 c:\users\alumno\desktop\primer_parcial_laboratorio\elenco.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"Validaciones.h"
+	"Pelicula.h"
+	"Actor.h"
+	"Genero.h"
+
+1571659155 c:\users\alumno\desktop\primer_parcial_laboratorio\validaciones.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+
+1571669862 c:\users\alumno\desktop\primer_parcial_laboratorio\pelicula.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"Validaciones.h"
+	"Fecha.h"
+	"Genero.h"
+
+1571659857 c:\users\alumno\desktop\primer_parcial_laboratorio\fecha.h
+
+1571669862 c:\users\alumno\desktop\primer_parcial_laboratorio\genero.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1571664145 c:\users\alumno\desktop\primer_parcial_laboratorio\actor.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"Validaciones.h"
+	"Pais.h"
+
+1571670123 c:\users\alumno\desktop\primer_parcial_laboratorio\pais.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1571659857 source:c:\users\alumno\desktop\primer_parcial_laboratorio\fecha.c
+	"Fecha.h"
+
+1571669930 source:c:\users\alumno\desktop\primer_parcial_laboratorio\genero.c
+	"Genero.h"
+
+1571670216 source:c:\users\alumno\desktop\primer_parcial_laboratorio\main.c
+	<stdio.h>
+	<stdlib.h>
+	"Validaciones.h"
+	"Fecha.h"
+	"Pais.h"
+	"Pelicula.h"
+	"Genero.h"
+	"Actor.h"
+	"Elenco.h"
+
+1571670123 source:c:\users\alumno\desktop\primer_parcial_laboratorio\pais.c
+	"Pais.h"
+
+1571669930 source:c:\users\alumno\desktop\primer_parcial_laboratorio\pelicula.c
+	"Pelicula.h"
+
+1571659155 source:c:\users\alumno\desktop\primer_parcial_laboratorio\validaciones.c
+	"Validaciones.h"
+
+1571667579 source:c:\users\alumno\desktop\primer_parcial_laboratorio\actor.c
+	"Actor.h"
+
