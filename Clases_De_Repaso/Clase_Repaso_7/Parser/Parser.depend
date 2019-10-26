@@ -1,0 +1,13 @@
+# depslib dependency file v1.0
+1572099274 source:c:\users\alumno\desktop\parser\main.c
+	<stdio.h>
+	<stdlib.h>
+	"Archivos.h"
+
+1572098267 source:c:\users\alumno\desktop\parser\archivos.c
+	"Archivos.h"
+
+1572099115 c:\users\alumno\desktop\parser\archivos.h
+	<stdio.h>
+	<stdlib.h>
+
