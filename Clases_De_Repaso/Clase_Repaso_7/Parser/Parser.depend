@@ -11,3 +11,17 @@
 	<stdio.h>
 	<stdlib.h>
 
+1572104617 source:c:\users\alumno\desktop\laboratorioyprogramacioni\clases_de_repaso\clase_repaso_7\parser\archivos.c
+	"Archivos.h"
+
+1572104617 c:\users\alumno\desktop\laboratorioyprogramacioni\clases_de_repaso\clase_repaso_7\parser\archivos.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1572104875 source:c:\users\alumno\desktop\laboratorioyprogramacioni\clases_de_repaso\clase_repaso_7\parser\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"Archivos.h"
+
