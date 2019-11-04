@@ -1,0 +1,14 @@
+# depslib dependency file v1.0
+1572879353 source:c:\users\alumno\desktop\lista_dinamica\main.c
+	<stdio.h>
+	<stdlib.h>
+	"Persona.h"
+
+1572879166 c:\users\alumno\desktop\lista_dinamica\persona.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1572879455 source:c:\users\alumno\desktop\lista_dinamica\persona.c
+	"Persona.h"
+
