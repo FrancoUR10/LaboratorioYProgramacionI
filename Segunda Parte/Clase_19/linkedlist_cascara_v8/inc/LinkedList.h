@@ -18,32 +18,19 @@
 
 #ifndef __LINKEDLIST
 #define __LINKEDLIST
+
 struct Node
 {
-    void* pElement;                 //puntero al elemento (persona, empleado, etc.)
-    struct Node* pNextNode;         //puntero al prox nodo
+    void* pElement;                        //puntero al elemento (persona, empleado, etc.)
+    struct Node* pNextNode;                //puntero al prox nodo
 }typedef Node;
 
 struct LinkedList
 {
     Node* pFirstNode;
-    int size;                       //cada vez que agrego o elimino un elemento size++/--
+    int size;                              //cada vez que agrego o elimino un elemento size++/--
 }typedef LinkedList;
-/*
-typedef struct
-{
-    void* pElement;
-    Node* pNextNode;
-}Node;
-typedef struct
-{
-    Node* pFirstNode;
-    int size;
-}LinkedList;
-*/
 #endif
-
-
 
 //Publicas
 LinkedList* ll_newLinkedList(void);
@@ -51,7 +38,7 @@ int ll_len(LinkedList* this);                                       //devuelve e
 Node* test_getNode(LinkedList* this, int nodeIndex);
 int test_addNode(LinkedList* this, int nodeIndex,void* pElement);
 int ll_add(LinkedList* this, void* pElement);
-void* ll_get(LinkedList* this, int index);
+void* ll_get(LinkedList* lista, int index);
 int ll_set(LinkedList* this, int index,void* pElement);
 int ll_remove(LinkedList* this,int index);
 int ll_clear(LinkedList* this);

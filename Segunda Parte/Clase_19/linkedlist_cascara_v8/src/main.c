@@ -26,29 +26,26 @@
 
 int main(void)
 {
-    //startTesting(1);  // ll_newLinkedList
-    //startTesting(2);  // ll_len
- //startTesting(3);  // getNode - test_getNode
-    //startTesting(4);  // addNode - test_addNode
-        startTesting(5);  // ll_add
-        /*
-        startTesting(6);  // ll_get
-        startTesting(7);  // ll_set
-        startTesting(8);  // ll_remove
-        startTesting(9);  // ll_clear
-        startTesting(10); // ll_deleteLinkedList
-        startTesting(11); // ll_indexOf
-        startTesting(12); // ll_isEmpty
-        startTesting(13); // ll_push
-        startTesting(14); // ll_pop
-        startTesting(15); // ll_contains
-        startTesting(16); // ll_containsAll
-        startTesting(17); // ll_subList
-        startTesting(18); // ll_clone
-        startTesting(19); // ll_sort
-        */
-
-    return 0;
+    //startTesting(1);  // ll_newLinkedList ok
+    //startTesting(2);  // ll_len ok
+    //startTesting(3);  // getNode - test_getNode ok
+    //startTesting(4);  // addNode - test_addNode ok
+    //startTesting(5);  // ll_add ok
+    //startTesting(6);  // ll_get ok
+    //startTesting(8);  // ll_remove ok
+    //startTesting(9);  // ll_clear ok
+    //startTesting(7);  // ll_set ok
+    //startTesting(10); // ll_deleteLinkedList ok
+    //startTesting(12); // ll_isEmpty ok
+    //startTesting(11); // ll_indexOf ok
+    //startTesting(18); // ll_clone ok
+    //startTesting(13); // ll_push
+    //startTesting(14); // ll_pop
+    //startTesting(15); // ll_contains
+    //startTesting(16); // ll_containsAll
+    //startTesting(17); // ll_subList
+    //startTesting(19); // ll_sort
+        return 0;
 }
 
 
