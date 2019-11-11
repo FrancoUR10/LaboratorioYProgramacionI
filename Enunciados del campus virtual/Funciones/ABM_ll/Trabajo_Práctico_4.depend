@@ -41,7 +41,7 @@
 	<stdlib.h>
 	<string.h>
 
-1573478550 source:d:\laboratorioyprogramacioni\enunciados del campus virtual\funciones\abm_ll\main.c
+1573482221 source:d:\laboratorioyprogramacioni\enunciados del campus virtual\funciones\abm_ll\main.c
 	<stdio.h>
 	<stdlib.h>
 	"LinkedList.h"
@@ -54,7 +54,7 @@
 	<string.h>
 	<ctype.h>
 
-1573477993 d:\laboratorioyprogramacioni\enunciados del campus virtual\funciones\abm_ll\empleado.h
+1573482233 d:\laboratorioyprogramacioni\enunciados del campus virtual\funciones\abm_ll\empleado.h
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -64,6 +64,6 @@
 1573477157 source:d:\laboratorioyprogramacioni\enunciados del campus virtual\funciones\abm_ll\validaciones.c
 	"Validaciones.h"
 
-1573478536 source:d:\laboratorioyprogramacioni\enunciados del campus virtual\funciones\abm_ll\empleado.c
+1573485288 source:d:\laboratorioyprogramacioni\enunciados del campus virtual\funciones\abm_ll\empleado.c
 	"Empleado.h"
 

@@ -30,8 +30,11 @@ eEmpleado* empleado_nuevoEmpleadoParametros(char* id,char* nombre,char* apellido
 void empleado_mostrarListaEmpleados(LinkedList* listaEmpleados);
 int empleado_buscarPorId(LinkedList* listaEmpleados,int idABuscar);
 
-void empleado_darDeAlta(LinkedList* listaEmpleados,int* contAltas);
+int empleado_darDeAlta(LinkedList* listaEmpleados,int* contAltas);
+int empleado_darDeBaja(LinkedList* listaEmpleados);
 int empleado_modificarDatos(LinkedList* listaEmpleados);
 void menuPedirDatosAModificar(LinkedList* listaEmpleados,int indiceEncontrado);
+int empleado_guardarDatos(FILE* archivo,LinkedList* listaEmpleados,int* contAltas);
+int empleado_cargarDatos(FILE* archivo,LinkedList* listaEmpleados,int* contAltas);
 
 #endif // EMPLEADO_H_INCLUDED

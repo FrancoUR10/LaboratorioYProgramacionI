@@ -169,7 +169,7 @@ void empleado_mostrarListaEmpleados(LinkedList* listaEmpleados)
         {
             for(i=0;i<len;i++)
             {
-                aux=ll_get(listaEmpleados,i);
+                aux=(eEmpleado*)ll_get(listaEmpleados,i);
                 empleado_mostrarUnEmpleado(aux);
             }
         }
@@ -185,7 +185,7 @@ int empleado_buscarPorId(LinkedList* listaEmpleados,int idABuscar)
     {
         for(i=0;i<len;i++)
         {
-            aux=ll_get(listaEmpleados,i);
+            aux=(eEmpleado*)ll_get(listaEmpleados,i);
             if(aux->id==idABuscar)
             {
                 retorno=i;
@@ -195,8 +195,9 @@ int empleado_buscarPorId(LinkedList* listaEmpleados,int idABuscar)
     }
     return retorno;
 }
-void empleado_darDeAlta(LinkedList* listaEmpleados,int* contAltas)
+int empleado_darDeAlta(LinkedList* listaEmpleados,int* contAltas)
 {
+    int sePudo=-1;
     int confirmacion;
     int auxIdInt;
     char auxNombre[256];
@@ -228,7 +229,7 @@ void empleado_darDeAlta(LinkedList* listaEmpleados,int* contAltas)
 
         if(ingresoSecuencialValido==1)
         {
-            confirmacion=confirmarCambios("\nEsta seguro que desea dar de alta? (s/n): ","\nSolo confirme con ('s' o con 'n')");
+            confirmacion=confirmarCambios("\nEsta seguro que desea dar de alta? (s/n): ","\nSolo confirme con ('s' o con 'n'): ");
             if(confirmacion==1)
             {
                 itoa(auxIdInt,auxIdStr,10);
@@ -236,17 +237,65 @@ void empleado_darDeAlta(LinkedList* listaEmpleados,int* contAltas)
                 auxDatos=empleado_nuevoEmpleadoParametros(auxIdStr,auxNombre,auxApellido,auxEdadStr,auxSueldoStr);
                 ll_add(listaEmpleados,auxDatos);
                 printf("\nSe ha dado de alta al id numero %d\n",auxIdInt);
+                sePudo=1;
             }
             else if(confirmacion==0)
             {
                 printf("\nAlta cancelada por el usuario\n");
+                sePudo=0;
             }
         }
-        else
+        if(sePudo==-1)
         {
             printf("\nAlta cancelada\n");
         }
     }
+    return sePudo;
+}
+int empleado_darDeBaja(LinkedList* listaEmpleados)
+{
+    int sePudo=-1;
+    int confirmacion;
+    int indiceResultadoBusqueda;
+    char auxIdStr[256];
+    int auxIdInt;
+    if(listaEmpleados!=NULL && ll_isEmpty(listaEmpleados)==1)
+    {
+        printf("\nNo hay ningun elemento en la lista\n");
+    }
+    else
+    {
+        empleado_mostrarListaEmpleados(listaEmpleados);
+        if(getStrNumerosSinRango("\nIngrese el id a dar de baja: ",auxIdStr,"\nSolo se permiten numeros\n",3))
+        {
+            auxIdInt=atoi(auxIdStr);
+            indiceResultadoBusqueda=empleado_buscarPorId(listaEmpleados,auxIdInt);
+            if(indiceResultadoBusqueda==-1)
+            {
+                printf("\nEl id ingresado no existe\n");
+            }
+            else
+            {
+                confirmacion=confirmarCambios("\nEsta seguro que desea dar de baja? (s/n): ","\nSolo confirme con ('s' o con 'n'): ");
+                if(confirmacion==1)
+                {
+                    ll_remove(listaEmpleados,indiceResultadoBusqueda);
+                    printf("\nSe ha dado de baja al id numero %d\n",auxIdInt);
+                    sePudo=1;
+                }
+                else if(confirmacion==0)
+                {
+                    printf("\nBaja cancelada por el usuario\n");
+                    sePudo=0;
+                }
+            }
+        }
+        if(sePudo==-1)
+        {
+            printf("\nBaja cancelada\n");
+        }
+    }
+    return sePudo;
 }
 int empleado_modificarDatos(LinkedList* listaEmpleados)
 {
@@ -261,7 +310,7 @@ int empleado_modificarDatos(LinkedList* listaEmpleados)
     else
     {
         empleado_mostrarListaEmpleados(listaEmpleados);
-        if(getStrNumerosSinRango("\nIngrese el id a modificar: ",auxIdStr,"Solo se permiten numeros",3))
+        if(getStrNumerosSinRango("\nIngrese el id a modificar: ",auxIdStr,"\nSolo se permiten numeros\n",3))
         {
             auxIdInt=atoi(auxIdStr);
             indiceResultadoBusqueda=empleado_buscarPorId(listaEmpleados,auxIdInt);
@@ -275,6 +324,10 @@ int empleado_modificarDatos(LinkedList* listaEmpleados)
                 sePudo=1;
             }
         }
+        if(sePudo==-1)
+        {
+            printf("\nModificacion cancelada\n");
+        }
     }
     return sePudo;
 }
@@ -284,7 +337,7 @@ void menuPedirDatosAModificar(LinkedList* listaEmpleados,int indiceEncontrado)
     int flagDatoIngresado=0;
     char auxEdadStr[256];
     char auxSueldoStr[256];
-    eEmpleado* datosActuales=ll_get(listaEmpleados,indiceEncontrado);
+    eEmpleado* datosActuales=(eEmpleado*)ll_get(listaEmpleados,indiceEncontrado);
     eEmpleado auxDatos=*datosActuales;
     eEmpleado* proximosDatos=NULL;
     int opcionMenu;
@@ -296,6 +349,7 @@ void menuPedirDatosAModificar(LinkedList* listaEmpleados,int indiceEncontrado)
         empleado_mostrarUnEmpleado(datosActuales);
         printf("Datos a modificar\n");
         empleado_mostrarUnEmpleado(&auxDatos);
+
         printf("\nQue datos desea modificar?:\n");
         printf("1-NOMBRE\n");
         printf("2-APELLIDO\n");
@@ -312,6 +366,7 @@ void menuPedirDatosAModificar(LinkedList* listaEmpleados,int indiceEncontrado)
                     printf("\nSe ha ingresado el nombre\n");
                     flagDatoIngresado=1;
                 }
+                system("pause");
                 break;
             case 2:
                 if(getStrLetras("\nIngrese el apellido: ",auxDatos.apellido,"\nSolo se permiten letras\n","\nRango valido entre 3 y 12\n",3,12,3))
@@ -319,6 +374,7 @@ void menuPedirDatosAModificar(LinkedList* listaEmpleados,int indiceEncontrado)
                     printf("\nSe ha ingresado el apellido\n");
                     flagDatoIngresado=1;
                 }
+                system("pause");
                 break;
             case 3:
                 if(getStrNumeros("\nIngrese la edad: ",auxEdadStr,"\nSolo se permiten numeros\n","\nNumero valido entre el 20 y el 67\n",20,67,3))
@@ -326,6 +382,7 @@ void menuPedirDatosAModificar(LinkedList* listaEmpleados,int indiceEncontrado)
                     auxDatos.edad=atoi(auxEdadStr);
                     flagDatoIngresado=1;
                 }
+                system("pause");
                 break;
             case 4:
                 if(getStrNumerosFlotantes("\nIngrese el sueldo: ",auxSueldoStr,"\nSolo se permiten numeros y un solo punto\n","\nNumero valido entre el 1000 y el 10000\n",1000,10000,3))
@@ -333,6 +390,7 @@ void menuPedirDatosAModificar(LinkedList* listaEmpleados,int indiceEncontrado)
                     auxDatos.sueldo=atof(auxSueldoStr);
                     flagDatoIngresado=1;
                 }
+                system("pause");
                 break;
             case 5:
                 if(flagDatoIngresado==1)
@@ -345,7 +403,7 @@ void menuPedirDatosAModificar(LinkedList* listaEmpleados,int indiceEncontrado)
                         {
                             *proximosDatos=auxDatos;
                             ll_set(listaEmpleados,indiceEncontrado,proximosDatos);
-                            datosActuales=ll_get(listaEmpleados,indiceEncontrado);
+                            datosActuales=(eEmpleado*)ll_get(listaEmpleados,indiceEncontrado);
                             printf("\nSe han confirmado los cambios realizados\n");
                             flagDatoIngresado=0;
                         }
@@ -355,6 +413,7 @@ void menuPedirDatosAModificar(LinkedList* listaEmpleados,int indiceEncontrado)
                 {
                     printf("\nNo se ha realizado ningun cambio que confirmar\n");
                 }
+                system("pause");
                 break;
             case 6:
                 if(flagDatoIngresado==1)
@@ -371,11 +430,64 @@ void menuPedirDatosAModificar(LinkedList* listaEmpleados,int indiceEncontrado)
                     printf("\nModificacion finalizada\n");
                     continuarMenu='n';
                 }
+
                 break;
             default:
                 printf("\nOpcion ingresada no valida\n");
+                system("pause");
         }
-        system("pause");
     }
     while(continuarMenu=='s');
+}
+int empleado_guardarDatos(FILE* archivo,LinkedList* listaEmpleados,int* contAltas)
+{
+    int sePudo=-1;
+    int i;
+    int len=ll_len(listaEmpleados);
+    eEmpleado* auxDatos;
+    archivo=fopen("empleados.csv","wb");
+    if(listaEmpleados!=NULL && archivo!=NULL)
+    {
+        for(i=0;i<len;i++)
+        {
+            auxDatos=ll_get(listaEmpleados,i);
+            fwrite(auxDatos,sizeof(eEmpleado),1,archivo);
+        }
+        fclose(archivo);
+        sePudo=1;
+    }
+    return sePudo;
+}
+int empleado_cargarDatos(FILE* archivo,LinkedList* listaEmpleados,int* contAltas)
+{
+    int sePudo=-1;
+    eEmpleado* auxDatos;
+    if(listaEmpleados!=NULL && ll_isEmpty(listaEmpleados)==1)
+    {
+        printf("\nNo hay ningun elemento en la lista\n");
+    }
+    else
+    {
+        archivo=fopen("empleados.csv","rb");
+        if(archivo!=NULL)
+        {
+            ll_clear(listaEmpleados);
+            while(!feof(archivo))
+            {
+                auxDatos=empleado_nuevoEmpleado();
+                if(auxDatos!=NULL)
+                {
+                    fread(auxDatos,sizeof(eEmpleado),1,archivo);
+                    if(feof(archivo))
+                    {
+                        break;
+                    }
+                    ll_add(listaEmpleados,auxDatos);
+                }
+            }
+            fclose(archivo);
+            sePudo=1;
+        }
+    }
+    return sePudo;
 }
