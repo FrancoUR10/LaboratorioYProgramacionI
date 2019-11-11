@@ -1,0 +1,35 @@
+# depslib dependency file v1.0
+1573421887 source:c:\users\acquisto\desktop\programacion y laboratorio\tp enunciados\trabajo_práctico_4\linkedlist.c
+	"LinkedList.h"
+
+1573423461 c:\users\acquisto\desktop\programacion y laboratorio\tp enunciados\trabajo_práctico_4\linkedlist.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1571596708 source:c:\users\acquisto\desktop\programacion y laboratorio\tp enunciados\trabajo_práctico_4\validaciones.c
+	"Validaciones.h"
+
+1571596953 c:\users\acquisto\desktop\programacion y laboratorio\tp enunciados\trabajo_práctico_4\validaciones.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+
+1573427042 source:c:\users\acquisto\desktop\programacion y laboratorio\tp enunciados\trabajo_práctico_4\empleado.c
+	"Empleado.h"
+
+1573423870 c:\users\acquisto\desktop\programacion y laboratorio\tp enunciados\trabajo_práctico_4\empleado.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"Validaciones.h"
+	"LinkedList.h"
+
+1573427111 source:c:\users\acquisto\desktop\programacion y laboratorio\tp enunciados\trabajo_práctico_4\main.c
+	<stdio.h>
+	<stdlib.h>
+	"LinkedList.h"
+	"Validaciones.h"
+	"Empleado.h"
+
