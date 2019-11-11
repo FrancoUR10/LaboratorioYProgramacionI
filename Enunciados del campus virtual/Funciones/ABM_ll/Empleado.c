@@ -445,16 +445,23 @@ int empleado_guardarDatos(FILE* archivo,LinkedList* listaEmpleados,int* contAlta
     int i;
     int len=ll_len(listaEmpleados);
     eEmpleado* auxDatos;
-    archivo=fopen("empleados.csv","wb");
-    if(listaEmpleados!=NULL && archivo!=NULL)
+    if(listaEmpleados!=NULL && ll_isEmpty(listaEmpleados)==1)
     {
-        for(i=0;i<len;i++)
+        printf("\nNo hay ningun elemento en la lista\n");
+    }
+    else
+    {
+        archivo=fopen("empleados.csv","wb");
+        if(archivo!=NULL)
         {
-            auxDatos=ll_get(listaEmpleados,i);
-            fwrite(auxDatos,sizeof(eEmpleado),1,archivo);
+            for(i=0;i<len;i++)
+            {
+                auxDatos=ll_get(listaEmpleados,i);
+                fwrite(auxDatos,sizeof(eEmpleado),1,archivo);
+            }
+            fclose(archivo);
+            sePudo=1;
         }
-        fclose(archivo);
-        sePudo=1;
     }
     return sePudo;
 }
@@ -462,11 +469,6 @@ int empleado_cargarDatos(FILE* archivo,LinkedList* listaEmpleados,int* contAltas
 {
     int sePudo=-1;
     eEmpleado* auxDatos;
-    if(listaEmpleados!=NULL && ll_isEmpty(listaEmpleados)==1)
-    {
-        printf("\nNo hay ningun elemento en la lista\n");
-    }
-    else
     {
         archivo=fopen("empleados.csv","rb");
         if(archivo!=NULL)
