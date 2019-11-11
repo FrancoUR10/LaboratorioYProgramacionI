@@ -26,6 +26,7 @@ int main()
             case 2:
                 break;
             case 3:
+                empleado_modificarDatos(listaEmpleados);
                 break;
             case 4:
                 break;

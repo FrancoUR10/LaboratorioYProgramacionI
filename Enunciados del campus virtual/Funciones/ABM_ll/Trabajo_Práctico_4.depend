@@ -33,3 +33,37 @@
 	"Validaciones.h"
 	"Empleado.h"
 
+1573477157 source:d:\laboratorioyprogramacioni\enunciados del campus virtual\funciones\abm_ll\linkedlist.c
+	"LinkedList.h"
+
+1573477157 d:\laboratorioyprogramacioni\enunciados del campus virtual\funciones\abm_ll\linkedlist.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1573478550 source:d:\laboratorioyprogramacioni\enunciados del campus virtual\funciones\abm_ll\main.c
+	<stdio.h>
+	<stdlib.h>
+	"LinkedList.h"
+	"Validaciones.h"
+	"Empleado.h"
+
+1573477157 d:\laboratorioyprogramacioni\enunciados del campus virtual\funciones\abm_ll\validaciones.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+
+1573477993 d:\laboratorioyprogramacioni\enunciados del campus virtual\funciones\abm_ll\empleado.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"Validaciones.h"
+	"LinkedList.h"
+
+1573477157 source:d:\laboratorioyprogramacioni\enunciados del campus virtual\funciones\abm_ll\validaciones.c
+	"Validaciones.h"
+
+1573478536 source:d:\laboratorioyprogramacioni\enunciados del campus virtual\funciones\abm_ll\empleado.c
+	"Empleado.h"
+

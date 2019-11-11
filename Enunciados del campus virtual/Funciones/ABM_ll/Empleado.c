@@ -161,7 +161,7 @@ void empleado_mostrarListaEmpleados(LinkedList* listaEmpleados)
     int len=ll_len(listaEmpleados);
     if(listaEmpleados!=NULL)
     {
-        if(ll_isEmpty(listaEmpleados)==1)
+        if(listaEmpleados!=NULL && ll_isEmpty(listaEmpleados)==1)
         {
             printf("\nNo hay ningun elemento en la lista\n");
         }
@@ -209,25 +209,23 @@ void empleado_darDeAlta(LinkedList* listaEmpleados,int* contAltas)
     int ingresoSecuencialValido=1;
     if(listaEmpleados!=NULL)
     {
-        if(ingresoSecuencialValido==1)
+        if(!getStrLetras("\nIngrese el nombre: ",auxNombre,"\nSolo se permiten letras\n","\nRango valido entre 3 y 12\n",3,12,3))
         {
-            if(!getStrLetras("\nIngrese el nombre: ",auxNombre,"\nSolo se permiten letras\n","\nRango valido entre 3 y 12\n",3,12,3))
-            {
-                ingresoSecuencialValido=0;
-            }
-            else if(!getStrLetras("\nIngrese el apellido: ",auxApellido,"\nSolo se permiten letras\n","\nRango valido entre 3 y 12\n",3,12,3))
-            {
-                ingresoSecuencialValido=0;
-            }
-            else if(!getStrNumeros("\nIngrese la edad: ",auxEdadStr,"\nSolo se permiten numeros\n","\nNumero valido entre el 20 y el 67\n",20,67,3))
-            {
-                ingresoSecuencialValido=0;
-            }
-            else if(!getStrNumerosFlotantes("\nIngrese el sueldo: ",auxSueldoStr,"\nSolo se permiten numeros y un solo punto\n","\nNumero valido entre el 1000 y el 10000\n",1000,10000,3))
-            {
-                ingresoSecuencialValido=0;
-            }
+            ingresoSecuencialValido=0;
         }
+        else if(!getStrLetras("\nIngrese el apellido: ",auxApellido,"\nSolo se permiten letras\n","\nRango valido entre 3 y 12\n",3,12,3))
+        {
+            ingresoSecuencialValido=0;
+        }
+        else if(!getStrNumeros("\nIngrese la edad: ",auxEdadStr,"\nSolo se permiten numeros\n","\nNumero valido entre el 20 y el 67\n",20,67,3))
+        {
+            ingresoSecuencialValido=0;
+        }
+        else if(!getStrNumerosFlotantes("\nIngrese el sueldo: ",auxSueldoStr,"\nSolo se permiten numeros y un solo punto\n","\nNumero valido entre el 1000 y el 10000\n",1000,10000,3))
+        {
+            ingresoSecuencialValido=0;
+        }
+
         if(ingresoSecuencialValido==1)
         {
             confirmacion=confirmarCambios("\nEsta seguro que desea dar de alta? (s/n): ","\nSolo confirme con ('s' o con 'n')");
@@ -249,4 +247,135 @@ void empleado_darDeAlta(LinkedList* listaEmpleados,int* contAltas)
             printf("\nAlta cancelada\n");
         }
     }
+}
+int empleado_modificarDatos(LinkedList* listaEmpleados)
+{
+    int sePudo=-1;
+    int indiceResultadoBusqueda;
+    char auxIdStr[256];
+    int auxIdInt;
+    if(listaEmpleados!=NULL && ll_isEmpty(listaEmpleados)==1)
+    {
+        printf("\nNo hay ningun elemento en la lista\n");
+    }
+    else
+    {
+        empleado_mostrarListaEmpleados(listaEmpleados);
+        if(getStrNumerosSinRango("\nIngrese el id a modificar: ",auxIdStr,"Solo se permiten numeros",3))
+        {
+            auxIdInt=atoi(auxIdStr);
+            indiceResultadoBusqueda=empleado_buscarPorId(listaEmpleados,auxIdInt);
+            if(indiceResultadoBusqueda==-1)
+            {
+                printf("\nEl id ingresado no existe\n");
+            }
+            else
+            {
+                menuPedirDatosAModificar(listaEmpleados,indiceResultadoBusqueda);
+                sePudo=1;
+            }
+        }
+    }
+    return sePudo;
+}
+void menuPedirDatosAModificar(LinkedList* listaEmpleados,int indiceEncontrado)
+{
+    int confirmacion;
+    int flagDatoIngresado=0;
+    char auxEdadStr[256];
+    char auxSueldoStr[256];
+    eEmpleado* datosActuales=ll_get(listaEmpleados,indiceEncontrado);
+    eEmpleado auxDatos=*datosActuales;
+    eEmpleado* proximosDatos=NULL;
+    int opcionMenu;
+    char continuarMenu='s';
+    do
+    {
+        system("cls");
+        printf("Datos actuales seleccionados\n");
+        empleado_mostrarUnEmpleado(datosActuales);
+        printf("Datos a modificar\n");
+        empleado_mostrarUnEmpleado(&auxDatos);
+        printf("\nQue datos desea modificar?:\n");
+        printf("1-NOMBRE\n");
+        printf("2-APELLIDO\n");
+        printf("3-EDAD\n");
+        printf("4-SUELDO\n");
+        printf("5-CONFIRMAR CAMBIOS\n");
+        printf("6-FINALIZAR MODIFICACION\n");
+        opcionMenu=getInt("\nIngrese una opcion: ");
+        switch(opcionMenu)
+        {
+            case 1:
+                if(getStrLetras("\nIngrese el nombre: ",auxDatos.nombre,"\nSolo se permiten letras\n","\nRango valido entre 3 y 12\n",3,12,3))
+                {
+                    printf("\nSe ha ingresado el nombre\n");
+                    flagDatoIngresado=1;
+                }
+                break;
+            case 2:
+                if(getStrLetras("\nIngrese el apellido: ",auxDatos.apellido,"\nSolo se permiten letras\n","\nRango valido entre 3 y 12\n",3,12,3))
+                {
+                    printf("\nSe ha ingresado el apellido\n");
+                    flagDatoIngresado=1;
+                }
+                break;
+            case 3:
+                if(getStrNumeros("\nIngrese la edad: ",auxEdadStr,"\nSolo se permiten numeros\n","\nNumero valido entre el 20 y el 67\n",20,67,3))
+                {
+                    auxDatos.edad=atoi(auxEdadStr);
+                    flagDatoIngresado=1;
+                }
+                break;
+            case 4:
+                if(getStrNumerosFlotantes("\nIngrese el sueldo: ",auxSueldoStr,"\nSolo se permiten numeros y un solo punto\n","\nNumero valido entre el 1000 y el 10000\n",1000,10000,3))
+                {
+                    auxDatos.sueldo=atof(auxSueldoStr);
+                    flagDatoIngresado=1;
+                }
+                break;
+            case 5:
+                if(flagDatoIngresado==1)
+                {
+                    confirmacion=confirmarCambios("\nDesea confirmar los cambios realizados? (s/n): ","\nSolo confirme con ('s' o con 'n')");
+                    if(confirmacion==1)
+                    {
+                        proximosDatos=empleado_nuevoEmpleado();
+                        if(proximosDatos!=NULL)
+                        {
+                            *proximosDatos=auxDatos;
+                            ll_set(listaEmpleados,indiceEncontrado,proximosDatos);
+                            datosActuales=ll_get(listaEmpleados,indiceEncontrado);
+                            printf("\nSe han confirmado los cambios realizados\n");
+                            flagDatoIngresado=0;
+                        }
+                    }
+                }
+                else
+                {
+                    printf("\nNo se ha realizado ningun cambio que confirmar\n");
+                }
+                break;
+            case 6:
+                if(flagDatoIngresado==1)
+                {
+                    confirmacion=confirmarCambios("\nEsta seguro que desea salir sin confirmar cambios? (s/n): ","\nSolo confirme con ('s' o con 'n'): ");
+                    if(confirmacion==1)
+                    {
+                        printf("\nModificacion finalizada sin confirmar cambios\n");
+                        continuarMenu='n';
+                    }
+                }
+                else
+                {
+                    printf("\nModificacion finalizada\n");
+                    continuarMenu='n';
+                }
+                break;
+            default:
+                printf("\nOpcion ingresada no valida\n");
+        }
+        system("pause");
+    }
+    while(continuarMenu=='s');
 }
