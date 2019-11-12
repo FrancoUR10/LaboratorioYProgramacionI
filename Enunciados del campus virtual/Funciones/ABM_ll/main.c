@@ -36,6 +36,7 @@ int main()
                 empleado_modificarDatos(listaEmpleados);
                 break;
             case 5:
+                empleado_ordenarEmpleados(listaEmpleados);
                 break;
             case 6:
                 empleado_mostrarListaEmpleados(listaEmpleados);

@@ -140,16 +140,111 @@ eEmpleado* empleado_nuevoEmpleadoParametros(char* id,char* nombre,char* apellido
     }
     return unEmpleado;
 }
+int empleado_compararPorId(void* empleado1,void* empleado2)
+{
+    int comparacion=-1;
+    int id1;
+    int id2;
+    eEmpleado* emp1=(eEmpleado*)empleado1;
+    eEmpleado* emp2=(eEmpleado*)empleado2;
+    empleado_getId(emp1,&id1);
+    empleado_getId(emp2,&id2);
+    if(id1 > id2)
+    {
+        comparacion=1;
+    }
+    else if(id1==id2)
+    {
+        comparacion=0;
+    }
+    return comparacion;
+}
+int empleado_compararPorNombre(void* empleado1,void* empleado2)
+{
+    int comparacion=-1;
+    char nombre1[256];
+    char nombre2[256];
+    eEmpleado* emp1=(eEmpleado*)empleado1;
+    eEmpleado* emp2=(eEmpleado*)empleado2;
+    empleado_getNombre(emp1,nombre1);
+    empleado_getNombre(emp2,nombre2);
+    if(strcmp(nombre1,nombre2)==1)
+    {
+        comparacion=1;
+    }
+    else if(strcmp(nombre1,nombre2)==0)
+    {
+        comparacion=0;
+    }
+    return comparacion;
+}
+int empleado_compararPorApellido(void* empleado1,void* empleado2)
+{
+    int comparacion=-1;
+    char apellido1[256];
+    char apellido2[256];
+    eEmpleado* emp1=(eEmpleado*)empleado1;
+    eEmpleado* emp2=(eEmpleado*)empleado2;
+    empleado_getApellido(emp1,apellido1);
+    empleado_getApellido(emp2,apellido2);
+    if(strcmp(apellido1,apellido2)==1)
+    {
+        comparacion=1;
+    }
+    else if(strcmp(apellido1,apellido2)==0)
+    {
+        comparacion=0;
+    }
+    return comparacion;
+}
+int empleado_compararPorEdad(void* empleado1,void* empleado2)
+{
+    int comparacion=-1;
+    int edad1;
+    int edad2;
+    eEmpleado* emp1=(eEmpleado*)empleado1;
+    eEmpleado* emp2=(eEmpleado*)empleado2;
+    empleado_getEdad(emp1,&edad1);
+    empleado_getEdad(emp2,&edad2);
+    if(edad1 > edad2)
+    {
+        comparacion=1;
+    }
+    else if(edad1==edad2)
+    {
+        comparacion=0;
+    }
+    return comparacion;
+}
+int empleado_compararPorSueldo(void* empleado1,void* empleado2)
+{
+    int comparacion=-1;
+    float sueldo1;
+    float sueldo2;
+    eEmpleado* emp1=(eEmpleado*)empleado1;
+    eEmpleado* emp2=(eEmpleado*)empleado2;
+    empleado_getSueldo(emp1,&sueldo1);
+    empleado_getSueldo(emp2,&sueldo2);
+    if(sueldo1 > sueldo2)
+    {
+        comparacion=1;
+    }
+    else if(sueldo1==sueldo2)
+    {
+        comparacion=0;
+    }
+    return comparacion;
+}
 int empleado_mostrarUnEmpleado(eEmpleado* unEmpleado)
 {
     int seMostro=0;
     if(unEmpleado!=NULL)
     {
-        printf("%d\t",unEmpleado->id);
-        printf("%s\t",unEmpleado->nombre);
-        printf("%s\t",unEmpleado->apellido);
-        printf("%d\t",unEmpleado->edad);
-        printf("%.2f\n",unEmpleado->sueldo);
+        printf("\n%d",unEmpleado->id);
+        printf("%14s",unEmpleado->nombre);
+        printf("%14s",unEmpleado->apellido);
+        printf("%7d",unEmpleado->edad);
+        printf("%12.2f\n",unEmpleado->sueldo);
         seMostro=1;
     }
     return seMostro;
@@ -167,6 +262,7 @@ void empleado_mostrarListaEmpleados(LinkedList* listaEmpleados)
         }
         else
         {
+            printf("\nID       NOMBRE      APELLIDO     EDAD   SUELDO\n");
             for(i=0;i<len;i++)
             {
                 aux=(eEmpleado*)ll_get(listaEmpleados,i);
@@ -218,7 +314,7 @@ int empleado_darDeAlta(LinkedList* listaEmpleados,int* contAltas)
         {
             ingresoSecuencialValido=0;
         }
-        else if(!getStrNumeros("\nIngrese la edad: ",auxEdadStr,"\nSolo se permiten numeros\n","\nNumero valido entre el 20 y el 67\n",20,67,3))
+        else if(!getStrNumeros("\nIngrese la edad: ",auxEdadStr,"\nSolo se permiten numeros\n","\nNumero valido entre el 18 y el 65\n",18,65,3))
         {
             ingresoSecuencialValido=0;
         }
@@ -345,9 +441,10 @@ void menuPedirDatosAModificar(LinkedList* listaEmpleados,int indiceEncontrado)
     do
     {
         system("cls");
-        printf("Datos actuales seleccionados\n");
+        printf("\nID       NOMBRE      APELLIDO     EDAD   SUELDO\n");
+        printf("\nDatos actuales seleccionados:\n");
         empleado_mostrarUnEmpleado(datosActuales);
-        printf("Datos a modificar\n");
+        printf("\nDatos a modificar:\n");
         empleado_mostrarUnEmpleado(&auxDatos);
 
         printf("\nQue datos desea modificar?:\n");
@@ -377,7 +474,7 @@ void menuPedirDatosAModificar(LinkedList* listaEmpleados,int indiceEncontrado)
                 system("pause");
                 break;
             case 3:
-                if(getStrNumeros("\nIngrese la edad: ",auxEdadStr,"\nSolo se permiten numeros\n","\nNumero valido entre el 20 y el 67\n",20,67,3))
+                if(getStrNumeros("\nIngrese la edad: ",auxEdadStr,"\nSolo se permiten numeros\n","\nNumero valido entre el 18 y el 65\n",18,65,3))
                 {
                     auxDatos.edad=atoi(auxEdadStr);
                     flagDatoIngresado=1;
@@ -454,6 +551,7 @@ int empleado_guardarDatos(FILE* archivo,LinkedList* listaEmpleados,int* contAlta
         archivo=fopen("empleados.csv","wb");
         if(archivo!=NULL)
         {
+            fwrite(contAltas,sizeof(int),1,archivo);
             for(i=0;i<len;i++)
             {
                 auxDatos=ll_get(listaEmpleados,i);
@@ -473,6 +571,7 @@ int empleado_cargarDatos(FILE* archivo,LinkedList* listaEmpleados,int* contAltas
         archivo=fopen("empleados.csv","rb");
         if(archivo!=NULL)
         {
+            fread(contAltas,sizeof(int),1,archivo);
             ll_clear(listaEmpleados);
             while(!feof(archivo))
             {
@@ -492,4 +591,79 @@ int empleado_cargarDatos(FILE* archivo,LinkedList* listaEmpleados,int* contAltas
         }
     }
     return sePudo;
+}
+void empleado_ordenarEmpleados(LinkedList* listaEmpleados)
+{
+    int elejirOrden;
+    int opcionMenu;
+    char continuarMenu='s';
+    do
+    {
+        system("cls");
+        printf("Desea ordenar de manera ascendente o descendente?\n");
+        printf("1-ASCENDENTE\n");
+        printf("2-DESCENDENTE\n");
+        printf("3-CANCELAR ORDENAMIENTO\n");
+        opcionMenu=getInt("\nIngrese una opcion: ");
+        switch(opcionMenu)
+        {
+            case 1:
+                elejirOrden=1;
+                system("pause");
+                break;
+            case 2:
+                elejirOrden=0;
+                system("pause");
+                break;
+            case 3:
+                printf("\nOrdenamiento cancelado por el usuario\n");
+                continuarMenu='n';
+                elejirOrden=-1;
+                break;
+        }
+        if(elejirOrden!=-1)
+        {
+            system("cls");
+            printf("%d",elejirOrden);
+            printf("Por cual criterio desea ordenar?\n");
+            printf("1-ORDENAR POR ID\n");
+            printf("2-ORDENAR POR NOMBRE\n");
+            printf("3-ORDENAR POR APELLIDO\n");
+            printf("4-ORDENAR POR EDAD\n");
+            printf("5-ORDENAR POR SUELDO\n");
+            printf("6-CANCELAR ORDENAMIENTO\n");
+            opcionMenu=getInt("\nIngrese una opcion: ");
+            switch(opcionMenu)
+            {
+                case 1:
+                    ll_sort(listaEmpleados,empleado_compararPorId,elejirOrden);
+                    continuarMenu='n';
+                    break;
+                case 2:
+                    ll_sort(listaEmpleados,empleado_compararPorNombre,elejirOrden);
+                    continuarMenu='n';
+                    break;
+                case 3:
+                    ll_sort(listaEmpleados,empleado_compararPorApellido,elejirOrden);
+                    continuarMenu='n';
+                    break;
+                case 4:
+                    ll_sort(listaEmpleados,empleado_compararPorEdad,elejirOrden);
+                    continuarMenu='n';
+                    break;
+                case 5:
+                    ll_sort(listaEmpleados,empleado_compararPorSueldo,elejirOrden);
+                    continuarMenu='n';
+                    break;
+                case 6:
+                    printf("\nOrdenamiento cancelado por el usuario\n");
+                    continuarMenu='n';
+                    break;
+                default:
+                    printf("\nOpcion ingresada no valida\n");
+                    system("pause");
+            }
+        }
+    }
+    while(continuarMenu=='s');
 }

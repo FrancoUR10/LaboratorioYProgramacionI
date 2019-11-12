@@ -27,14 +27,19 @@ int empleado_getApellido(eEmpleado* empleado,char* apellido);
 int empleado_getEdad(eEmpleado* empleado,int* edad);
 int empleado_getSueldo(eEmpleado* empleado,float* sueldo);
 eEmpleado* empleado_nuevoEmpleadoParametros(char* id,char* nombre,char* apellido,char* edad,char* sueldo);
+int empleado_compararPorId(void* empleado1,void* empleado2);
+int empleado_compararPorNombre(void* empleado1,void* empleado2);
+int empleado_compararPorApellido(void* empleado1,void* empleado2);
+int empleado_compararPorEdad(void* empleado1,void* empleado2);
+int empleado_compararPorSueldo(void* empleado1,void* empleado2);
+int empleado_mostrarUnEmpleado(eEmpleado* unEmpleado);
 void empleado_mostrarListaEmpleados(LinkedList* listaEmpleados);
 int empleado_buscarPorId(LinkedList* listaEmpleados,int idABuscar);
-
 int empleado_darDeAlta(LinkedList* listaEmpleados,int* contAltas);
 int empleado_darDeBaja(LinkedList* listaEmpleados);
 int empleado_modificarDatos(LinkedList* listaEmpleados);
 void menuPedirDatosAModificar(LinkedList* listaEmpleados,int indiceEncontrado);
 int empleado_guardarDatos(FILE* archivo,LinkedList* listaEmpleados,int* contAltas);
 int empleado_cargarDatos(FILE* archivo,LinkedList* listaEmpleados,int* contAltas);
-
+void empleado_ordenarEmpleados(LinkedList* listaEmpleados);
 #endif // EMPLEADO_H_INCLUDED
