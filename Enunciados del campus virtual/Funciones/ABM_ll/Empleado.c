@@ -447,7 +447,7 @@ void menuPedirDatosAModificar(LinkedList* listaEmpleados,int indiceEncontrado)
         printf("\nDatos a modificar:\n");
         empleado_mostrarUnEmpleado(&auxDatos);
 
-        printf("\nQue datos desea modificar?:\n");
+        printf("\nQue datos desea modificar?\n");
         printf("1-NOMBRE\n");
         printf("2-APELLIDO\n");
         printf("3-EDAD\n");
@@ -477,6 +477,7 @@ void menuPedirDatosAModificar(LinkedList* listaEmpleados,int indiceEncontrado)
                 if(getStrNumeros("\nIngrese la edad: ",auxEdadStr,"\nSolo se permiten numeros\n","\nNumero valido entre el 18 y el 65\n",18,65,3))
                 {
                     auxDatos.edad=atoi(auxEdadStr);
+                    printf("\nSe ha ingresado la edad\n");
                     flagDatoIngresado=1;
                 }
                 system("pause");
@@ -485,6 +486,7 @@ void menuPedirDatosAModificar(LinkedList* listaEmpleados,int indiceEncontrado)
                 if(getStrNumerosFlotantes("\nIngrese el sueldo: ",auxSueldoStr,"\nSolo se permiten numeros y un solo punto\n","\nNumero valido entre el 1000 y el 10000\n",1000,10000,3))
                 {
                     auxDatos.sueldo=atof(auxSueldoStr);
+                    printf("\nSe ha ingresado el sueldo\n");
                     flagDatoIngresado=1;
                 }
                 system("pause");
@@ -492,7 +494,7 @@ void menuPedirDatosAModificar(LinkedList* listaEmpleados,int indiceEncontrado)
             case 5:
                 if(flagDatoIngresado==1)
                 {
-                    confirmacion=confirmarCambios("\nDesea confirmar los cambios realizados? (s/n): ","\nSolo confirme con ('s' o con 'n')");
+                    confirmacion=confirmarCambios("\nDesea confirmar los cambios realizados? (s/n): ","\nSolo confirme con ('s' o con 'n'): ");
                     if(confirmacion==1)
                     {
                         proximosDatos=empleado_nuevoEmpleado();
@@ -558,6 +560,7 @@ int empleado_guardarDatos(FILE* archivo,LinkedList* listaEmpleados,int* contAlta
                 fwrite(auxDatos,sizeof(eEmpleado),1,archivo);
             }
             fclose(archivo);
+            printf("\nSe han guardado los datos\n");
             sePudo=1;
         }
     }
@@ -587,6 +590,7 @@ int empleado_cargarDatos(FILE* archivo,LinkedList* listaEmpleados,int* contAltas
                 }
             }
             fclose(archivo);
+            printf("\nSe han cargado los datos\n");
             sePudo=1;
         }
     }
@@ -597,73 +601,84 @@ void empleado_ordenarEmpleados(LinkedList* listaEmpleados)
     int elejirOrden;
     int opcionMenu;
     char continuarMenu='s';
-    do
+    if(listaEmpleados!=NULL && ll_isEmpty(listaEmpleados)==1)
     {
-        system("cls");
-        printf("Desea ordenar de manera ascendente o descendente?\n");
-        printf("1-ASCENDENTE\n");
-        printf("2-DESCENDENTE\n");
-        printf("3-CANCELAR ORDENAMIENTO\n");
-        opcionMenu=getInt("\nIngrese una opcion: ");
-        switch(opcionMenu)
-        {
-            case 1:
-                elejirOrden=1;
-                system("pause");
-                break;
-            case 2:
-                elejirOrden=0;
-                system("pause");
-                break;
-            case 3:
-                printf("\nOrdenamiento cancelado por el usuario\n");
-                continuarMenu='n';
-                elejirOrden=-1;
-                break;
-        }
-        if(elejirOrden!=-1)
+        printf("\nNo hay ningun elemento en la lista\n");
+    }
+    else
+    {
+        do
         {
             system("cls");
-            printf("%d",elejirOrden);
-            printf("Por cual criterio desea ordenar?\n");
-            printf("1-ORDENAR POR ID\n");
-            printf("2-ORDENAR POR NOMBRE\n");
-            printf("3-ORDENAR POR APELLIDO\n");
-            printf("4-ORDENAR POR EDAD\n");
-            printf("5-ORDENAR POR SUELDO\n");
-            printf("6-CANCELAR ORDENAMIENTO\n");
+            printf("Desea ordenar de manera ascendente o descendente?\n");
+            printf("1-ASCENDENTE\n");
+            printf("2-DESCENDENTE\n");
+            printf("3-CANCELAR ORDENAMIENTO\n");
             opcionMenu=getInt("\nIngrese una opcion: ");
             switch(opcionMenu)
             {
                 case 1:
-                    ll_sort(listaEmpleados,empleado_compararPorId,elejirOrden);
-                    continuarMenu='n';
+                    elejirOrden=1;
+                    system("pause");
                     break;
                 case 2:
-                    ll_sort(listaEmpleados,empleado_compararPorNombre,elejirOrden);
-                    continuarMenu='n';
+                    elejirOrden=0;
+                    system("pause");
                     break;
                 case 3:
-                    ll_sort(listaEmpleados,empleado_compararPorApellido,elejirOrden);
-                    continuarMenu='n';
-                    break;
-                case 4:
-                    ll_sort(listaEmpleados,empleado_compararPorEdad,elejirOrden);
-                    continuarMenu='n';
-                    break;
-                case 5:
-                    ll_sort(listaEmpleados,empleado_compararPorSueldo,elejirOrden);
-                    continuarMenu='n';
-                    break;
-                case 6:
                     printf("\nOrdenamiento cancelado por el usuario\n");
                     continuarMenu='n';
+                    elejirOrden=-1;
                     break;
-                default:
-                    printf("\nOpcion ingresada no valida\n");
-                    system("pause");
+            }
+            if(elejirOrden!=-1)
+            {
+                system("cls");
+                printf("Por cual criterio desea ordenar?\n");
+                printf("1-ORDENAR POR ID\n");
+                printf("2-ORDENAR POR NOMBRE\n");
+                printf("3-ORDENAR POR APELLIDO\n");
+                printf("4-ORDENAR POR EDAD\n");
+                printf("5-ORDENAR POR SUELDO\n");
+                printf("6-CANCELAR ORDENAMIENTO\n");
+                opcionMenu=getInt("\nIngrese una opcion: ");
+                switch(opcionMenu)
+                {
+                    case 1:
+                        ll_sort(listaEmpleados,empleado_compararPorId,elejirOrden);
+                        printf("\nSe ha ordenado por id\n");
+                        continuarMenu='n';
+                        break;
+                    case 2:
+                        ll_sort(listaEmpleados,empleado_compararPorNombre,elejirOrden);
+                        printf("\nSe ha ordenado por nombre\n");
+                        continuarMenu='n';
+                        break;
+                    case 3:
+                        ll_sort(listaEmpleados,empleado_compararPorApellido,elejirOrden);
+                        printf("\nSe ha ordenado por apellido\n");
+                        continuarMenu='n';
+                        break;
+                    case 4:
+                        ll_sort(listaEmpleados,empleado_compararPorEdad,elejirOrden);
+                        printf("\nSe ha ordenado por edad\n");
+                        continuarMenu='n';
+                        break;
+                    case 5:
+                        ll_sort(listaEmpleados,empleado_compararPorSueldo,elejirOrden);
+                        printf("\nSe ha ordenado por sueldo\n");
+                        continuarMenu='n';
+                        break;
+                    case 6:
+                        printf("\nOrdenamiento cancelado por el usuario\n");
+                        continuarMenu='n';
+                        break;
+                    default:
+                        printf("\nOpcion ingresada no valida\n");
+                        system("pause");
+                }
             }
         }
+        while(continuarMenu=='s');
     }
-    while(continuarMenu=='s');
 }

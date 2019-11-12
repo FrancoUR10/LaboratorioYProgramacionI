@@ -3,6 +3,7 @@
 #include "LinkedList.h"
 #include "Validaciones.h"
 #include "Empleado.h"
+
 int main()
 {
     FILE* archivoEmpleados=NULL;
