@@ -7,6 +7,7 @@
 int main()
 {
     FILE* archivoProductos=NULL;
+    FILE* archivoProductosTexto=NULL;
     LinkedList* listaProductos=ll_newLinkedList();
     int contAltas=1;
     int opcionMenu;
@@ -19,8 +20,10 @@ int main()
         printf("4-BAJA FISICA\n");
         printf("5-INFORMAR\n");
         printf("6-SALIR\n");
-        printf("7-CARGAR DATOS\n");
-        printf("8-GUARDAR DATOS\n");
+        printf("7-CARGAR DATOS MODO BINARIO\n");
+        printf("8-GUARDAR DATOS MODO BINARIO\n");
+        printf("9-CARGAR DATOS MODO TEXTO\n");
+        printf("10-GUARDAR DATOS MODO TEXTO\n");
         opcionMenu=getInt("\nIngrese una opcion: ");
         switch(opcionMenu)
         {
@@ -47,6 +50,12 @@ int main()
                 break;
             case 8:
                 producto_guardarDatos(archivoProductos,listaProductos,&contAltas);
+                break;
+            case 9:
+                producto_cargarDatosModoTexto(archivoProductosTexto,listaProductos,&contAltas);
+                break;
+            case 10:
+                producto_guardarDatosModoTexto(archivoProductosTexto,listaProductos,&contAltas);
                 break;
             default:
                 printf("\nOpcion ingresada no valida\n");

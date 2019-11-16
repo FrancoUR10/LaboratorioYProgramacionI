@@ -235,4 +235,6 @@ void producto_informarDatos(LinkedList* listaProductos);
  *
  */
 void producto_mostrarListaProductosNoActivos(LinkedList* listaProductos);
+int producto_guardarDatosModoTexto(FILE* archivo,LinkedList* listaproductos,int* contAltas);
+int producto_cargarDatosModoTexto(FILE* archivo,LinkedList* listaproductos,int* contAltas);
 #endif // PRODUCTO_H_INCLUDED

@@ -626,3 +626,84 @@ void producto_mostrarListaProductosNoActivos(LinkedList* listaProductos)
         }
     }
 }
+int producto_guardarDatosModoTexto(FILE* archivo,LinkedList* listaproductos,int* contAltas)
+{
+    char auxAltasStr[256];
+    char auxCodigoStr[256];
+    char auxDescripcionStr[256];
+    char auxCantidadStr[256];
+    char auxImporteStr[256];
+    char auxActivoStr[256];
+    int sePudo=-1;
+    int i;
+    int len=ll_len(listaproductos);
+    eProducto* auxDatos;
+    int indiceEncontrado;
+    indiceEncontrado=producto_buscarPorEstado(listaproductos,ACTIVO);
+    if(listaproductos!=NULL && (indiceEncontrado==-1 || ll_isEmpty(listaproductos)==1))
+    {
+        printf("\nNo hay ningun elemento en la lista\n");
+    }
+    else
+    {
+        archivo=fopen("datosTexto.csv","w");
+        if(archivo!=NULL)
+        {
+            itoa(*contAltas,auxAltasStr,10);
+            fprintf(archivo,"%s\n",auxAltasStr);
+            for(i=0;i<len;i++)
+            {
+                auxDatos=ll_get(listaproductos,i);
+                itoa(auxDatos->codigo,auxCodigoStr,10);
+                producto_getDescripcion(auxDatos,auxDescripcionStr);
+                itoa(auxDatos->cantidad,auxCantidadStr,10);
+                itoa(auxDatos->importe,auxImporteStr,10);
+                itoa(auxDatos->activo,auxActivoStr,10);
+
+                fprintf(archivo,"%s,%s,%s,%s,%s\n",auxCodigoStr,auxDescripcionStr,auxCantidadStr,auxImporteStr,auxActivoStr);
+            }
+            fclose(archivo);
+            printf("\nSe han guardado los datos\n");
+            sePudo=1;
+        }
+    }
+    return sePudo;
+}
+int producto_cargarDatosModoTexto(FILE* archivo,LinkedList* listaproductos,int* contAltas)
+{
+    char auxAltasStr[256];
+    char auxCodigoStr[256];
+    char auxDescripcionStr[256];
+    char auxCantidadStr[256];
+    char auxImporteStr[256];
+    char auxActivoStr[256];
+    int sePudo=-1;
+    eProducto* auxDatos;
+    {
+        archivo=fopen("datosTexto.csv","r");
+        if(archivo!=NULL)
+        {
+            fscanf(archivo,"%[^\n]\n",auxAltasStr);
+            *contAltas=atoi(auxAltasStr);
+            ll_clear(listaproductos);
+            while(!feof(archivo))
+            {
+                if(auxDatos!=NULL)
+                {
+                    fscanf(archivo,"%[^,],%[^,],%[^,],%[^,],%[^\n]\n",auxCodigoStr,auxDescripcionStr,auxCantidadStr,auxImporteStr,auxActivoStr);
+                    auxDatos=producto_nuevoProductoParametros(auxCodigoStr,auxDescripcionStr,auxCantidadStr,auxImporteStr);
+                    auxDatos->activo=atoi(auxActivoStr);
+                    ll_add(listaproductos,auxDatos);
+                    if(feof(archivo))
+                    {
+                        break;
+                    }
+                }
+            }
+            fclose(archivo);
+            printf("\nSe han cargado los datos\n");
+            sePudo=1;
+        }
+    }
+    return sePudo;
+}
