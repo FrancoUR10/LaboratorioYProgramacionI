@@ -26,7 +26,7 @@
 1573915662 source:c:\users\alumno\desktop\practica\producto.c
 	"Producto.h"
 
-1573914121 c:\users\alumno\desktop\practica\producto.h
+1573916256 c:\users\alumno\desktop\practica\producto.h
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -36,7 +36,7 @@
 1573905842 source:c:\users\alumno\desktop\practica\validaciones.c
 	"Validaciones.h"
 
-1573914237 source:c:\users\alumno\desktop\practica\main.c
+1573916029 source:c:\users\alumno\desktop\practica\main.c
 	<stdio.h>
 	<stdlib.h>
 	"LinkedList.h"

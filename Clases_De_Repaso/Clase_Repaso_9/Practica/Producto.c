@@ -657,10 +657,10 @@ int producto_guardarDatosModoTexto(FILE* archivo,LinkedList* listaproductos,int*
                 itoa(auxDatos->codigo,auxCodigoStr,10);
                 producto_getDescripcion(auxDatos,auxDescripcionStr);
                 itoa(auxDatos->cantidad,auxCantidadStr,10);
-                itoa(auxDatos->importe,auxImporteStr,10);
+                sprintf(auxImporteStr,"%f",auxDatos->importe);
                 itoa(auxDatos->activo,auxActivoStr,10);
 
-                fprintf(archivo,"%s,%s,%s,%s,%s\n",auxCodigoStr,auxDescripcionStr,auxCantidadStr,auxImporteStr,auxActivoStr);
+                fprintf(archivo,"%s;%s;%s;%s;%s\n",auxCodigoStr,auxDescripcionStr,auxCantidadStr,auxImporteStr,auxActivoStr);
             }
             fclose(archivo);
             printf("\nSe han guardado los datos\n");
@@ -690,7 +690,7 @@ int producto_cargarDatosModoTexto(FILE* archivo,LinkedList* listaproductos,int* 
             {
                 if(auxDatos!=NULL)
                 {
-                    fscanf(archivo,"%[^,],%[^,],%[^,],%[^,],%[^\n]\n",auxCodigoStr,auxDescripcionStr,auxCantidadStr,auxImporteStr,auxActivoStr);
+                    fscanf(archivo,"%[^;];%[^;];%[^;];%[^;];%[^\n]\n",auxCodigoStr,auxDescripcionStr,auxCantidadStr,auxImporteStr,auxActivoStr);
                     auxDatos=producto_nuevoProductoParametros(auxCodigoStr,auxDescripcionStr,auxCantidadStr,auxImporteStr);
                     auxDatos->activo=atoi(auxActivoStr);
                     ll_add(listaproductos,auxDatos);
