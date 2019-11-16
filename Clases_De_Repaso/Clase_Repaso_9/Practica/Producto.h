@@ -235,6 +235,24 @@ void producto_informarDatos(LinkedList* listaProductos);
  *
  */
 void producto_mostrarListaProductosNoActivos(LinkedList* listaProductos);
+
+/** \brief Guarda los datos en modo texto
+ *
+ * \param archivo FILE* El archivo con los datos a guardar en texto
+ * \param listaproductos LinkedList* La lista de productos
+ * \param contAltas int* El contador de altas
+ * \return int Si no se pudo guardar los datos [-1] si se guardo [1]
+ *
+ */
 int producto_guardarDatosModoTexto(FILE* archivo,LinkedList* listaproductos,int* contAltas);
+
+/** \brief Carga los datos en modo texto
+ *
+ * \param archivo FILE* El archivo con los datos a cargar en texto
+ * \param listaproductos LinkedList* La lista de productos
+ * \param contAltas int* El contador de altas
+ * \return int Si no se pudo cargar los datos [-1] si se cargo [1]
+ *
+ */
 int producto_cargarDatosModoTexto(FILE* archivo,LinkedList* listaproductos,int* contAltas);
 #endif // PRODUCTO_H_INCLUDED

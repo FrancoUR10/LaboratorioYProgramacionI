@@ -20,10 +20,10 @@ int main()
         printf("4-BAJA FISICA\n");
         printf("5-INFORMAR\n");
         printf("6-SALIR\n");
-        printf("7-CARGAR DATOS MODO BINARIO\n");
-        printf("8-GUARDAR DATOS MODO BINARIO\n");
-        printf("9-CARGAR DATOS MODO TEXTO\n");
-        printf("10-GUARDAR DATOS MODO TEXTO\n");
+        printf("7-CARGAR DATOS (MODO BINARIO)\n");
+        printf("8-GUARDAR DATOS (MODO BINARIO)\n");
+        printf("9-CARGAR DATOS (MODO TEXTO)\n");
+        printf("10-GUARDAR DATOS (MODO TEXTO)\n");
         opcionMenu=getInt("\nIngrese una opcion: ");
         switch(opcionMenu)
         {
