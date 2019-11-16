@@ -1,0 +1,45 @@
+# depslib dependency file v1.0
+1573905842 source:c:\users\alumno\desktop\practica\empleado.c
+	"Empleado.h"
+
+1573909194 c:\users\alumno\desktop\practica\empleado.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"Validaciones.h"
+	"LinkedList.h"
+
+1573905842 c:\users\alumno\desktop\practica\validaciones.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+
+1573905842 c:\users\alumno\desktop\practica\linkedlist.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1573905842 source:c:\users\alumno\desktop\practica\linkedlist.c
+	"LinkedList.h"
+
+1573913257 source:c:\users\alumno\desktop\practica\producto.c
+	"Producto.h"
+
+1573912970 c:\users\alumno\desktop\practica\producto.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"Validaciones.h"
+	"LinkedList.h"
+
+1573905842 source:c:\users\alumno\desktop\practica\validaciones.c
+	"Validaciones.h"
+
+1573913021 source:c:\users\alumno\desktop\practica\main.c
+	<stdio.h>
+	<stdlib.h>
+	"LinkedList.h"
+	"Validaciones.h"
+	"Producto.h"
+
