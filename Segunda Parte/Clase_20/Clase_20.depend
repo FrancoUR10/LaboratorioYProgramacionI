@@ -1,0 +1,63 @@
+# depslib dependency file v1.0
+1574176758 source:c:\users\alumno\desktop\clase_20\main.c
+	<stdio.h>
+	<stdlib.h>
+	"LinkedList.h"
+	"Validaciones.h"
+	"Problemas.h"
+	"llamada.h"
+
+1574164651 c:\users\alumno\desktop\clase_20\validaciones.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+
+1574166341 c:\users\alumno\desktop\clase_20\linkedlist.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1574170461 source:c:\users\alumno\desktop\clase_20\validaciones.c
+	"Validaciones.h"
+
+1574166254 source:c:\users\alumno\desktop\clase_20\linkedlist.c
+	"LinkedList.h"
+
+1574164651 source:c:\users\alumno\desktop\clase_20\empleado.c
+	"Empleado.h"
+
+1574164651 c:\users\alumno\desktop\clase_20\empleado.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"Validaciones.h"
+	"LinkedList.h"
+
+1574166659 source:c:\users\alumno\desktop\clase_20\fecha.c
+	"fecha.h"
+
+1574166659 c:\users\alumno\desktop\clase_20\fecha.h
+
+1574176973 source:c:\users\alumno\desktop\clase_20\llamada.c
+	"llamada.h"
+
+1574177202 c:\users\alumno\desktop\clase_20\llamada.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"fecha.h"
+	"Problemas.h"
+	"Validaciones.h"
+	"LinkedList.h"
+
+1574170111 c:\users\alumno\desktop\clase_20\problemas.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"Validaciones.h"
+	"LinkedList.h"
+
+1574170320 source:c:\users\alumno\desktop\clase_20\problemas.c
+	"Problemas.h"
+
