@@ -1,0 +1,53 @@
+# depslib dependency file v1.0
+1574543985 source:c:\users\acquisto\desktop\programacion y laboratorio\filtros\empleado.c
+	"Empleado.h"
+
+1574543371 c:\users\acquisto\desktop\programacion y laboratorio\filtros\empleado.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"Validaciones.h"
+	"LinkedList.h"
+
+1574539785 c:\users\acquisto\desktop\programacion y laboratorio\filtros\validaciones.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+
+1574543581 c:\users\acquisto\desktop\programacion y laboratorio\filtros\linkedlist.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1574543581 source:c:\users\acquisto\desktop\programacion y laboratorio\filtros\linkedlist.c
+	"LinkedList.h"
+
+1574550661 source:c:\users\acquisto\desktop\programacion y laboratorio\filtros\llamada.c
+	"Llamada.h"
+
+1574550010 c:\users\acquisto\desktop\programacion y laboratorio\filtros\llamada.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"Validaciones.h"
+	"LinkedList.h"
+	"Problema.h"
+
+1574550011 source:c:\users\acquisto\desktop\programacion y laboratorio\filtros\main.c
+	<stdio.h>
+	<stdlib.h>
+	"LinkedList.h"
+	"Validaciones.h"
+	"Llamada.h"
+
+1574548643 source:c:\users\acquisto\desktop\programacion y laboratorio\filtros\validaciones.c
+	"Validaciones.h"
+
+1574546095 c:\users\acquisto\desktop\programacion y laboratorio\filtros\problema.h
+	"LinkedList.h"
+	"Validaciones.h"
+
+1574546491 source:c:\users\acquisto\desktop\programacion y laboratorio\filtros\problema.c
+	"Problema.h"
+
