@@ -417,42 +417,53 @@ int vuelo_filtrarPorDestinoPortugal(void* unvuelo)
 }
 void vuelo_mostrarListaDeVuelosAPortugal(LinkedList* listavuelos,LinkedList* listaPiloto)
 {
-    eVuelo* auxFiltro;
-    int lenFiltro;
-    LinkedList* listaFiltro;
-    char auxDestino[256];
-    int auxIdPilotoVuelos;
-    int auxIdPiloto;
-    int indiceBusqueda;
-    eVuelo* auxvuelo;
-    ePiloto* auxPiloto;
-    int i;
-    if(listavuelos!=NULL && listaPiloto!=NULL)
+    LinkedList* listaFiltro=ll_filter(listavuelos,vuelo_filtrarPorDestinoPortugal);
+    if(listaFiltro!=NULL)
     {
-        if(listavuelos!=NULL && ll_isEmpty(listavuelos)==1)
+        vuelo_mostrarListavuelos(listaFiltro,listaPiloto);
+    }
+}
+/*
+int vuelo_buscarPorNombrePil(LinkedList* listavuelos,int idABuscar)
+{
+    int auxIdVuelo;
+    int retorno=-1;
+    eVuelo* aux;
+    int i;
+    int len=ll_len(listavuelos);
+    if(listavuelos!=NULL)
+    {
+        for(i=0;i<len;i++)
         {
-            printf("\nNo hay ningun elemento en la lista\n");
-        }
-        else
-        {
-            printf("\nIDVUELO--IDAVION--PILOTO--FECHA--DESTINO--C.PASAJEROS--H.DESPEGUE--H.LLEGADA\n");
-                listaFiltro=ll_filter(listavuelos,vuelo_filtrarPorDestinoPortugal);
-            for(i=0;i<lenFiltro;i++)
+            aux=(eVuelo*)ll_get(listavuelos,i);
+            vuelo_getIdVuelo(aux,&auxIdVuelo);
+            if(auxIdVuelo==idABuscar)
             {
-                auxFiltro=(eVuelo*)ll_get(listaFiltro,i);
-                vuelo_getIdPiloto(auxFiltro,&auxIdPilotoVuelos);
-                indiceBusqueda=piloto_buscarPorId(listaPiloto,auxIdPilotoVuelos);
-                if(indiceBusqueda!=-1)
-                {
-                    auxPiloto=(ePiloto*)ll_get(listaPiloto,indiceBusqueda);
-                    piloto_getId(auxPiloto,&auxIdPiloto);
-                    vuelo_getDestino(auxFiltro,auxDestino);
-                    if((listaFiltro!=NULL) && (auxIdPilotoVuelos==auxIdPiloto))
-                    {
-                        vuelo_mostrarUnvuelo(auxFiltro,auxPiloto);
-                    }
-                }
+                retorno=i;
+                break;
             }
         }
     }
+    return retorno;
 }
+*/
+/*
+vuelo_filtrarPorVuelosSinAlexLifeson(void* unVuelo)
+{
+    int filtro=0;
+    int auxIdPiloto;
+    eVuelo* vuelo=(eVuelo*)unvuelo;
+    vuelo_getIdPiloto(vuelo,&auxIdPiloto);
+    if(auxIdPiloto!=1)
+}
+*/
+/*
+void vuelo_mostrarListaDeVuelosSinAlexLifeson(LinkedList* listavuelos,LinkedList* listaPiloto)
+{
+    LinkedList* listaFiltro=ll_filter(listavuelos,vuelo_filtrarPorVuelosSinAlexLifeson);
+    if(listaFiltro!=NULL)
+    {
+        vuelo_mostrarListavuelos(listaFiltro,listaPiloto);
+    }
+}
+*/
