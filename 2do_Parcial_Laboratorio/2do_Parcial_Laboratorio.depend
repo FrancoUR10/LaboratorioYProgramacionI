@@ -1,0 +1,68 @@
+# depslib dependency file v1.0
+1574770767 source:d:\laboratorioyprogramacioni\2do_parcial_laboratorio\empleado.c
+	"Empleado.h"
+
+1574767464 d:\laboratorioyprogramacioni\2do_parcial_laboratorio\empleado.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"Validaciones.h"
+	"LinkedList.h"
+	"Localidad.h"
+
+1574767464 d:\laboratorioyprogramacioni\2do_parcial_laboratorio\validaciones.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+
+1574767464 d:\laboratorioyprogramacioni\2do_parcial_laboratorio\linkedlist.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1574767464 d:\laboratorioyprogramacioni\2do_parcial_laboratorio\localidad.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"Validaciones.h"
+	"LinkedList.h"
+
+1574767464 source:d:\laboratorioyprogramacioni\2do_parcial_laboratorio\linkedlist.c
+	"LinkedList.h"
+
+1574767464 source:d:\laboratorioyprogramacioni\2do_parcial_laboratorio\localidad.c
+	"Localidad.h"
+
+1574777319 source:d:\laboratorioyprogramacioni\2do_parcial_laboratorio\main.c
+	<stdio.h>
+	<stdlib.h>
+	"LinkedList.h"
+	"Validaciones.h"
+	"Vuelos.h"
+	"Pilotos.h"
+
+1574773672 d:\laboratorioyprogramacioni\2do_parcial_laboratorio\pilotos.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"LinkedList.h"
+	"Validaciones.h"
+
+1574777598 d:\laboratorioyprogramacioni\2do_parcial_laboratorio\vuelos.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"LinkedList.h"
+	"Validaciones.h"
+	"Pilotos.h"
+
+1574776884 source:d:\laboratorioyprogramacioni\2do_parcial_laboratorio\pilotos.c
+	"Pilotos.h"
+
+1574771885 source:d:\laboratorioyprogramacioni\2do_parcial_laboratorio\validaciones.c
+	"Validaciones.h"
+
+1574777263 source:d:\laboratorioyprogramacioni\2do_parcial_laboratorio\vuelos.c
+	"Vuelos.h"
+
