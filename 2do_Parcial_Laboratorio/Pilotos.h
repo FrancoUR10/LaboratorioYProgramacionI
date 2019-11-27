@@ -36,12 +36,21 @@ void piloto_harcodearDatos(LinkedList* listapiloto);
 
 /** \brief Busca una piloto por su id
  *
- * \param listapiloto LinkedList* La lista de pilotoes
+ * \param listapiloto LinkedList* La lista de pilotos
  * \param idABuscar int El id a buscar
  * \return int Si encontro el id retorna su indice, si no lo encontro [-1]
  *
  */
 int piloto_buscarPorId(LinkedList* listapiloto,int idABuscar);
+
+/** \brief Busca una piloto por su nombre y apellido
+ *
+ * \param listapiloto LinkedList* La lista de pilotos
+ * \param nombreYApellidoABuscar char* El nombre y apellido a buscar
+ * \return int Si encontro el nombre y apellido retorna su indice, si no lo encontro [-1]
+ *
+ */
+int piloto_buscarPorNombreYApellido(LinkedList* listapiloto,char* nombreYApellidoABuscar);
 
 /** \brief Muestra una piloto
  *

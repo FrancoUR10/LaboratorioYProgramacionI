@@ -99,4 +99,6 @@ int vuelo_filtrarPorVuelosCortos(void* unvuelo);
 int vuelo_guardarDatosPorFiltro(FILE* archivo,LinkedList* listavuelos);
 int vuelo_filtrarPorDestinoPortugal(void* unvuelo);
 void vuelo_mostrarListaDeVuelosAPortugal(LinkedList* listavuelos,LinkedList* listaPiloto);
+int vuelo_filtrarPorVuelosSinAlexLifeson(void* unVuelo);
+void vuelo_mostrarListaDeVuelosSinAlexLifeson(LinkedList* listavuelos,LinkedList* listaPiloto);
 #endif // VUELOS_H_INCLUDED

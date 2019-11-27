@@ -34,6 +34,7 @@ void piloto_harcodearDatos(LinkedList* listapiloto)
 }
 int piloto_buscarPorId(LinkedList* listapiloto,int idABuscar)
 {
+    int auxId;
     int retorno=-1;
     ePiloto* auxDatos;
     int i;
@@ -43,7 +44,30 @@ int piloto_buscarPorId(LinkedList* listapiloto,int idABuscar)
         for(i=0;i<len;i++)
         {
             auxDatos=ll_get(listapiloto,i);
-            if(auxDatos->id==idABuscar)
+            piloto_getId(auxDatos,&auxId);
+            if(auxId==idABuscar)
+            {
+                retorno=i;
+                break;
+            }
+        }
+    }
+    return retorno;
+}
+int piloto_buscarPorNombreYApellido(LinkedList* listapiloto,char* nombreYApellidoABuscar)
+{
+    char auxNombreYApellido[256];
+    int retorno=-1;
+    ePiloto* auxDatos;
+    int i;
+    int len=ll_len(listapiloto);
+    if(listapiloto!=NULL)
+    {
+        for(i=0;i<len;i++)
+        {
+            auxDatos=ll_get(listapiloto,i);
+            piloto_getNombreYApellido(auxDatos,nombreYApellidoABuscar);
+            if(strcmp(auxNombreYApellido,nombreYApellidoABuscar)==0)
             {
                 retorno=i;
                 break;

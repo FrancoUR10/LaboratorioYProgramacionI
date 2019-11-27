@@ -44,6 +44,7 @@ int main()
                 vuelo_mostrarListaDeVuelosAPortugal(listaVuelos,listaPilotos);
                 break;
             case 5:
+                vuelo_mostrarListaDeVuelosSinAlexLifeson(listaVuelos,listaPilotos);
                 break;
             case 6:
                 continuarMenu='n';
