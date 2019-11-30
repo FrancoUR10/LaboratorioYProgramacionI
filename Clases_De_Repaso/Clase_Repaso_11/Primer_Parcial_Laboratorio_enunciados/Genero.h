@@ -44,4 +44,14 @@ void genero_mostrarLista(eGenero listagenero[],int tamgenero);
  *
  */
 int genero_buscarPorId(eGenero listagenero[],int tamgenero,int idABuscar);
+
+/** \brief Busca una descripcion y retorna su indice
+ *
+ * \param listaGenero[] eGenero La lista de generoes
+ * \param tamGenero int La longitud del array
+ * \param descripcionABuscar char* La descripcion a buscar
+ * \return int Si encontro la descripcion retorna su indice, si no la encontro [-1]
+ *
+ */
+int genero_buscarIdPorDescripcion(eGenero listaGenero[],int tamGenero,char* descripcionABuscar);
 #endif // GENERO_H_INCLUDED

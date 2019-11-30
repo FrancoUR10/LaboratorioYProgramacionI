@@ -39,3 +39,17 @@ int genero_buscarPorId(eGenero listagenero[],int tamgenero,int idABuscar)
     }
     return retorno;
 }
+int genero_buscarIdPorDescripcion(eGenero listaGenero[],int tamGenero,char* descripcionABuscar)
+{
+    int retorno=-1;
+    int i;
+    for(i=0;i<tamGenero;i++)
+    {
+        if(strcmp(listaGenero[i].descripcion,descripcionABuscar)==0)
+        {
+            retorno=listaGenero[i].id;
+            break;
+        }
+    }
+    return retorno;
+}

@@ -316,10 +316,10 @@
 	<string.h>
 	"Validaciones.h"
 
-1575151454 source:c:\users\franco\desktop\temporal\laboratorioyprogramacioni\clases_de_repaso\clase_repaso_11\primer_parcial_laboratorio_enunciados\elenco.c
+1575156070 source:c:\users\franco\desktop\temporal\laboratorioyprogramacioni\clases_de_repaso\clase_repaso_11\primer_parcial_laboratorio_enunciados\elenco.c
 	"Elenco.h"
 
-1575152257 c:\users\franco\desktop\temporal\laboratorioyprogramacioni\clases_de_repaso\clase_repaso_11\primer_parcial_laboratorio_enunciados\elenco.h
+1575154792 c:\users\franco\desktop\temporal\laboratorioyprogramacioni\clases_de_repaso\clase_repaso_11\primer_parcial_laboratorio_enunciados\elenco.h
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -337,7 +337,7 @@
 
 1575151454 c:\users\franco\desktop\temporal\laboratorioyprogramacioni\clases_de_repaso\clase_repaso_11\primer_parcial_laboratorio_enunciados\fecha.h
 
-1575151454 c:\users\franco\desktop\temporal\laboratorioyprogramacioni\clases_de_repaso\clase_repaso_11\primer_parcial_laboratorio_enunciados\genero.h
+1575153666 c:\users\franco\desktop\temporal\laboratorioyprogramacioni\clases_de_repaso\clase_repaso_11\primer_parcial_laboratorio_enunciados\genero.h
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -346,7 +346,7 @@
 1575151454 source:c:\users\franco\desktop\temporal\laboratorioyprogramacioni\clases_de_repaso\clase_repaso_11\primer_parcial_laboratorio_enunciados\fecha.c
 	"Fecha.h"
 
-1575151454 source:c:\users\franco\desktop\temporal\laboratorioyprogramacioni\clases_de_repaso\clase_repaso_11\primer_parcial_laboratorio_enunciados\genero.c
+1575153583 source:c:\users\franco\desktop\temporal\laboratorioyprogramacioni\clases_de_repaso\clase_repaso_11\primer_parcial_laboratorio_enunciados\genero.c
 	"Genero.h"
 
 1575151454 source:c:\users\franco\desktop\temporal\laboratorioyprogramacioni\clases_de_repaso\clase_repaso_11\primer_parcial_laboratorio_enunciados\localidad.c

@@ -147,4 +147,5 @@ void elenco_mostrarPeliculasConActorArgentino(eElenco listaElenco[],int tamElenc
 void elenco_mostrarPeliculasConUnActorSeleccionado(eElenco listaElenco[],int tamElenco,ePelicula listaPelicula[],int tamPelicula,eActor listaActor[],int tamActor,eGenero listaGenero[],int tamGenero,ePais listaPais[],int tamPais);
 void elenco_mostrarActoresQueNoParticipanEnPeliculas(eElenco listaElenco[],int tamElenco,ePelicula listaPelicula[],int tamPelicula,eActor listaActor[],int tamActor,eGenero listaGenero[],int tamGenero,ePais listaPais[],int tamPais);
 int elenco_buscarActorPorCodigo(eElenco listaElenco[],int tamElenco,int codigoActorABuscar);
+void elenco_mostrarRecaudacionEnPeliculasRomanticas(eElenco listaElenco[],int tamElenco,eActor listaActor[],int tamActor,ePais listaPais[],int tamPais,ePelicula listaPelicula[],int tamPelicula,eGenero listaGenero[],int tamGenero);
 #endif // ELENCO_H_INCLUDED

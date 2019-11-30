@@ -1,13 +1,5 @@
 #include "Elenco.h"
-/*
-1. Mostrar las películas de terror cuyo año de estreno sea después del 2002.
-2. Películas en donde haya participado un actor argentino.
-3. Mostrar las películas en las que participó un actor seleccionado.
-4. Seleccionar un actor y determinar cuánto ha recaudado en todas las
-   películas románticas en las que participó.
 
-5. Listar los actores que no participaron en ninguna película.
-*/
 void elenco_informarDatos(eElenco listaElenco[],int tamElenco,eActor listaActor[],int tamActor,ePelicula listaPelicula[],int tamPelicula,eGenero listaGenero[],int tamGenero,ePais listaPais[],int tamPais)
 {
     int opcionMenu;
@@ -37,6 +29,7 @@ void elenco_informarDatos(eElenco listaElenco[],int tamElenco,eActor listaActor[
                 system("pause");
                 break;
             case 4:
+                elenco_mostrarRecaudacionEnPeliculasRomanticas(listaElenco,tamElenco,listaActor,tamActor,listaPais,tamPais,listaPelicula,tamPelicula,listaGenero,tamGenero);
                 system("pause");
                 break;
             case 5:
@@ -359,4 +352,35 @@ int elenco_buscarActorPorCodigo(eElenco listaElenco[],int tamElenco,int codigoAc
         }
     }
     return retorno;
+}
+void elenco_mostrarRecaudacionEnPeliculasRomanticas(eElenco listaElenco[],int tamElenco,eActor listaActor[],int tamActor,ePais listaPais[],int tamPais,ePelicula listaPelicula[],int tamPelicula,eGenero listaGenero[],int tamGenero)
+{
+    float acumuladorValorContrato=0;
+    char actorSeleccionado[256];
+    int indiceBusquedaActor;
+    int indiceBusquedaPelicula;
+    int indiceBusquedaGenero;
+    int i;
+    actor_mostrarLista(listaActor,tamActor,listaPais,tamPais);
+    if(getStrNumerosSinRango("\nIngrese el codigo de un actor: ",actorSeleccionado,"\nSolo se permiten numeros\n",3))
+    {
+        indiceBusquedaActor=actor_buscarPorCodigo(listaActor,tamActor,atoi(actorSeleccionado));
+        if(indiceBusquedaActor==-1)
+        {
+            printf("\nEl codigo ingresado no existe\n");
+        }
+        else
+        {
+            for(i=0;i<tamElenco;i++)
+            {
+                indiceBusquedaPelicula=pelicula_buscarPorCodigo(listaPelicula,tamPelicula,listaElenco[i].codigoPelicula);
+                indiceBusquedaGenero=genero_buscarIdPorDescripcion(listaGenero,tamGenero,"Romance");
+                if((listaActor[indiceBusquedaActor].estado==OCUPADO) && (listaPelicula[indiceBusquedaPelicula].idGenero==indiceBusquedaGenero) && (listaActor[indiceBusquedaActor].codigo==listaElenco[i].codigoActor) && (listaPelicula[indiceBusquedaPelicula].codigo==listaElenco[i].codigoPelicula))
+                {
+                    acumuladorValorContrato+=listaElenco[i].valorContrato;
+                }
+            }
+            printf("\nTotal de recaudacion en peliculas de romance: %.2f\n",acumuladorValorContrato);
+        }
+    }
 }
