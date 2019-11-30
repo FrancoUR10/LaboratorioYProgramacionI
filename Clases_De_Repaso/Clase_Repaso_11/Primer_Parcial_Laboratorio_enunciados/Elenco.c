@@ -335,18 +335,28 @@ void elenco_mostrarActoresQueNoParticipanEnPeliculas(eElenco listaElenco[],int t
     int indiceBusquedaPais;
     int indiceBusquedaActor;
     int i;
-    int j;
     printf("\nID          NOMBRE        APELLIDO        GENERO          NACIONALIDAD\n");
     for(i=0;i<tamActor;i++)
     {
-        for(j=0;j<tamElenco;j++)
-        {
-            indiceBusquedaActor=actor_buscarPorCodigo(listaActor,tamActor,listaElenco[j].codigoActor);
+            indiceBusquedaActor=elenco_buscarActorPorCodigo(listaElenco,tamElenco,listaActor[i].codigo);
             indiceBusquedaPais=pais_buscarPorId(listaPais,tamPais,listaActor[i].idNacionalidad);
             if((listaActor[i].estado==OCUPADO) && (indiceBusquedaActor==-1))
             {
-                actor_mostrarUnoSolo(listaActor[j],listaPais,indiceBusquedaPais);
+                actor_mostrarUnoSolo(listaActor[i],listaPais,indiceBusquedaPais);
             }
+    }
+}
+int elenco_buscarActorPorCodigo(eElenco listaElenco[],int tamElenco,int codigoActorABuscar)
+{
+    int retorno=-1;
+    int i;
+    for(i=0;i<tamElenco;i++)
+    {
+        if((listaElenco[i].codigoDeReparto!=-1)&&(listaElenco[i].codigoActor==codigoActorABuscar))
+        {
+            retorno=i;
+            break;
         }
     }
+    return retorno;
 }
