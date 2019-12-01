@@ -359,7 +359,7 @@ void elenco_mostrarActoresQueNoParticipanEnPeliculas(eElenco listaElenco[],int t
     int indiceBusquedaPais;
     int indiceBusquedaActor;
     int i;
-    printf("\nID          NOMBRE        APELLIDO        GENERO          NACIONALIDAD\n");
+    printf("\nCODIGO      NOMBRE        APELLIDO        GENERO          NACIONALIDAD\n");
     for(i=0;i<tamActor;i++)
     {
             indiceBusquedaActor=elenco_buscarActorPorCodigo(listaElenco,tamElenco,listaActor[i].codigo);

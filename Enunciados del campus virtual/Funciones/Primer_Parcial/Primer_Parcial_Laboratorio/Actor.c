@@ -91,7 +91,7 @@ void actor_mostrarLista(eActor listaactor[],int tamactor,ePais listaPais[],int t
     else
     {
         actor_ordenarDatos(listaactor,tamactor);
-        printf("\nID          NOMBRE        APELLIDO        GENERO          NACIONALIDAD\n");
+        printf("\nCODIGO       NOMBRE        APELLIDO        GENERO          NACIONALIDAD\n");
         for(i=0;i<tamactor;i++)
         {
             indiceBusqueda=pais_buscarPorId(listaPais,tamPais,listaactor[i].idNacionalidad);
@@ -300,7 +300,7 @@ void actor_pedirDatosAModificar(eActor listaactor[],ePais listaPais[],int tamPai
     do
     {
         system("cls");
-        printf("\nID          NOMBRE        APELLIDO        GENERO     NACIONALIDAD\n");
+        printf("\nCODIGO       NOMBRE        APELLIDO        GENERO          NACIONALIDAD\n");
 
         printf("\nDatos actuales seleccionados:\n");
         indiceBusqueda=pais_buscarPorId(listaPais,tamPais,listaactor[indice].idNacionalidad);

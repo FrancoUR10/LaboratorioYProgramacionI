@@ -185,3 +185,77 @@
 1575116250 source:d:\laboratorioyprogramacioni\clases_de_repaso\clase_repaso_11\primer_parcial_laboratorio\actor.c
 	"Actor.h"
 
+1575166422 source:c:\users\acquisto\desktop\programacion y laboratorio\laboratorioyprogramacioni\enunciados del campus virtual\funciones\primer_parcial\primer_parcial_laboratorio\elenco.c
+	"Elenco.h"
+
+1575166422 c:\users\acquisto\desktop\programacion y laboratorio\laboratorioyprogramacioni\enunciados del campus virtual\funciones\primer_parcial\primer_parcial_laboratorio\elenco.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"Validaciones.h"
+	"Actor.h"
+	"Pelicula.h"
+
+1575166422 c:\users\acquisto\desktop\programacion y laboratorio\laboratorioyprogramacioni\enunciados del campus virtual\funciones\primer_parcial\primer_parcial_laboratorio\validaciones.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+
+1575166422 c:\users\acquisto\desktop\programacion y laboratorio\laboratorioyprogramacioni\enunciados del campus virtual\funciones\primer_parcial\primer_parcial_laboratorio\actor.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"Validaciones.h"
+	"Pais.h"
+
+1575166422 c:\users\acquisto\desktop\programacion y laboratorio\laboratorioyprogramacioni\enunciados del campus virtual\funciones\primer_parcial\primer_parcial_laboratorio\pais.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"Validaciones.h"
+
+1575166422 c:\users\acquisto\desktop\programacion y laboratorio\laboratorioyprogramacioni\enunciados del campus virtual\funciones\primer_parcial\primer_parcial_laboratorio\pelicula.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"Validaciones.h"
+	"Fecha.h"
+	"Genero.h"
+
+1575166422 c:\users\acquisto\desktop\programacion y laboratorio\laboratorioyprogramacioni\enunciados del campus virtual\funciones\primer_parcial\primer_parcial_laboratorio\fecha.h
+
+1575166422 c:\users\acquisto\desktop\programacion y laboratorio\laboratorioyprogramacioni\enunciados del campus virtual\funciones\primer_parcial\primer_parcial_laboratorio\genero.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"Validaciones.h"
+
+1575166422 source:c:\users\acquisto\desktop\programacion y laboratorio\laboratorioyprogramacioni\enunciados del campus virtual\funciones\primer_parcial\primer_parcial_laboratorio\fecha.c
+	"Fecha.h"
+
+1575166422 source:c:\users\acquisto\desktop\programacion y laboratorio\laboratorioyprogramacioni\enunciados del campus virtual\funciones\primer_parcial\primer_parcial_laboratorio\genero.c
+	"Genero.h"
+
+1575166422 source:c:\users\acquisto\desktop\programacion y laboratorio\laboratorioyprogramacioni\enunciados del campus virtual\funciones\primer_parcial\primer_parcial_laboratorio\main.c
+	<stdio.h>
+	<stdlib.h>
+	"Validaciones.h"
+	"Genero.h"
+	"Pelicula.h"
+	"Actor.h"
+	"Elenco.h"
+	"Pais.h"
+
+1575166422 source:c:\users\acquisto\desktop\programacion y laboratorio\laboratorioyprogramacioni\enunciados del campus virtual\funciones\primer_parcial\primer_parcial_laboratorio\pais.c
+	"Pais.h"
+
+1575166422 source:c:\users\acquisto\desktop\programacion y laboratorio\laboratorioyprogramacioni\enunciados del campus virtual\funciones\primer_parcial\primer_parcial_laboratorio\pelicula.c
+	"Pelicula.h"
+
+1575166422 source:c:\users\acquisto\desktop\programacion y laboratorio\laboratorioyprogramacioni\enunciados del campus virtual\funciones\primer_parcial\primer_parcial_laboratorio\validaciones.c
+	"Validaciones.h"
+
+1575168488 source:c:\users\acquisto\desktop\programacion y laboratorio\laboratorioyprogramacioni\enunciados del campus virtual\funciones\primer_parcial\primer_parcial_laboratorio\actor.c
+	"Actor.h"
+
