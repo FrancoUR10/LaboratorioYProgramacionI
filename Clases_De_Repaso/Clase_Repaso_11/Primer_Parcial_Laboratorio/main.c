@@ -10,6 +10,7 @@
 #define MAX_PELICULA 5
 #define MAX_ACTOR 100
 #define MAX_PAIS 5
+
 int main()
 {
     eActor listaActores[MAX_ACTOR];

@@ -17,16 +17,16 @@ typedef struct
 
 /** \brief Muestra en un menu los informes
  *
- * \param listaElenco[] eElenco
- * \param tamElenco int
- * \param listaActor[] eActor
- * \param tamActor int
- * \param listaPelicula[] ePelicula
- * \param tamPelicula int
- * \param listaGenero[] eGenero
- * \param tamGenero int
- * \param listaPais[] ePais
- * \param tamPais int
+ * \param listaElenco[] eElenco La lista de elencos
+ * \param tamElenco int La longitud de la lista elencos
+ * \param listaActor[] eActor La lista de actores
+ * \param tamActor int La longitud de la lista actores
+ * \param listaPelicula[] ePelicula La lista de peliculas
+ * \param tamPelicula int La longitud de la lista peliculas
+ * \param listaGenero[] eGenero La lista de generos
+ * \param tamGenero int La longitud de la lista generos
+ * \param listaPais[] ePais La lista de paises
+ * \param tamPais int La longitud de la lista paises
  * \return void No retorna nada
  *
  */
@@ -143,9 +143,78 @@ int elenco_buscarUnElenco(eElenco listaElenco[],int tamElenco,int codigoActorABu
  *
  */
 void elenco_ordenarDatos(eElenco listaElenco[],int tamElenco,ePelicula listaPelicula[],int tamPelicula,eActor listaActor[],int tamActor);
+
+/** \brief Muestra la lista de peliculas que tengan un actor argentino
+ *
+ * \param listaElenco[] eElenco La lista de elencos
+ * \param tamElenco int La longitud de la lista elencos
+ * \param listaPelicula[] ePelicula La lista de peliculas
+ * \param tamPelicula int La longitud de la lista peliculas
+ * \param listaActor[] eActor La lista de actores
+ * \param tamActor int La longitud de la lista actores
+ * \param listaGenero[] eGenero La lista de generos
+ * \param tamGenero int La longitud de la lista generos
+ * \param listaPais[] ePais La lista de paises
+ * \param tamPais int La longitud de la lista paises
+ * \return void No retorna nada
+ *
+ */
 void elenco_mostrarPeliculasConActorArgentino(eElenco listaElenco[],int tamElenco,ePelicula listaPelicula[],int tamPelicula,eActor listaActor[],int tamActor,eGenero listaGenero[],int tamGenero,ePais listaPais[],int tamPais);
+
+/** \brief Muestra la lista de peliculas que contengan un actor seleccionado
+ *
+ * \param listaElenco[] eElenco La lista de elencos
+ * \param tamElenco int La longitud de la lista elencos
+ * \param listaPelicula[] ePelicula La lista de peliculas
+ * \param tamPelicula int La longitud de la lista peliculas
+ * \param listaActor[] eActor La lista de actores
+ * \param tamActor int La longitud de la lista actores
+ * \param listaGenero[] eGenero La lista de generos
+ * \param tamGenero int La longitud de la lista generos
+ * \param listaPais[] ePais La lista de paises
+ * \param tamPais int La longitud de la lista paises
+ * \return void No retorna nada
+ *
+ */
 void elenco_mostrarPeliculasConUnActorSeleccionado(eElenco listaElenco[],int tamElenco,ePelicula listaPelicula[],int tamPelicula,eActor listaActor[],int tamActor,eGenero listaGenero[],int tamGenero,ePais listaPais[],int tamPais);
-void elenco_mostrarActoresQueNoParticipanEnPeliculas(eElenco listaElenco[],int tamElenco,ePelicula listaPelicula[],int tamPelicula,eActor listaActor[],int tamActor,eGenero listaGenero[],int tamGenero,ePais listaPais[],int tamPais);
-int elenco_buscarActorPorCodigo(eElenco listaElenco[],int tamElenco,int codigoActorABuscar);
+
+/** \brief Muestra el total del valor recaudado del actor seleccionado que actuo en peliculas romanticas
+ *
+ * \param listaElenco[] eElenco La lista de elencos
+ * \param tamElenco int La longitud de la lista elencos
+ * \param listaActor[] eActor La lista de actores
+ * \param tamActor int La longitud de la lista actores
+ * \param listaPais[] ePais La lista de paises
+ * \param tamPais int La longitud de la lista paises
+ * \param listaPelicula[] ePelicula La lista de peliculas
+ * \param tamPelicula int La longitud de la lista peliculas
+ * \param listaGenero[] eGenero La lista de generos
+ * \param tamGenero int La longitud de la lista generos
+ * \return void No retorna nada
+ *
+ */
 void elenco_mostrarRecaudacionEnPeliculasRomanticas(eElenco listaElenco[],int tamElenco,eActor listaActor[],int tamActor,ePais listaPais[],int tamPais,ePelicula listaPelicula[],int tamPelicula,eGenero listaGenero[],int tamGenero);
+
+/** \brief Muestra la lista de actores que no participan en ninguna pelicula
+ *
+ * \param listaElenco[] eElenco La lista de elencos
+ * \param tamElenco int La longitud de la lista elencos
+ * \param listaActor[] eActor La lista de actores
+ * \param tamActor int La longitud de la lista actores
+ * \param listaPais[] ePais La lista de paises
+ * \param tamPais int La longitud de la lista paises
+ * \return void No retorna nada
+ *
+ */
+void elenco_mostrarActoresQueNoParticipanEnPeliculas(eElenco listaElenco[],int tamElenco,eActor listaActor[],int tamActor,ePais listaPais[],int tamPais);
+
+/** \brief Busca el codigo de un actor que se encuentre en el elenco
+ *
+ * \param listaElenco[] eElenco La lista de elencos
+ * \param tamElenco int La longitud de la lista elencos
+ * \param codigoActorABuscar int El codigo del actor a buscar
+ * \return int Si encontro el codigo del actor retorna su indice, si no lo encontro [-1]
+ *
+ */
+int elenco_buscarActorPorCodigo(eElenco listaElenco[],int tamElenco,int codigoActorABuscar);
 #endif // ELENCO_H_INCLUDED

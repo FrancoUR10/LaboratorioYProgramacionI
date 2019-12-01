@@ -54,5 +54,15 @@ void pelicula_mostrarLista(ePelicula listapelicula[],int tampelicula,eGenero lis
  *
  */
 int pelicula_buscarPorCodigo(ePelicula listapelicula[],int tampelicula,int codigoABuscar);
+
+/** \brief Muestra la lista de peliculas estrenadas despues del anio 2002
+ *
+ * \param listaPelicula[] ePelicula La lista de peliculas
+ * \param tamPelicula int La longitud de la lista peliculas
+ * \param listaGenero[] eGenero La lista de generos
+ * \param tamGenero int La longitud de la lista generos
+ * \return void No retorna nada
+ *
+ */
 void pelicula_mostrarPeliculasDespuesDel2002(ePelicula listaPelicula[],int tamPelicula,eGenero listaGenero[],int tamGenero);
 #endif // PELICULA_H_INCLUDED

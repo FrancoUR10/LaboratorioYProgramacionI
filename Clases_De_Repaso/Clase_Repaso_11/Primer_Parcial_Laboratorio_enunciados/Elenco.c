@@ -33,7 +33,7 @@ void elenco_informarDatos(eElenco listaElenco[],int tamElenco,eActor listaActor[
                 system("pause");
                 break;
             case 5:
-                elenco_mostrarActoresQueNoParticipanEnPeliculas(listaElenco,tamElenco,listaPelicula,tamPelicula,listaActor,tamActor,listaGenero,tamGenero,listaPais,tamPais);
+                elenco_mostrarActoresQueNoParticipanEnPeliculas(listaElenco,tamElenco,listaActor,tamActor,listaPais,tamPais);
                 system("pause");
                 break;
             case 6:
@@ -323,36 +323,6 @@ void elenco_mostrarPeliculasConUnActorSeleccionado(eElenco listaElenco[],int tam
         }
     }
 }
-void elenco_mostrarActoresQueNoParticipanEnPeliculas(eElenco listaElenco[],int tamElenco,ePelicula listaPelicula[],int tamPelicula,eActor listaActor[],int tamActor,eGenero listaGenero[],int tamGenero,ePais listaPais[],int tamPais)
-{
-    int indiceBusquedaPais;
-    int indiceBusquedaActor;
-    int i;
-    printf("\nID          NOMBRE        APELLIDO        GENERO          NACIONALIDAD\n");
-    for(i=0;i<tamActor;i++)
-    {
-            indiceBusquedaActor=elenco_buscarActorPorCodigo(listaElenco,tamElenco,listaActor[i].codigo);
-            indiceBusquedaPais=pais_buscarPorId(listaPais,tamPais,listaActor[i].idNacionalidad);
-            if((listaActor[i].estado==OCUPADO) && (indiceBusquedaActor==-1))
-            {
-                actor_mostrarUnoSolo(listaActor[i],listaPais,indiceBusquedaPais);
-            }
-    }
-}
-int elenco_buscarActorPorCodigo(eElenco listaElenco[],int tamElenco,int codigoActorABuscar)
-{
-    int retorno=-1;
-    int i;
-    for(i=0;i<tamElenco;i++)
-    {
-        if((listaElenco[i].codigoDeReparto!=-1)&&(listaElenco[i].codigoActor==codigoActorABuscar))
-        {
-            retorno=i;
-            break;
-        }
-    }
-    return retorno;
-}
 void elenco_mostrarRecaudacionEnPeliculasRomanticas(eElenco listaElenco[],int tamElenco,eActor listaActor[],int tamActor,ePais listaPais[],int tamPais,ePelicula listaPelicula[],int tamPelicula,eGenero listaGenero[],int tamGenero)
 {
     float acumuladorValorContrato=0;
@@ -383,4 +353,34 @@ void elenco_mostrarRecaudacionEnPeliculasRomanticas(eElenco listaElenco[],int ta
             printf("\nTotal de recaudacion en peliculas de romance: %.2f\n",acumuladorValorContrato);
         }
     }
+}
+void elenco_mostrarActoresQueNoParticipanEnPeliculas(eElenco listaElenco[],int tamElenco,eActor listaActor[],int tamActor,ePais listaPais[],int tamPais)
+{
+    int indiceBusquedaPais;
+    int indiceBusquedaActor;
+    int i;
+    printf("\nID          NOMBRE        APELLIDO        GENERO          NACIONALIDAD\n");
+    for(i=0;i<tamActor;i++)
+    {
+            indiceBusquedaActor=elenco_buscarActorPorCodigo(listaElenco,tamElenco,listaActor[i].codigo);
+            indiceBusquedaPais=pais_buscarPorId(listaPais,tamPais,listaActor[i].idNacionalidad);
+            if((listaActor[i].estado==OCUPADO) && (indiceBusquedaActor==-1))
+            {
+                actor_mostrarUnoSolo(listaActor[i],listaPais,indiceBusquedaPais);
+            }
+    }
+}
+int elenco_buscarActorPorCodigo(eElenco listaElenco[],int tamElenco,int codigoActorABuscar)
+{
+    int retorno=-1;
+    int i;
+    for(i=0;i<tamElenco;i++)
+    {
+        if((listaElenco[i].codigoDeReparto!=-1) && (listaElenco[i].codigoActor==codigoActorABuscar))
+        {
+            retorno=i;
+            break;
+        }
+    }
+    return retorno;
 }
