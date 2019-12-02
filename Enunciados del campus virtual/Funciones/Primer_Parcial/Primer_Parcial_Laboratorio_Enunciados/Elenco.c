@@ -278,6 +278,7 @@ void elenco_ordenarDatos(eElenco listaElenco[],int tamElenco,ePelicula listaPeli
 void elenco_mostrarPeliculasConActorArgentino(eElenco listaElenco[],int tamElenco,ePelicula listaPelicula[],int tamPelicula,eActor listaActor[],int tamActor,eGenero listaGenero[],int tamGenero,ePais listaPais[],int tamPais)
 {
     int indiceBusquedaActor;
+    int idNacionalidadEncontrado;
     int indiceBusquedaPelicula;
     int indiceBusquedaGenero;
     int i;
@@ -285,9 +286,10 @@ void elenco_mostrarPeliculasConActorArgentino(eElenco listaElenco[],int tamElenc
     for(i=0;i<tamElenco;i++)
     {
         indiceBusquedaActor=actor_buscarPorCodigo(listaActor,tamActor,listaElenco[i].codigoActor);
+        idNacionalidadEncontrado=pais_buscarIdPorDescripcion(listaPais,tamPais,"Argentina");
         indiceBusquedaPelicula=pelicula_buscarPorCodigo(listaPelicula,tamPelicula,listaElenco[i].codigoPelicula);
         indiceBusquedaGenero=genero_buscarPorId(listaGenero,tamGenero,listaPelicula[indiceBusquedaPelicula].idGenero);
-        if((listaActor[indiceBusquedaActor].idNacionalidad==pais_buscarIdPorDescripcion(listaPais,tamPais,"Argentina")) && (listaActor[indiceBusquedaActor].estado==OCUPADO) && (listaElenco[i].codigoActor==listaActor[indiceBusquedaActor].codigo) && (listaElenco[i].codigoPelicula==listaPelicula[indiceBusquedaPelicula].codigo))
+        if((listaActor[indiceBusquedaActor].idNacionalidad==idNacionalidadEncontrado) && (listaActor[indiceBusquedaActor].estado==OCUPADO) && (listaActor[indiceBusquedaActor].codigo==listaElenco[i].codigoActor) && (listaPelicula[indiceBusquedaPelicula].codigo==listaElenco[i].codigoPelicula))
         {
             pelicula_mostrarUnoSolo(listaPelicula[indiceBusquedaPelicula],listaGenero,indiceBusquedaGenero);
         }
@@ -295,15 +297,17 @@ void elenco_mostrarPeliculasConActorArgentino(eElenco listaElenco[],int tamElenc
 }
 void elenco_mostrarPeliculasConUnActorSeleccionado(eElenco listaElenco[],int tamElenco,ePelicula listaPelicula[],int tamPelicula,eActor listaActor[],int tamActor,eGenero listaGenero[],int tamGenero,ePais listaPais[],int tamPais)
 {
-    char actorSeleccionado[256];
+    char auxActorSeleccionadoStr[256];
+    int auxActorSeleccionadoInt;
     int indiceBusquedaActor;
     int indiceBusquedaPelicula;
     int indiceBusquedaGenero;
     int i;
     actor_mostrarLista(listaActor,tamActor,listaPais,tamPais);
-    if(getStrNumerosSinRango("\nIngrese el codigo de un actor: ",actorSeleccionado,"\nSolo se permiten numeros\n",3))
+    if(getStrNumerosSinRango("\nIngrese el codigo de un actor: ",auxActorSeleccionadoStr,"\nSolo se permiten numeros\n",3))
     {
-        if(actor_buscarPorCodigo(listaActor,tamActor,atoi(actorSeleccionado))==-1)
+        auxActorSeleccionadoInt=actor_buscarPorCodigo(listaActor,tamActor,atoi(auxActorSeleccionadoStr));
+        if(auxActorSeleccionadoInt==-1)
         {
             printf("\nEl codigo ingresado no existe\n");
         }
@@ -315,7 +319,7 @@ void elenco_mostrarPeliculasConUnActorSeleccionado(eElenco listaElenco[],int tam
                 indiceBusquedaActor=actor_buscarPorCodigo(listaActor,tamActor,listaElenco[i].codigoActor);
                 indiceBusquedaPelicula=pelicula_buscarPorCodigo(listaPelicula,tamPelicula,listaElenco[i].codigoPelicula);
                 indiceBusquedaGenero=genero_buscarPorId(listaGenero,tamGenero,listaPelicula[indiceBusquedaPelicula].idGenero);
-                if((indiceBusquedaActor==actor_buscarPorCodigo(listaActor,tamActor,atoi(actorSeleccionado))) && (listaActor[indiceBusquedaActor].estado==OCUPADO) && (listaElenco[i].codigoActor==listaActor[indiceBusquedaActor].codigo) && (listaElenco[i].codigoPelicula==listaPelicula[indiceBusquedaPelicula].codigo))
+                if((listaActor[indiceBusquedaActor].codigo==listaActor[auxActorSeleccionadoInt].codigo) && (listaActor[indiceBusquedaActor].estado==OCUPADO) && (listaActor[indiceBusquedaActor].codigo==listaElenco[i].codigoActor) && (listaPelicula[indiceBusquedaPelicula].codigo==listaElenco[i].codigoPelicula))
                 {
                     pelicula_mostrarUnoSolo(listaPelicula[indiceBusquedaPelicula],listaGenero,indiceBusquedaGenero);
                 }
@@ -329,7 +333,7 @@ void elenco_mostrarRecaudacionEnPeliculasRomanticas(eElenco listaElenco[],int ta
     char actorSeleccionado[256];
     int indiceBusquedaActor;
     int indiceBusquedaPelicula;
-    int indiceBusquedaGenero;
+    int idGeneroEncontrado;
     int i;
     actor_mostrarLista(listaActor,tamActor,listaPais,tamPais);
     if(getStrNumerosSinRango("\nIngrese el codigo de un actor: ",actorSeleccionado,"\nSolo se permiten numeros\n",3))
@@ -344,8 +348,8 @@ void elenco_mostrarRecaudacionEnPeliculasRomanticas(eElenco listaElenco[],int ta
             for(i=0;i<tamElenco;i++)
             {
                 indiceBusquedaPelicula=pelicula_buscarPorCodigo(listaPelicula,tamPelicula,listaElenco[i].codigoPelicula);
-                indiceBusquedaGenero=genero_buscarIdPorDescripcion(listaGenero,tamGenero,"Romance");
-                if((listaActor[indiceBusquedaActor].estado==OCUPADO) && (listaPelicula[indiceBusquedaPelicula].idGenero==indiceBusquedaGenero) && (listaActor[indiceBusquedaActor].codigo==listaElenco[i].codigoActor) && (listaPelicula[indiceBusquedaPelicula].codigo==listaElenco[i].codigoPelicula))
+                idGeneroEncontrado=genero_buscarIdPorDescripcion(listaGenero,tamGenero,"Romance");
+                if((listaActor[indiceBusquedaActor].estado==OCUPADO) && (listaPelicula[indiceBusquedaPelicula].idGenero==idGeneroEncontrado) && (listaActor[indiceBusquedaActor].codigo==listaElenco[i].codigoActor) && (listaPelicula[indiceBusquedaPelicula].codigo==listaElenco[i].codigoPelicula))
                 {
                     acumuladorValorContrato+=listaElenco[i].valorContrato;
                 }
@@ -364,7 +368,7 @@ void elenco_mostrarActoresQueNoParticipanEnPeliculas(eElenco listaElenco[],int t
     {
             indiceBusquedaActor=elenco_buscarActorPorCodigo(listaElenco,tamElenco,listaActor[i].codigo);
             indiceBusquedaPais=pais_buscarPorId(listaPais,tamPais,listaActor[i].idNacionalidad);
-            if((listaActor[i].estado==OCUPADO) && (indiceBusquedaActor==-1))
+            if((listaActor[i].estado==OCUPADO) && (listaActor[i].codigo!=listaElenco[indiceBusquedaActor].codigoActor))
             {
                 actor_mostrarUnoSolo(listaActor[i],listaPais,indiceBusquedaPais);
             }
