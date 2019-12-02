@@ -1,0 +1,592 @@
+# depslib dependency file v1.0
+1574896636 source:c:\users\acquisto\desktop\programacion y laboratorio\primer_parcial_laboratorio\elenco.c
+	"Elenco.h"
+
+1574987749 c:\users\acquisto\desktop\programacion y laboratorio\primer_parcial_laboratorio\elenco.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"Validaciones.h"
+	"Actor.h"
+	"Pelicula.h"
+
+1574970629 source:c:\users\acquisto\desktop\programacion y laboratorio\primer_parcial_laboratorio\genero.c
+	"Genero.h"
+
+1574969901 c:\users\acquisto\desktop\programacion y laboratorio\primer_parcial_laboratorio\genero.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"Validaciones.h"
+
+1574987221 source:c:\users\acquisto\desktop\programacion y laboratorio\primer_parcial_laboratorio\main.c
+	<stdio.h>
+	<stdlib.h>
+	"Validaciones.h"
+	"Genero.h"
+	"Pelicula.h"
+	"Actor.h"
+	"Elenco.h"
+	"Pais.h"
+
+1574957020 c:\users\acquisto\desktop\programacion y laboratorio\primer_parcial_laboratorio\validaciones.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+
+1574971359 c:\users\acquisto\desktop\programacion y laboratorio\primer_parcial_laboratorio\pelicula.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"Validaciones.h"
+	"Fecha.h"
+	"Genero.h"
+
+1574985631 c:\users\acquisto\desktop\programacion y laboratorio\primer_parcial_laboratorio\actor.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"Validaciones.h"
+	"Pais.h"
+
+1574971612 source:c:\users\acquisto\desktop\programacion y laboratorio\primer_parcial_laboratorio\pelicula.c
+	"Pelicula.h"
+
+1574961713 source:c:\users\acquisto\desktop\programacion y laboratorio\primer_parcial_laboratorio\abm.c
+	"ABM.h"
+
+1574964115 c:\users\acquisto\desktop\programacion y laboratorio\primer_parcial_laboratorio\abm.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"Validaciones.h"
+	"Localidad.h"
+
+1574957020 source:c:\users\acquisto\desktop\programacion y laboratorio\primer_parcial_laboratorio\validaciones.c
+	"Validaciones.h"
+
+1574985648 source:c:\users\acquisto\desktop\programacion y laboratorio\primer_parcial_laboratorio\actor.c
+	"Actor.h"
+
+1574963018 c:\users\acquisto\desktop\programacion y laboratorio\primer_parcial_laboratorio\localidad.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"Validaciones.h"
+
+1574962004 source:c:\users\acquisto\desktop\programacion y laboratorio\primer_parcial_laboratorio\localidad.c
+	"Localidad.h"
+
+1574971342 source:c:\users\acquisto\desktop\programacion y laboratorio\primer_parcial_laboratorio\fecha.c
+	"Fecha.h"
+
+1574971342 c:\users\acquisto\desktop\programacion y laboratorio\primer_parcial_laboratorio\fecha.h
+
+1574972280 source:c:\users\acquisto\desktop\programacion y laboratorio\primer_parcial_laboratorio\pais.c
+	"Pais.h"
+
+1574972280 c:\users\acquisto\desktop\programacion y laboratorio\primer_parcial_laboratorio\pais.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"Validaciones.h"
+
+1575115701 source:d:\laboratorioyprogramacioni\clases_de_repaso\clase_repaso_11\primer_parcial_laboratorio\abm.c
+	"ABM.h"
+
+1575115701 d:\laboratorioyprogramacioni\clases_de_repaso\clase_repaso_11\primer_parcial_laboratorio\abm.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"Validaciones.h"
+	"Localidad.h"
+
+1575115701 d:\laboratorioyprogramacioni\clases_de_repaso\clase_repaso_11\primer_parcial_laboratorio\validaciones.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+
+1575115701 d:\laboratorioyprogramacioni\clases_de_repaso\clase_repaso_11\primer_parcial_laboratorio\localidad.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"Validaciones.h"
+
+1575120682 source:d:\laboratorioyprogramacioni\clases_de_repaso\clase_repaso_11\primer_parcial_laboratorio\elenco.c
+	"Elenco.h"
+
+1575120575 d:\laboratorioyprogramacioni\clases_de_repaso\clase_repaso_11\primer_parcial_laboratorio\elenco.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"Validaciones.h"
+	"Actor.h"
+	"Pelicula.h"
+
+1575115701 d:\laboratorioyprogramacioni\clases_de_repaso\clase_repaso_11\primer_parcial_laboratorio\actor.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"Validaciones.h"
+	"Pais.h"
+
+1575115701 d:\laboratorioyprogramacioni\clases_de_repaso\clase_repaso_11\primer_parcial_laboratorio\pais.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"Validaciones.h"
+
+1575115701 d:\laboratorioyprogramacioni\clases_de_repaso\clase_repaso_11\primer_parcial_laboratorio\pelicula.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"Validaciones.h"
+	"Fecha.h"
+	"Genero.h"
+
+1575115701 d:\laboratorioyprogramacioni\clases_de_repaso\clase_repaso_11\primer_parcial_laboratorio\fecha.h
+
+1575115701 d:\laboratorioyprogramacioni\clases_de_repaso\clase_repaso_11\primer_parcial_laboratorio\genero.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"Validaciones.h"
+
+1575115701 source:d:\laboratorioyprogramacioni\clases_de_repaso\clase_repaso_11\primer_parcial_laboratorio\fecha.c
+	"Fecha.h"
+
+1575115701 source:d:\laboratorioyprogramacioni\clases_de_repaso\clase_repaso_11\primer_parcial_laboratorio\genero.c
+	"Genero.h"
+
+1575115701 source:d:\laboratorioyprogramacioni\clases_de_repaso\clase_repaso_11\primer_parcial_laboratorio\localidad.c
+	"Localidad.h"
+
+1575119368 source:d:\laboratorioyprogramacioni\clases_de_repaso\clase_repaso_11\primer_parcial_laboratorio\main.c
+	<stdio.h>
+	<stdlib.h>
+	"Validaciones.h"
+	"Genero.h"
+	"Pelicula.h"
+	"Actor.h"
+	"Elenco.h"
+	"Pais.h"
+
+1575115701 source:d:\laboratorioyprogramacioni\clases_de_repaso\clase_repaso_11\primer_parcial_laboratorio\pais.c
+	"Pais.h"
+
+1575119659 source:d:\laboratorioyprogramacioni\clases_de_repaso\clase_repaso_11\primer_parcial_laboratorio\pelicula.c
+	"Pelicula.h"
+
+1575115701 source:d:\laboratorioyprogramacioni\clases_de_repaso\clase_repaso_11\primer_parcial_laboratorio\validaciones.c
+	"Validaciones.h"
+
+1575116250 source:d:\laboratorioyprogramacioni\clases_de_repaso\clase_repaso_11\primer_parcial_laboratorio\actor.c
+	"Actor.h"
+
+1575115701 source:d:\laboratorioyprogramacioni\clases_de_repaso\clase_repaso_11\primer_parcial_laboratorio_enunciados\abm.c
+	"ABM.h"
+
+1575115701 d:\laboratorioyprogramacioni\clases_de_repaso\clase_repaso_11\primer_parcial_laboratorio_enunciados\abm.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"Validaciones.h"
+	"Localidad.h"
+
+1575115701 d:\laboratorioyprogramacioni\clases_de_repaso\clase_repaso_11\primer_parcial_laboratorio_enunciados\validaciones.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+
+1575115701 d:\laboratorioyprogramacioni\clases_de_repaso\clase_repaso_11\primer_parcial_laboratorio_enunciados\localidad.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"Validaciones.h"
+
+1575116250 source:d:\laboratorioyprogramacioni\clases_de_repaso\clase_repaso_11\primer_parcial_laboratorio_enunciados\actor.c
+	"Actor.h"
+
+1575115701 d:\laboratorioyprogramacioni\clases_de_repaso\clase_repaso_11\primer_parcial_laboratorio_enunciados\actor.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"Validaciones.h"
+	"Pais.h"
+
+1575123777 d:\laboratorioyprogramacioni\clases_de_repaso\clase_repaso_11\primer_parcial_laboratorio_enunciados\pais.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"Validaciones.h"
+
+1575115701 source:d:\laboratorioyprogramacioni\clases_de_repaso\clase_repaso_11\primer_parcial_laboratorio_enunciados\fecha.c
+	"Fecha.h"
+
+1575115701 d:\laboratorioyprogramacioni\clases_de_repaso\clase_repaso_11\primer_parcial_laboratorio_enunciados\fecha.h
+
+1575115701 source:d:\laboratorioyprogramacioni\clases_de_repaso\clase_repaso_11\primer_parcial_laboratorio_enunciados\genero.c
+	"Genero.h"
+
+1575115701 d:\laboratorioyprogramacioni\clases_de_repaso\clase_repaso_11\primer_parcial_laboratorio_enunciados\genero.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"Validaciones.h"
+
+1575115701 source:d:\laboratorioyprogramacioni\clases_de_repaso\clase_repaso_11\primer_parcial_laboratorio_enunciados\localidad.c
+	"Localidad.h"
+
+1575122004 source:d:\laboratorioyprogramacioni\clases_de_repaso\clase_repaso_11\primer_parcial_laboratorio_enunciados\main.c
+	<stdio.h>
+	<stdlib.h>
+	"Validaciones.h"
+	"Genero.h"
+	"Pelicula.h"
+	"Actor.h"
+	"Elenco.h"
+	"Pais.h"
+
+1575122069 d:\laboratorioyprogramacioni\clases_de_repaso\clase_repaso_11\primer_parcial_laboratorio_enunciados\pelicula.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"Validaciones.h"
+	"Fecha.h"
+	"Genero.h"
+
+1575125742 d:\laboratorioyprogramacioni\clases_de_repaso\clase_repaso_11\primer_parcial_laboratorio_enunciados\elenco.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"Validaciones.h"
+	"Actor.h"
+	"Pelicula.h"
+
+1575123761 source:d:\laboratorioyprogramacioni\clases_de_repaso\clase_repaso_11\primer_parcial_laboratorio_enunciados\pais.c
+	"Pais.h"
+
+1575122839 source:d:\laboratorioyprogramacioni\clases_de_repaso\clase_repaso_11\primer_parcial_laboratorio_enunciados\pelicula.c
+	"Pelicula.h"
+
+1575115701 source:d:\laboratorioyprogramacioni\clases_de_repaso\clase_repaso_11\primer_parcial_laboratorio_enunciados\validaciones.c
+	"Validaciones.h"
+
+1575125849 source:d:\laboratorioyprogramacioni\clases_de_repaso\clase_repaso_11\primer_parcial_laboratorio_enunciados\elenco.c
+	"Elenco.h"
+
+1575151454 source:c:\users\franco\desktop\temporal\laboratorioyprogramacioni\clases_de_repaso\clase_repaso_11\primer_parcial_laboratorio_enunciados\abm.c
+	"ABM.h"
+
+1575151454 c:\users\franco\desktop\temporal\laboratorioyprogramacioni\clases_de_repaso\clase_repaso_11\primer_parcial_laboratorio_enunciados\abm.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"Validaciones.h"
+	"Localidad.h"
+
+1575151454 c:\users\franco\desktop\temporal\laboratorioyprogramacioni\clases_de_repaso\clase_repaso_11\primer_parcial_laboratorio_enunciados\validaciones.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+
+1575151454 c:\users\franco\desktop\temporal\laboratorioyprogramacioni\clases_de_repaso\clase_repaso_11\primer_parcial_laboratorio_enunciados\localidad.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"Validaciones.h"
+
+1575151454 source:c:\users\franco\desktop\temporal\laboratorioyprogramacioni\clases_de_repaso\clase_repaso_11\primer_parcial_laboratorio_enunciados\actor.c
+	"Actor.h"
+
+1575151454 c:\users\franco\desktop\temporal\laboratorioyprogramacioni\clases_de_repaso\clase_repaso_11\primer_parcial_laboratorio_enunciados\actor.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"Validaciones.h"
+	"Pais.h"
+
+1575151454 c:\users\franco\desktop\temporal\laboratorioyprogramacioni\clases_de_repaso\clase_repaso_11\primer_parcial_laboratorio_enunciados\pais.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"Validaciones.h"
+
+1575156070 source:c:\users\franco\desktop\temporal\laboratorioyprogramacioni\clases_de_repaso\clase_repaso_11\primer_parcial_laboratorio_enunciados\elenco.c
+	"Elenco.h"
+
+1575154792 c:\users\franco\desktop\temporal\laboratorioyprogramacioni\clases_de_repaso\clase_repaso_11\primer_parcial_laboratorio_enunciados\elenco.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"Validaciones.h"
+	"Actor.h"
+	"Pelicula.h"
+
+1575151454 c:\users\franco\desktop\temporal\laboratorioyprogramacioni\clases_de_repaso\clase_repaso_11\primer_parcial_laboratorio_enunciados\pelicula.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"Validaciones.h"
+	"Fecha.h"
+	"Genero.h"
+
+1575151454 c:\users\franco\desktop\temporal\laboratorioyprogramacioni\clases_de_repaso\clase_repaso_11\primer_parcial_laboratorio_enunciados\fecha.h
+
+1575153666 c:\users\franco\desktop\temporal\laboratorioyprogramacioni\clases_de_repaso\clase_repaso_11\primer_parcial_laboratorio_enunciados\genero.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"Validaciones.h"
+
+1575151454 source:c:\users\franco\desktop\temporal\laboratorioyprogramacioni\clases_de_repaso\clase_repaso_11\primer_parcial_laboratorio_enunciados\fecha.c
+	"Fecha.h"
+
+1575153583 source:c:\users\franco\desktop\temporal\laboratorioyprogramacioni\clases_de_repaso\clase_repaso_11\primer_parcial_laboratorio_enunciados\genero.c
+	"Genero.h"
+
+1575151454 source:c:\users\franco\desktop\temporal\laboratorioyprogramacioni\clases_de_repaso\clase_repaso_11\primer_parcial_laboratorio_enunciados\localidad.c
+	"Localidad.h"
+
+1575151454 source:c:\users\franco\desktop\temporal\laboratorioyprogramacioni\clases_de_repaso\clase_repaso_11\primer_parcial_laboratorio_enunciados\main.c
+	<stdio.h>
+	<stdlib.h>
+	"Validaciones.h"
+	"Genero.h"
+	"Pelicula.h"
+	"Actor.h"
+	"Elenco.h"
+	"Pais.h"
+
+1575151454 source:c:\users\franco\desktop\temporal\laboratorioyprogramacioni\clases_de_repaso\clase_repaso_11\primer_parcial_laboratorio_enunciados\pais.c
+	"Pais.h"
+
+1575151454 source:c:\users\franco\desktop\temporal\laboratorioyprogramacioni\clases_de_repaso\clase_repaso_11\primer_parcial_laboratorio_enunciados\pelicula.c
+	"Pelicula.h"
+
+1575151454 source:c:\users\franco\desktop\temporal\laboratorioyprogramacioni\clases_de_repaso\clase_repaso_11\primer_parcial_laboratorio_enunciados\validaciones.c
+	"Validaciones.h"
+
+1575166422 source:c:\users\acquisto\desktop\programacion y laboratorio\laboratorioyprogramacioni\enunciados del campus virtual\funciones\primer_parcial\primer_parcial_laboratorio_enunciados\elenco.c
+	"Elenco.h"
+
+1575166422 c:\users\acquisto\desktop\programacion y laboratorio\laboratorioyprogramacioni\enunciados del campus virtual\funciones\primer_parcial\primer_parcial_laboratorio_enunciados\elenco.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"Validaciones.h"
+	"Actor.h"
+	"Pelicula.h"
+
+1575166422 c:\users\acquisto\desktop\programacion y laboratorio\laboratorioyprogramacioni\enunciados del campus virtual\funciones\primer_parcial\primer_parcial_laboratorio_enunciados\validaciones.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+
+1575166422 c:\users\acquisto\desktop\programacion y laboratorio\laboratorioyprogramacioni\enunciados del campus virtual\funciones\primer_parcial\primer_parcial_laboratorio_enunciados\actor.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"Validaciones.h"
+	"Pais.h"
+
+1575166422 c:\users\acquisto\desktop\programacion y laboratorio\laboratorioyprogramacioni\enunciados del campus virtual\funciones\primer_parcial\primer_parcial_laboratorio_enunciados\pais.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"Validaciones.h"
+
+1575166422 c:\users\acquisto\desktop\programacion y laboratorio\laboratorioyprogramacioni\enunciados del campus virtual\funciones\primer_parcial\primer_parcial_laboratorio_enunciados\pelicula.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"Validaciones.h"
+	"Fecha.h"
+	"Genero.h"
+
+1575166422 c:\users\acquisto\desktop\programacion y laboratorio\laboratorioyprogramacioni\enunciados del campus virtual\funciones\primer_parcial\primer_parcial_laboratorio_enunciados\fecha.h
+
+1575166422 c:\users\acquisto\desktop\programacion y laboratorio\laboratorioyprogramacioni\enunciados del campus virtual\funciones\primer_parcial\primer_parcial_laboratorio_enunciados\genero.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"Validaciones.h"
+
+1575166422 source:c:\users\acquisto\desktop\programacion y laboratorio\laboratorioyprogramacioni\enunciados del campus virtual\funciones\primer_parcial\primer_parcial_laboratorio_enunciados\fecha.c
+	"Fecha.h"
+
+1575166422 source:c:\users\acquisto\desktop\programacion y laboratorio\laboratorioyprogramacioni\enunciados del campus virtual\funciones\primer_parcial\primer_parcial_laboratorio_enunciados\genero.c
+	"Genero.h"
+
+1575166422 source:c:\users\acquisto\desktop\programacion y laboratorio\laboratorioyprogramacioni\enunciados del campus virtual\funciones\primer_parcial\primer_parcial_laboratorio_enunciados\main.c
+	<stdio.h>
+	<stdlib.h>
+	"Validaciones.h"
+	"Genero.h"
+	"Pelicula.h"
+	"Actor.h"
+	"Elenco.h"
+	"Pais.h"
+
+1575166422 source:c:\users\acquisto\desktop\programacion y laboratorio\laboratorioyprogramacioni\enunciados del campus virtual\funciones\primer_parcial\primer_parcial_laboratorio_enunciados\pais.c
+	"Pais.h"
+
+1575166422 source:c:\users\acquisto\desktop\programacion y laboratorio\laboratorioyprogramacioni\enunciados del campus virtual\funciones\primer_parcial\primer_parcial_laboratorio_enunciados\pelicula.c
+	"Pelicula.h"
+
+1575166422 source:c:\users\acquisto\desktop\programacion y laboratorio\laboratorioyprogramacioni\enunciados del campus virtual\funciones\primer_parcial\primer_parcial_laboratorio_enunciados\validaciones.c
+	"Validaciones.h"
+
+1575309687 source:c:\users\franco\desktop\temporal\laboratorioyprogramacioni\enunciados del campus virtual\funciones\primer_parcial\primer_parcial_laboratorio_enunciados\actor.c
+	"Actor.h"
+
+1575309687 c:\users\franco\desktop\temporal\laboratorioyprogramacioni\enunciados del campus virtual\funciones\primer_parcial\primer_parcial_laboratorio_enunciados\actor.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"Validaciones.h"
+	"Pais.h"
+
+1575309687 c:\users\franco\desktop\temporal\laboratorioyprogramacioni\enunciados del campus virtual\funciones\primer_parcial\primer_parcial_laboratorio_enunciados\validaciones.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+
+1575309687 c:\users\franco\desktop\temporal\laboratorioyprogramacioni\enunciados del campus virtual\funciones\primer_parcial\primer_parcial_laboratorio_enunciados\pais.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"Validaciones.h"
+
+1575309687 source:c:\users\franco\desktop\temporal\laboratorioyprogramacioni\enunciados del campus virtual\funciones\primer_parcial\primer_parcial_laboratorio_enunciados\fecha.c
+	"Fecha.h"
+
+1575309687 c:\users\franco\desktop\temporal\laboratorioyprogramacioni\enunciados del campus virtual\funciones\primer_parcial\primer_parcial_laboratorio_enunciados\fecha.h
+
+1575309687 source:c:\users\franco\desktop\temporal\laboratorioyprogramacioni\enunciados del campus virtual\funciones\primer_parcial\primer_parcial_laboratorio_enunciados\genero.c
+	"Genero.h"
+
+1575309687 c:\users\franco\desktop\temporal\laboratorioyprogramacioni\enunciados del campus virtual\funciones\primer_parcial\primer_parcial_laboratorio_enunciados\genero.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"Validaciones.h"
+
+1575309687 source:c:\users\franco\desktop\temporal\laboratorioyprogramacioni\enunciados del campus virtual\funciones\primer_parcial\primer_parcial_laboratorio_enunciados\main.c
+	<stdio.h>
+	<stdlib.h>
+	"Validaciones.h"
+	"Genero.h"
+	"Pelicula.h"
+	"Actor.h"
+	"Elenco.h"
+	"Pais.h"
+
+1575309687 c:\users\franco\desktop\temporal\laboratorioyprogramacioni\enunciados del campus virtual\funciones\primer_parcial\primer_parcial_laboratorio_enunciados\pelicula.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"Validaciones.h"
+	"Fecha.h"
+	"Genero.h"
+
+1575309687 c:\users\franco\desktop\temporal\laboratorioyprogramacioni\enunciados del campus virtual\funciones\primer_parcial\primer_parcial_laboratorio_enunciados\elenco.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"Validaciones.h"
+	"Actor.h"
+	"Pelicula.h"
+
+1575309687 source:c:\users\franco\desktop\temporal\laboratorioyprogramacioni\enunciados del campus virtual\funciones\primer_parcial\primer_parcial_laboratorio_enunciados\pais.c
+	"Pais.h"
+
+1575311016 source:c:\users\franco\desktop\temporal\laboratorioyprogramacioni\enunciados del campus virtual\funciones\primer_parcial\primer_parcial_laboratorio_enunciados\pelicula.c
+	"Pelicula.h"
+
+1575309687 source:c:\users\franco\desktop\temporal\laboratorioyprogramacioni\enunciados del campus virtual\funciones\primer_parcial\primer_parcial_laboratorio_enunciados\validaciones.c
+	"Validaciones.h"
+
+1575310817 source:c:\users\franco\desktop\temporal\laboratorioyprogramacioni\enunciados del campus virtual\funciones\primer_parcial\primer_parcial_laboratorio_enunciados\elenco.c
+	"Elenco.h"
+
+1575309687 source:c:\users\franco\desktop\temporal\primer_parcial_laboratorio_enunciados\actor.c
+	"Actor.h"
+
+1575309687 c:\users\franco\desktop\temporal\primer_parcial_laboratorio_enunciados\actor.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"Validaciones.h"
+	"Pais.h"
+
+1575309687 c:\users\franco\desktop\temporal\primer_parcial_laboratorio_enunciados\validaciones.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+
+1575309687 c:\users\franco\desktop\temporal\primer_parcial_laboratorio_enunciados\pais.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"Validaciones.h"
+
+1575309687 source:c:\users\franco\desktop\temporal\primer_parcial_laboratorio_enunciados\fecha.c
+	"Fecha.h"
+
+1575309687 c:\users\franco\desktop\temporal\primer_parcial_laboratorio_enunciados\fecha.h
+
+1575309687 source:c:\users\franco\desktop\temporal\primer_parcial_laboratorio_enunciados\genero.c
+	"Genero.h"
+
+1575309687 c:\users\franco\desktop\temporal\primer_parcial_laboratorio_enunciados\genero.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"Validaciones.h"
+
+1575309687 source:c:\users\franco\desktop\temporal\primer_parcial_laboratorio_enunciados\pais.c
+	"Pais.h"
+
+1575319412 source:c:\users\franco\desktop\temporal\primer_parcial_laboratorio_enunciados\pelicula.c
+	"Pelicula.h"
+
+1575321731 c:\users\franco\desktop\temporal\primer_parcial_laboratorio_enunciados\pelicula.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"Validaciones.h"
+	"Fecha.h"
+	"Genero.h"
+
+1575309687 source:c:\users\franco\desktop\temporal\primer_parcial_laboratorio_enunciados\validaciones.c
+	"Validaciones.h"
+
+1575317224 source:c:\users\franco\desktop\temporal\primer_parcial_laboratorio_enunciados\main.c
+	<stdio.h>
+	<stdlib.h>
+	"Validaciones.h"
+	"Genero.h"
+	"Pelicula.h"
+	"Actor.h"
+	"Elenco.h"
+	"Pais.h"
+
+1575321731 c:\users\franco\desktop\temporal\primer_parcial_laboratorio_enunciados\elenco.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"Validaciones.h"
+	"Actor.h"
+	"Pelicula.h"
+
+1575320181 source:c:\users\franco\desktop\temporal\primer_parcial_laboratorio_enunciados\elenco.c
+	"Elenco.h"
+
